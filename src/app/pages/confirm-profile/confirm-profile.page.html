@@ -1,0 +1,25 @@
+ 
+<ion-content class="ion-padding">
+  <div class="title-cont">
+    <ion-label class="title-lbl">Por favor confimanos tu perfil de usuario</ion-label>
+  </div>
+  <div class="user-cont" (click)="signUpWithUser()">
+    <div class="logo-img">
+      <img src="assets/img/person.png" class="user-logo">
+    </div>
+    <div class='user-lbl'>
+      <ion-label>Soy una persona en busqueda de oportunidades de empleo y mas.</ion-label>
+    </div>
+  </div>
+  <div class="job-cont" (click)="signUpWithJob()">
+    <div class="logo-img">
+      <img src="assets/img/building.png" class="job-logo">
+    </div>
+    <div class='job-lbl'>
+      <ion-label>Soy un asesor o empresa experta en recolocacion laboral</ion-label>
+    </div>
+  </div>
+  <div class="btn-cont">
+    <ion-button size="small" shape="round" color="success" expand="solid"  (click)="back()" > Volver altras</ion-button>
+  </div>
+</ion-content>

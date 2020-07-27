@@ -1,0 +1,86 @@
+
+<ion-content class="ion-padding">
+  <div class="logo-cont">
+    <img src="assets/img/logo.png" class="logo-img">
+  </div>
+  <div class="form-cont">
+    <form #signupForm="ngForm" novalidate>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label position="stacked" color="dark">Nombre Apellido</ion-label>
+          <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
+            Username is required
+          </p>
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked" color="dark">Teléfono</ion-label>
+          <ion-input [(ngModel)]="signup.phonenumber" name="password" type="number" #phonenumber="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="phonenumber.valid || submitted == false" class="ion-padding-start">
+            Telephone is required
+          </p>
+        </ion-text>
+        <ion-item>
+          <ion-label position="stacked" color="dark">Correo electrónico</ion-label>
+          <ion-input [(ngModel)]="signup.email" name="password" type="email" #email="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="email.valid || submitted == false" class="ion-padding-start">
+            Email is required
+          </p>
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="stacked" color="dark">Contraseña</ion-label>
+          <ion-input [(ngModel)]="signup.password" name="password" type="text" #password="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
+            Password is required
+          </p>
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="stacked" color="dark">DNI</ion-label>
+          <ion-input [(ngModel)]="signup.dni" name="dni" type="text" #dni="ngModel" required>
+          </ion-input>
+        </ion-item>
+ 
+        <ion-item>
+          <ion-label position="stacked" color="dark">Ciudad</ion-label>
+          <ion-select  placeholder="Lima Metropolitana" interface="alert" style="color: black!important;">
+            <ion-select-option *ngFor="let item of cityList;" [value]="signup.city" style="color: black!important;">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+           
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" color="dark">Distrito</ion-label>
+          <ion-select  placeholder="San Borja" interface="alert" style="color: black!important;">
+            <ion-select-option *ngFor="let item of districtList;"  [value]="signup.district" style="color: black!important;">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+          
+        </ion-item>
+         
+      </ion-list>
+  
+      <div class="btn-cont">
+        <ion-button (click)="onSignup(signupForm)" type="submit" color="success" size="small">Registrame</ion-button>
+      </div>
+    </form>
+  </div>
+   
+</ion-content>

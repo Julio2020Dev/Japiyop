@@ -1,0 +1,40 @@
+ 
+<ion-content class="myModal" >
+  <div class="logo-cont">
+    <img class="app-logo" src="assets/img/logo.png" alt="App logo">
+  </div>
+  <div class="title-cont">
+    <ion-label>Elige una cuenta</ion-label>
+    
+  </div>
+  <div class="title-cont-detail">
+    <ion-label>para continuar usando Japiyop</ion-label>
+  </div>
+  <div class="list-cont">
+    <ion-col *ngFor="let user of userList">
+      <ion-item class="email-item" (click)="addUser(user)">
+        <ion-avatar slot="start">
+          <img src="assets/img/person.png" [alt]="user.name + ' profile picture'">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{user.name}}</h2>
+          <p>{{user.email}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-item class="email-item" (click)="addAccount()">
+      <ion-avatar slot="start">
+        <img src="assets/img/add_person.png" >
+      </ion-avatar>
+      <ion-label>
+        <h2>Agregar otra cuenta</h2>
+      </ion-label>
+    </ion-item>
+    
+  </div>
+  <div class="lbl-cont"> 
+    <ion-label>
+      Para continuar, [Google] compartira tu nombre, direccion de correo electronico y foto de perfil con Japiyop
+    </ion-label>
+  </div>
+</ion-content>
