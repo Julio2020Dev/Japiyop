@@ -1,6 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="home-toolbar" [hidden]="showSearch">
     <ion-title>Jobhunters</ion-title>
+    <ion-buttons>
+      <ion-button class="person-btn" slot="start" (click)="profile()"><ion-icon name="person"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button  (click)="filter()"><ion-icon name="funnel" color="dark"></ion-icon></ion-button>
+      <ion-button (click)="searchJob()"><ion-icon name="search" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

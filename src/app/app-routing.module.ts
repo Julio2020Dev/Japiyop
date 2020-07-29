@@ -64,6 +64,18 @@ const routes: Routes = [
   {
     path: 'message',
     loadChildren: () => import('./pages/message/message.module').then( m => m.MessagePageModule)
+  },
+  {
+    path: 'push',
+    loadChildren: () => import('./pages/push/push.module').then( m => m.PushPageModule)
+  },
+  {
+    path: 'push-details',
+    loadChildren: () => import('./pages/push-details/push-details.module').then( m => m.PushDetailsPageModule)
+  },
+  {
+    path: 'push-list',
+    loadChildren: () => import('./pages/push-list/push-list.module').then( m => m.PushListPageModule)
   }
 ];
 

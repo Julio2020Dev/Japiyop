@@ -11,5 +11,10 @@ export class FavoritosPage implements OnInit {
 
   ngOnInit() {
   }
+  search(){
 
+  }
+  profile(){
+    
+  }
 }

@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>favoritos</ion-title>
+    <ion-title>Favoritos</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="profile()" class="person-btn" ><ion-icon name="person"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="search()"><ion-icon name="search" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
