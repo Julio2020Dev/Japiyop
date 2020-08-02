@@ -1,3 +1,42 @@
-<p>
-  job works!
-</p>
+ <div class="job-cont" (click)="gotoJobDetails()">
+   <div class="fav-cont">
+     <ion-icon name="heart"></ion-icon>
+   </div>
+
+   <div class="avatar-cont">
+     <ion-row>
+       <ion-col class="detail-col">
+        <div>
+          <div class="time-cont">
+            <ion-label style="color:gray;">{{p.time}}</ion-label>
+          </div>
+        </div>
+        <div [hidden]="!p.select">
+          <img src="assets/img/select_btn.png" style="margin-left: -15px; max-width: 95%;  margin-bottom: -10px;">
+        </div>
+        <div [hidden]="p.select"></div>
+       </ion-col>
+       <ion-col class="img-col">
+        <img [src]="p.avatar">
+       </ion-col>
+       <ion-col class="rate-col">
+        <div class="fav-cont">
+          <ion-icon name="heart" style="color:gray"></ion-icon>
+        </div>
+        <div class="review-cont">
+          <p>{{p.rate}}</p>
+          <ion-icon name="star"></ion-icon>
+        </div>
+        
+       </ion-col>
+     </ion-row>
+   </div>
+   <div class="title-cont">
+     <ion-label>{{p.author}}</ion-label>
+   </div>
+   <div class="detail-cont">
+     <textarea  class="detail-lbl">{{p.details}}</textarea>
+   </div>
+  
+ </div>
+

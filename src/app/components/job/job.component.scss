@@ -1,0 +1,67 @@
+.job-cont{
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: black;
+    border: 1px solid black;
+    .fav-cont{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .avatar-cont{
+        .detail-col{
+            display: inline-grid;;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-col{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rate-col{
+            text-align: right;
+            .fav-cont{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-top: 20px;
+                font-size: 20px;
+            }
+            .review-cont{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                color:gray;        
+                margin-top: 30px;
+                p{
+                    margin-right: 5px;
+                }
+            }
+            
+        }
+    }
+    .title-cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .detail-cont{
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        .detail-lbl{
+            background-color: black;
+            color: white;
+            width: 100%;
+            border: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+    .time-cont{
+        text-align: left;
+    }
+}

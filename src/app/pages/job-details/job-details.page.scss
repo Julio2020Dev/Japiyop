@@ -1,0 +1,105 @@
+.jobDetails-toolbar{
+    --min-height: 55px;
+    --background: black;
+    color:white;
+}
+ion-title{
+    font-weight: bold;
+}
+#pageCont{
+    --background:black;
+    #Container{
+        background-color: #1a1a1a;
+        border-bottom-color: #212020;
+        border-bottom-style: solid;
+        border-bottom-width: 10px;
+        p{
+            font-size: 12px;
+        }
+    }
+    .avatar-cont{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        .avatar-img{
+            width: 30%;
+        }
+    }
+    .fab-cont{
+        background-color: #1a1a1a;
+        padding: 10px;
+        margin-top: -55px;
+        font-size: 20px;
+        color: gray;
+        .link-col{
+            text-align: left;
+        }
+        .fav-col{
+            text-align: right;
+        }
+        .rate-col{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            p{
+                margin-right: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+    .motto-cont{
+        padding: 15px 15px;
+        color: white;
+        text-align: justify;
+    }
+    .pres-cont{
+        padding: 15px 15px;
+    }
+    .hours-cont{
+        padding: 20px 15px;
+        color:white;
+    }
+    .expert-cont{
+        padding: 20px 15px;
+    }
+    .location-cont{
+        padding: 15px 15px;
+        color: white;
+    }
+    .btn-cont{
+        .btn-img{
+            background: url("../../../assets/img/btn_background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            p{
+                color: white;
+                font-size: 12px;
+                
+            }
+        }
+    }
+
+    .detail-cont{
+        text-align: center;
+        padding: 20px 30px;
+        h2{
+            color:white;
+            font-size: 20px;
+        }
+        p{
+            color:gray;
+        }
+    }
+    .lbl-cont{
+        padding: 15px 20px;
+        ion-label{
+            color:white;
+            font-size: 1.2rem;
+        }
+    }
+    
+    
+}

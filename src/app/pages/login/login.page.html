@@ -1,26 +1,33 @@
  
 <ion-content class="ion-padding">
-  <div class="login-title">
-    <ion-label class="login-lbl">Comienza a crear tus propias oportunidades.</ion-label>
+  <div id="opaCont">
+    
   </div>
   <div class="login-logo">
-    <img src="assets/img/logo.png" alt="App logo">
+    <img src="assets/img/path.png">
   </div>
-  <div class="login-social">
-    <ion-list>
-      <div class="btn-cont" (click)="onSignWithGoogle()">
-        <img  class ="btn-img" src="assets/img/google.png" alt="google login">
+  <div id="pageCont">
+    <div class="login-title">
+      <img src="assets/img/title_logo.png">
+    </div>
+    
+    <div class="login-social">
+      <ion-list>
+        <div class="btn-cont" (click)="onSignWithGoogle()">
+          <img  class ="btn-img" src="assets/img/google_btn.png" alt="google login">
+        </div>
+        <div class="btn-cont" (click)="onSignWithLinkedIn()">
+          <img class ="btn-img" src="assets/img/linkedin_btn.png" alt="linkedin login">
+        </div>
+        <div class="btn-cont" (click)="onSignWithFacebook()">
+          <img class ="btn-img" src="assets/img/facebook_btn.png" alt="facebook login">
+        </div>      
+      </ion-list>
+      <div class="term-lbl">
+        <div>Al iniciar sesión acepto los</div>
       </div>
-      <div class="btn-cont" (click)="onSignWithLinkedIn()">
-        <img class ="btn-img" src="assets/img/linkedin.png" alt="linkedin login">
-      </div>
-      <div class="btn-cont" (click)="onSignWithFacebook()">
-        <img class ="btn-img" src="assets/img/facebook.png" alt="facebook login">
-      </div>      
-    </ion-list>
-    <div class="term-lbl">
-      AI iniciar sesión acepto los<span> terminos y condiciones</span>
     </div>
   </div>
-
+  
+  
 </ion-content>

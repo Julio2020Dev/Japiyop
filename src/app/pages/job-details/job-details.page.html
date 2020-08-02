@@ -1,9 +1,64 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>jobDetails</ion-title>
+  <ion-toolbar class="jobDetails-toolbar" >
+    <ion-title>{{job.author}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="pageCont">
+  <div class="avatar-cont">
+    <img [src]="job.avatar" class="avatar-img">
+  </div>
+  <div class="fab-cont">
+    <ion-row>
+      <ion-col class="link-col">
+        <ion-icon name="at"></ion-icon>
+      </ion-col>
+      <ion-col class="fav-col">
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="rate-col">
+        <p>{{job.rate}}</p>
+        <ion-icon name="star"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </div>
 
+  <div class="lbl-cont"><ion-label class="des-lbl">Lema comerical</ion-label></div>
+  <div class="motto-cont" id="Container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis odio</p>
+  </div>
+
+  <div class="lbl-cont"><ion-label class="des-lbl">Presentación</ion-label></div>
+  <div class="pres-cont" id="Container">
+    <img [src]="job.avatar" class="pres-img"/>
+  </div>
+
+  <div class="lbl-cont"><ion-label class="des-lbl">Horario de atención</ion-label></div>
+  <div class="hours-cont" id="Container">
+    <p>L - V 8:00 am - 6:00 pm</p>
+  </div>
+  
+  <div class="lbl-cont"><ion-label class="des-lbl">Expertise</ion-label></div>
+  <div class="expert-cont" id="Container">
+    <ion-col *ngFor="let item of expList">
+      <ion-button (click)="expetLevel(item)" size="small" color="medium" shape="round"  >{{item.label}}</ion-button>
+    </ion-col>
+  </div>
+  
+  <div class="lbl-cont"><ion-label class="des-lbl">Ubicación</ion-label></div>
+  <div class="location-cont" id="Container">
+    <p>Calle Las Begonias 347, San Isidro</p>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-img" (click)="contact()"><p>CONTACTAR</p></div>
+  </div>
+  <div class="detail-cont">
+    <h2>Solicitud enviada</h2>
+    <p>"The contact button dissapear if the user already"</p>
+  </div>
 </ion-content>

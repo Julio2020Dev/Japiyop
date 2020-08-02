@@ -2,11 +2,57 @@
   <ion-toolbar>
     <ion-title>Filtros</ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+      <ion-button (click)="back()"><ion-icon name="arrow-back" color="light"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" id="pageCont">
+  <div class="form-cont">
+    <form #filterForm="ngForm" novalidate>
+      <div class="select-cont">
+        <ion-item>
+          <ion-label position="stacked" color="dark">Categorias</ion-label>
+          <ion-select  placeholder="Hero" interface="popover" style="color: white!important;" >
+            <ion-select-option *ngFor="let item of categoryList;" [value]="filter.category" style="color: white!important;" >
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        
 
+        <ion-item>
+          <ion-label position="stacked" color="dark">Industrias especialiadas</ion-label>
+          <ion-select  placeholder="Publicidad" interface="popover" style="color: white!important;">
+            <ion-select-option *ngFor="let item of indusList;" [value]="filter.indus" style="color: white!important;">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="stacked" color="dark">Cargo</ion-label>
+          <ion-select  placeholder="Mando medio" interface="popover" style="color: white!important;">
+            <ion-select-option *ngFor="let item of positionList;" [value]="filter.position" style="color: white!important;">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="stacked" color="dark">CaCiudad</ion-label>
+          <ion-select  placeholder="Mando medio" interface="popover" style="color: white!important;">
+            <ion-select-option *ngFor="let item of cityList;" [value]="filter.city" style="color: white!important;">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="btn-cont">
+        <ion-button (click)="filterApply(filterForm)" type="submit" color="success" fill="clear"><ion-label style="color:black;">Aplicar</ion-label></ion-button>
+      </div>
+    </form>
+  </div>
+  
+  
 </ion-content>
