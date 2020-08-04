@@ -1,7 +1,10 @@
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="pageCont">
   <div class="logo-cont">
-    <img src="assets/img/logo.png" class="logo-img">
+    <div class="img-cont">
+      <img src="assets/icons/logo_color.png" class="logo-img">
+    </div>
+    
   </div>
   <div class="form-cont">
     <form #signupForm="ngForm" novalidate>
@@ -57,8 +60,8 @@
  
         <ion-item>
           <ion-label position="stacked" color="dark">Ciudad</ion-label>
-          <ion-select  placeholder="Lima Metropolitana" interface="alert" style="color: black!important;">
-            <ion-select-option *ngFor="let item of cityList;" [value]="signup.city" style="color: black!important;">
+          <ion-select  placeholder="Lima Metropolitana" interface="alert" style="color: white!important;">
+            <ion-select-option *ngFor="let item of cityList;" [value]="signup.city" style="color: white!important;">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -67,8 +70,8 @@
 
         <ion-item>
           <ion-label position="stacked" color="dark">Distrito</ion-label>
-          <ion-select  placeholder="San Borja" interface="alert" style="color: black!important;">
-            <ion-select-option *ngFor="let item of districtList;"  [value]="signup.district" style="color: black!important;">
+          <ion-select  placeholder="San Borja" interface="alert" style="color: white!important;">
+            <ion-select-option *ngFor="let item of districtList;"  [value]="signup.district" style="color: white!important;">
                 {{item.name}}
             </ion-select-option>
           </ion-select>

@@ -1,9 +1,78 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>jobRequest</ion-title>
+    <ion-title>Co'mo ven mis solicitudes</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()"><ion-icon name="arrow-back" color="light"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content id="pageCont">
+  <div class="profile-cont">
+    <ion-row>
+      <ion-col class="avatar-col">
+        <img src="assets/img/avatar.png" />
+      </ion-col>
+      <ion-col class="icon-col">
+        <div (click)="share()"><img src="assets/icons/share.png" /></div>
+        <div (click)="air()"><img src="assets/icons/airplane.png" /></div>
+      </ion-col>
+    </ion-row>
+    <div class="date-lbl"><p>Juan P, 27</p></div>
+    <div class="title-lbl"><p>Product Manager at lalala</p></div>
+    <div class="postion-lbl"><p>San Borja, Lima PE</p></div>
+    <div class="price-cont">
+      <p>Rango salarial: S/3,000 - S/4,500 netos</p>
+      <p>Ultima remuneracion: S/3.000 netos</p>
+    </div>
+    <div class="deadline-cont">
+      <p>Disponibilidad inmediata, 01/05.2020</p>
+    </div>
+    <div class="level-cont">
+      <p style="margin-top: 25px;font-weight: 300;">Industrias de interes: Tech, Textil, Autmotriz</p>
+      <div class="exp-cont">
+        <ion-col *ngFor="let item of expList">
+          <ion-button (click)="expetLevel(item)" size="small" color="medium" shape="round"  >{{item.label}}</ion-button>
+        </ion-col>
+      </div>
+    </div>
+  </div>
+  <div class="lbl-cont"><h3>Experiencia</h3></div>
+  <div class="exp-cont">
+    <div class="detail-lbl">
+      <h3>Product Manager(Mando medio)</h3>
+      <p>Japiyop - Texttil(230 empleados)</p>
+      <p class="date-lbl">01/03/2019 - 15/03/2020</p>
+    </div>
+    <div class="refer-cont">
+      <h3>Referencia</h3>
+      <div class="seb">
+        <ion-icon name="person"></ion-icon>
+        <p>Sebastian F. (Gerente general)</p>
+      </div>
+      
+      <div class="ex">
+        <ion-icon name="person"></ion-icon>
+        <p>Ex-jefe</p>
+      </div>
+    </div>
+     
+    <div class="detail-lbl">
+      <h3>Product Manager(Mando medio)</h3>
+      <p>Japiyop - Texttil(230 empleados)</p>
+      <p class="date-lbl">01/03/2019 - 15/03/2020</p>
+    </div>
+    <div class="refer-cont">
+      <h3>Referencia</h3>
+      <div class="seb">
+        <ion-icon name="person"></ion-icon>
+        <p>Sebastian F. (Gerente general)</p>
+      </div>
+      
+      <div class="ex">
+        <ion-icon name="person"></ion-icon>
+        <p>Ex-jefe</p>
+      </div>
+    </div>
+  </div>
 </ion-content>

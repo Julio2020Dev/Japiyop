@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoadingController,  NavController, ToastController } from '@ionic/angular';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public navCtrl:  NavController,
+    public toastController: ToastController,
+    private loadingCtrl: LoadingController,
+  ) { }
 
   ngOnInit() {
   }
-
+  back(){
+    this.navCtrl.back();
+  }
 }

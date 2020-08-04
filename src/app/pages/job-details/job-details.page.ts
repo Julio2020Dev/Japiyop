@@ -44,5 +44,8 @@ export class JobDetailsPage implements OnInit {
   expetLevel(item:any){
     console.log('JOB_DETAILS.PAG>>>> EXP BUTTON CLICKED!', item);
   }
+  share(){
+    console.log('JOB_DETAILS.PAG>>>> SHARING ICON CLICKED!');
+  }
 
 }

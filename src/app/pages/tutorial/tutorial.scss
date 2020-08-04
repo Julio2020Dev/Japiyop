@@ -20,18 +20,18 @@ ion-toolbar {
       }
     }
     .title-cont{
-      color: green;
-      margin-top: 25px;
+      margin-top: 20px;
       .title-lbl{
         word-spacing: 1px;
-        font-size: 2.0rem;
+        font-size: 25px;
         color: #19f1ca;
         text-align: justify;
 
       }
     }
     .detail-cont{
-      margin-top: 30px;
+      margin-top: 20px;
+      font-size: 12px;
       .detail-lbl{
         color:white;
         text-align: justify;
@@ -60,10 +60,10 @@ ion-toolbar {
 .slide-image {
   width: 12%;
 }
-
+ 
 ion-slides {
-  width: 100%;
-  height: 95%;
+  // width: 100%;
+  height: 100vh;
   --bullet-background: gray;
   --bullet-background-active: white;
 }

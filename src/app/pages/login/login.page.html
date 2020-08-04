@@ -1,8 +1,6 @@
  
-<ion-content class="ion-padding">
-  <div id="opaCont">
-    
-  </div>
+<ion-content >
+  <div id="opaCont"></div>
   <div class="login-logo">
     <img src="assets/img/path.png">
   </div>
@@ -12,17 +10,16 @@
     </div>
     
     <div class="login-social">
-      <ion-list>
         <div class="btn-cont" (click)="onSignWithGoogle()">
-          <img  class ="btn-img" src="assets/img/google_btn.png" alt="google login">
+          <div class="img-cont"><img  class ="btn-img" src="assets/img/google_btn.png" /></div>
         </div>
         <div class="btn-cont" (click)="onSignWithLinkedIn()">
-          <img class ="btn-img" src="assets/img/linkedin_btn.png" alt="linkedin login">
+          <div class="img-cont"><img class ="btn-img" src="assets/img/linkedin_btn.png"  /></div>
         </div>
         <div class="btn-cont" (click)="onSignWithFacebook()">
-          <img class ="btn-img" src="assets/img/facebook_btn.png" alt="facebook login">
+          <div class="img-cont"><img class ="btn-img" src="assets/img/facebook_btn.png"  /></div>
         </div>      
-      </ion-list>
+      
       <div class="term-lbl">
         <div>Al iniciar sesión acepto los</div>
       </div>

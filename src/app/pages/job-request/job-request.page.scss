@@ -1,0 +1,104 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: #010101;
+    ion-icon{
+        font-size: 1.5rem;
+    }
+}
+ion-title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+#pageCont{
+    background-color: black;
+    .profile-cont{
+        background-color: #1a1a1a;
+        color: white;
+        text-align: center;
+        padding: 10px 10px;
+        .avatar-col{
+            width: 70%;
+            text-align: right;
+            max-width: 70%;
+        }
+        .icon-col{
+            width: 30%;
+            text-align: right;
+            max-width: 30%;
+            align-items: center;
+            display: inline-grid;
+            justify-content: flex-end;
+            font-size: 2.0rem;
+            padding-right: 25px;
+        }
+        .date-lbl{
+            font-weight: 600;
+        }
+        .title-lbl{
+            font-weight: 600;
+        }
+        .postion-lbl{
+            font-weight: 300;
+        }
+        .price-cont{
+            border-bottom: 1px solid #2d2b2b;
+            border-top: 1px solid #2d2b2b;
+            color: #19f1ca;
+        }
+        .deadline-cont{
+            border-bottom: 1px solid #2d2b2b;
+            font-weight: 400;
+        }
+        .level-cont{
+            .exp-cont{
+            }
+        }
+    }
+    .lbl-cont{
+        background-color: black;
+        padding: 5px 20px;
+        color: white;
+    }
+    .exp-cont{
+        background-color: #1a1a1a;
+        color: white;
+        text-align: left;
+        padding: 15px 25px;
+        h3{
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 15px;
+            font-weight: 300;
+        }
+        .detail-lbl{
+            .date-lbl{
+                font-weight: 400;
+                margin-top: 25px;
+            }
+        }
+        .refer-cont{
+            margin-top: 35px;
+            .seb{
+                display: flex;
+                align-items: center;
+                p{
+                    margin-left: 10px;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                }
+            }
+            .ex{
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #2d2b2b;
+                margin-top: -5px;
+                p{
+                    margin-left: 10px;
+                }  
+            }
+        }
+    }
+}

@@ -22,6 +22,10 @@ ion-title{
     }
 }
 .search-cont{
+    ion-searchbar{
+        background-color: black;
+        color: white;
+    }
     .cancel-btn{
         position: absolute;
         top: 35%;

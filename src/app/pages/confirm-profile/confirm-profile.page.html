@@ -1,7 +1,7 @@
  
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" id="pageCont">
   <div class="title-cont">
-    <ion-label class="title-lbl">Por favor confimanos tu perfil de usuario</ion-label>
+    <h2 class="title-lbl">Por favor confimanos tu perfil de usuario</h2>
   </div>
   <div class="user-cont" (click)="signUpWithUser()">
     <div class="logo-img">
@@ -13,7 +13,7 @@
   </div>
   <div class="job-cont" (click)="signUpWithJob()">
     <div class="logo-img">
-      <img src="assets/img/building.png" class="job-logo">
+      <div class="img-cont"><img src="assets/img/building.png" class="job-logo"></div> 
     </div>
     <div class='job-lbl'>
       <ion-label>Soy un asesor o empresa experta en recolocacion laboral</ion-label>
