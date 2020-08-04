@@ -10,6 +10,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding" id="pageCont">
+  <div class="title-cont">
+    <h2>Jobhunters</h2>
+  </div>
+  <div class="hunter-cont">
+    <ion-col *ngFor="let job of jobList" style="padding: 5px;">
+      <app-job [data]="job" [type]="'main'"></app-job>
+    </ion-col>
+  </div>
 </ion-content>

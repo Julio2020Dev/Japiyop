@@ -34,7 +34,6 @@ export class ConfirmProfilePage implements OnInit {
     this.router.navigateByUrl('/signup',  {queryParams:param});
   }
   back(){
-
-
+    this.navCtrl.back();
   }
 }

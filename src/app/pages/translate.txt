@@ -1,0 +1,447 @@
+
+== 2
+{"jComienza a crear tus propias oportunidades!", "Start creating your own opportunities!"},
+{"Al iniciar sesion acepto Los terminos y condiciones", "By logging in I accept the terms and conditions"}
+==2.1
+{"Elige una cuenta" :"Choose an account"}
+{"para continuar usando Japishop": "to continue using Japishop"}
+{"Para continuar [Google] compartira tu nombre, direccion de correo electronico y foto de perfil con Japiyop": "To continue [Google] will share your name, email address and profile photo with Japiyop"}
+
+==2.1.1
+{'Por favor confimanos tu perfil de usuario':'Please confirm your user profile.'},
+{"soy una persona en busqueda de oportunidades de empleo y mas":"I am a person in search of employment opportunities and more"}
+{"soy un asesor o empresa esperta en recolocacion laboral" : "I am an advisor or a company specialized in job placement."}
+{"Volver atras": "Go back"}
+
+==3
+{"Recoplia info de google u otra elegida, pedir solo lo faltante.", "Collect info from google or another chosen one, ask only for what is missing."}
+{"Validar numero con SMS", "Validate number with SMS"}
+{"Nombre y Apellido":"Name and surname"}
+{"Teléfono" :"Telephone"}
+{"correo electrónico": "email"}
+{"contraseña":"password"}
+{"ciudad":"city"}
+{"distrito":"district"}
+{"registrarme":"register"}
+{" Registro exitoso", "Successful registration"}
+
+==4.1
+{"Enviada", "sent"}
+{"hace 3 hrs": "3 hours ago"}
+== 4.1.1
+{"asignar desde el super admin": "assign from super admin"}
+{"categorias":"categories"}
+{"industrias especialiadas":"specialized industries"}
+{"cargo":"position"}
+{"ciudad":"city"}
+{"aplicar":"Apply"}
+
+== 4.1.2
+{"barra de busqueda":"Search bar"}
+{"nombre de marca":"brand name"}
+{"post 6 mess" :"post 6 months"}
+{"ranking de estrellas" :"star ranking"}
+{"proyectos finallzados" :"completed projects"}
+== 4.1.3 
+detalle jobhunter
+blanco/color
+foto descript link de descarga del app
+lema comercial
+si no hay video volamos el titulo de presentacion
+horario de atencion
+textos (cualquiera)
+sugerido perfiles de clientes a recolocar
+sugerido industrias
+boton flotante
+difuminado para que el boton se vea bier
+
+admiistracion de contenidos
+video opcional
+opcional
+////================///
+// detail jobhunter
+// White color
+// photo description link app download
+// business slogan
+// if there is no video we will fly the presentation title
+// attention hours
+// texts (any)
+// suggested customer profiles to relocate
+// suggested industries
+// floating button
+// blurred to make the button look nice
+
+// content management
+// optional video
+// optional
+
+== 4.1.3.1 (Review Page)
+reseñas
+super admin
+borrar comentario
+ocultar resena
+mandar mensajito al usuario
+ver comentarios
+comentar
+//////========
+// reviews
+// super admin
+// delete comment
+// hide review
+// send a message to the user
+// see comments
+// comment
+== 4.1.3.1.2
+Todas las resenas
+// All reviews
+
+== 4.1.3.2
+solicitar servicio
+posiciones laborales que quiero
+agregar mas
+industrias de interes
+disponibilidad de trabajo
+fecha de disponibilidad
+Ultima remuneracion
+salario bruto mensual
+rango salarial (lo que busco)
+buardar como default
+solicitar contacto
+si la opcion es "de inmediato" no se abre la opcion de la fecha de disponibilidad
+//////========
+// request service
+// job positions i want
+// add more
+// industries of interest
+// Job availability
+// Availability Date
+// Last remuneration
+// gross monthly salary
+// salary range (what I'm looking for)
+// save as default
+// request contact
+// if the option is "immediately" the option of the availability date does not open
+
+== 4.1.3.2.1
+Desea eliminar esta posicion?
+si
+No, volver atras
+//////=========
+// Do you want to delete this position?
+// yes
+// No, go back
+
+== 4.1.3.2.2
+verificar perfil
+desea actualizar los datos de de su perfil
+si, deseo actualizar
+enviar solicitud
+si no tiene nada que actualizar elija esta opcion
+envio de solicitud exitoso
+//////=========
+// check profile
+// you want to update your profile data
+// yes i want to update
+// send request
+// if you have nothing to update choose this option
+// successful application submission
+== 4.1.3.3
+Mi perfil
+profesion
+grado de instruccion
+fecha de inicio
+fecha de finaizacion de estudios
+trabajo remoto
+reubicacion en otra region
+cargo en empleo
+ultimo empleo
+tipo de cargo en empleo1
+industria del empleo
+nombre del centro laboral
+razon social del centro labora
+numero de empleados del centro
+numero de empleados a cargo
+expertise
+ventas
+managment
+aregar expertise
+conbranzas
+rango salarial(lo que busco)
+situacion laboral actual
+referencias laboraies(opcional)
+posicion y e,presa (opcional)
+relacion
+guardar y enviar solicitud
+
+siguiente
+estuduante de la universidad del pacifico curso de rrhh -d
+jala el de la solicitud
+situacion laboral actual
+si coloca nombre de referencia
+los campos de cargo, relacion y numero son obligatorias
+nombres y apelidos
+nivel de ahorros
+esta infomacion solo se le muestra a japiyop
+ultinma boleta del empleador
+pedido del jobhunter
+
+guardar y enviar solicitud
+guardar e ir al home
+
+dividir en 3 partes
+Después de 10 modulos
+///=========
+// My profile
+// profession
+// degree of instruction
+// start date
+// completion date of studies
+// remote work
+// relocation to another region
+// job title
+// last job
+// type of job title1
+// employment industry
+// name of the workplace
+// business name of the work center
+// number of center employees
+// number of employees in charge
+// expertise
+// sales
+// managment
+// expertise expertise
+// fortunes
+// salary range (what I'm looking for)
+// Current job situation
+// laboratory references (optional)
+// position and e, prey (optional)
+// relationship
+// save and send request
+
+// following
+// pacific university student rrhh -d course
+// pull the application
+// Current job situation
+// if you put reference name
+// the fields of charge, relationship and number are mandatory
+// names and surnames
+// level of savings
+// this information is only shown to japiyop
+// latest employer ballot
+// jobhunter order
+// save and send request
+// save and go home
+// divide into 3 parts
+// After 10 modules
+== 5
+amarillo: interesados en tu emprendimiento
+verde: emprendimientos que te gustan
+morado: jobhunters
+
+bola verde agua: solicitud enviada
+bola morada: en linea (foro)
+verde agua
+//////===========
+// yellow: interested in your venture
+// green: ventures you like
+// purple: jobhunters
+
+// green ball water: request sent
+// purple ball: online (forum)
+// green water
+== 5.1
+textos(cualquiera)
+sugerido perfiles de clientes a recolocar
+sugerido industrias
+boton flotante
+difuminado para que el boton se vea bier
+administracion de cntenidos
+video opcional
+Si no hay video volamos el titulo de presentacion
+/////===
+// texts (any)
+// suggested customer profiles to relocate
+// suggested industries
+// floating button
+// blurred to make the button look nice
+// content administration
+// optional video
+// If there is no video we will fly the presentation title
+== 5.2.3
+seguridad
+bloquear a juan
+reportar a juan
+aceptar
+///////=======
+// security
+// block juan
+// report to juan
+// to accept
+== 7
+editar informacion
+mostrar perfil en Japiyop
+general
+compartir APP
+//=======
+// edit information
+// show profile in Japiyop
+// general
+// share app
+
+== 7.1 (Edit Information)
+click a la carita (sistema operativo (2 opcion))
+como me ve el jobhunter
+como se ven mis solicitudes
+Tu perfil ya esta casi completo
+Nombre y Apellido
+Telefono
+Si el boton de editar fue seleccionado
+Fecha de nacimiento
+estudios
+experiencia
+/////====
+// click to the face (operating system (2 option))
+// how does the jobhunter see me
+// how do my requests look
+// Your profile is almost complete
+// Name and surname
+// Telephone
+// If the edit button was selected
+// Date of birth
+// studies
+// experience
+== 7.1.4
+situacion laboral actual
+pendiente
+disponibilidad de trabajo
+fecha de disponbilidad
+industrias de interes
+finazas
+hoteleria u turismo
+agregar industria
+
+Si la opcion es "de inmediato" no se abre opcion de la fecha de disponibilidad
+1. cuando editas tienes la opcopn de borrar la industira colocada
+2. agregar industria aparece cuando das click al editar
+- te permite agregar mas industrias
+
+Trabajo remoto
+reubicacion en otra region
+cargo de empleo
+fecha de incio
+fecha de finalizacion
+tipo de cargo en empleo
+industrial del empleo
+razon social del centro labora
+numero de empleados del centro
+numero de emleados a cargo
+expertise
+funciona igual que industiral
+referencias laborales
+cargo y empresa de la referencia
+relacion con la referencia
+rango salarial
+ultima remuneracion
+visible para los jobhunters cuando les mandas una solicitud
+////=============
+// Current job situation
+// pending
+// Job availability
+// availability date
+// industries of interest
+// finances
+// hospitality or tourism
+// add industry
+
+// If the option is "immediately" there is no option for the availability date
+// 1. when you edit you have the option to delete the industira placed
+// 2. add industry appears when you click edit
+// - allows you to add more industries
+
+// Remote work
+// relocation to another region
+// job title
+// start date
+// finish date
+// type of job position
+// industrial employment
+// business name of the work center
+// number of center employees
+// number of employees in charge
+// expertise
+// works just like industiral
+// job references
+// title and reference company
+// relationship with the reference
+// salary range
+// last remuneration
+// Visible to jobhunters when you send them a request
+
+== 7.1.5(Studies Profile)
+Profesion
+insititucion
+grado de instruccion
+fecha de incio
+fecha de finalizacion
+especialidad
+institucion
+idiomas
+certificado
+otros
+institucion
+guardar
+
+//////////=========
+// Profession
+// institution
+// degree of instruction
+// start date
+// finish date
+// specialty
+// institution
+// Languages
+// certificate
+// others
+// institution
+// save
+== 7.2(Show me on Japiyop)
+Mostrar mi perfil
+mostrarme visible para jobhunters
+x default esta activo
+/////=========
+Show my profile
+show me visible to jobhunters
+x default is active
+
+== 7.3
+Notificaciones push
+metodos de pago
+preguntas frecuentes
+politicas de uso
+terminos y condiciones
+contatar Japiyop
+bloqueados
+cerrar sesion
+////////====
+// Push notifications
+// payment methods
+// frequent questions
+// usage policies
+// terms and Conditions
+// count Japiyop
+// blocked
+// Sign off
+== 8(Eval weekly user)
+Revision semanal
+cliente
+hay avaces en el proyecto
+comentarios
+push up notificaions
+Todas las partes: admin, cx, sh
+/////========
+// Weekly review
+// client
+// there is progress in the project
+// comments
+// push up notifications
+// All parts: admin, cx, sh

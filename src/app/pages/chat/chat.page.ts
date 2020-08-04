@@ -35,8 +35,8 @@ export class ChatPage implements OnInit {
     console.log('CHAT.PAGE>>>>> Select User Clicked!', item);
     this.navCtrl.navigateForward('job-request');
   }
-  option(){
-    console.log('CHAT.PAGE>>>>> OPTION CLICKED!');
+  filter(){
+    console.log('CHAT.PAGE>>>>> FILTER CLICKED!');
   }
 
 }

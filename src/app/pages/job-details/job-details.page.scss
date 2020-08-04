@@ -5,6 +5,7 @@
 }
 ion-title{
     font-weight: bold;
+    text-align: center;
 }
 #pageCont{
     --background:black;
@@ -20,10 +21,15 @@ ion-title{
     .avatar-cont{
         display: flex;
         justify-content: center;
-        margin-top: 50px;
-        .avatar-img{
-            width: 30%;
+        margin-top: 30px;
+        .img-cont{
+            width: 120px;
+            height: 120px;
+            .avatar-img{
+                width: 100%;
+            }
         }
+        
     }
     .fab-cont{
         background-color: #1a1a1a;
