@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-job',
@@ -11,13 +12,15 @@ export class JobComponent implements OnInit {
 
   constructor(
     public navCtrl:  NavController,
+    public router: Router,
   ) { }
 
   ngOnInit() {
 
   }
   gotoJobDetails(){
-    this.navCtrl.navigateForward('job-details', {queryParams: this.p});
+    this.navCtrl.navigateForward('hunter-details', {queryParams: this.p});
+
   }
 
 }

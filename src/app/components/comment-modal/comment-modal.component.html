@@ -1,0 +1,12 @@
+<div id="commentModal">
+  <div class="title-cont"><h3>Comentatrio</h3></div>
+  <div class="comment-cont"><ion-textarea rows="5"></ion-textarea></div>
+  <div class="star-cont">
+    <ion-col *ngFor=" let start of reviewList">
+      <ion-icon name="star"></ion-icon>
+    </ion-col>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-img" (click)="sentComment()"><p>Comentar</p> </div>
+  </div>
+</div>

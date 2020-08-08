@@ -76,7 +76,22 @@ const routes: Routes = [
   {
     path: 'push-list',
     loadChildren: () => import('./pages/push-list/push-list.module').then( m => m.PushListPageModule)
-  }
+  },
+  {
+    path: 'hunter-details',
+    loadChildren: () => import('./pages/hunter-details/hunter-details.module').then( m => m.HunterDetailsPageModule)
+  },
+  {
+    path: 'reviews',
+    loadChildren: () => import('./pages/reviews/reviews.module').then( m => m.ReviewsPageModule)
+  },
+  {
+    path: 'request',
+    loadChildren: () => import('./pages/request/request.module').then( m => m.RequestPageModule)
+  },
+   
+  
+   
 ];
 
 @NgModule({

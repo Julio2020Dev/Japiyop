@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar class="hunterDetails-toolbar" >
+    <!-- <ion-title>{{job.author}}</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="pageCont">
+  <div class="fab-cont">
+    <div class="fav-icon">
+      <ion-icon name="heart" (click)="favo()"></ion-icon>
+    </div>
+    <ion-row class="avatar-row">
+      <ion-col class="a-col">
+        <div class="img-cont">
+          <img [src]="job.avatar" class="avatar-img"> 
+        </div>
+        
+      </ion-col>
+      <ion-col class="rate-col">
+        <p>{{job.rate}}</p>
+        <ion-icon name="star"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="name-row">
+      <ion-col class="name-col">
+        <h3 style="font-size: 18px; margin-top: 10px;">{{job.author}}</h3>
+      </ion-col>
+      <ion-col class="fav-col">
+        <div class="share-img">
+          <img src="assets/icons/sharing.png" (click)="share()" />
+        </div>
+        
+      </ion-col>
+    </ion-row>
+     
+  </div>
+  <div class="seg-cont">
+    <ion-segment (ionChange)="segmentChanged($event)" value="information">
+      <ion-segment-button value="information">
+        <ion-label style="color: white;">Información</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="reviews">
+        <ion-label style="color: white;">Reseñas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+
+  <!--Information Content-->
+  <div class="info-cont" [hidden]="showInformation">
+    <div class="lbl-cont"><ion-label class="des-lbl">Lema comerical</ion-label></div>
+    <div class="motto-cont" id="Container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis odio</p>
+    </div>
+  
+    <div class="lbl-cont"><ion-label class="des-lbl">Presentación</ion-label></div>
+    <div class="pres-cont" id="Container">
+      <img [src]="job.avatar" class="pres-img"/>
+    </div>
+  
+    <div class="lbl-cont"><ion-label class="des-lbl">Horario de atención</ion-label></div>
+    <div class="hours-cont" id="Container">
+      <p>L - V 8:00 am - 6:00 pm</p>
+    </div>
+    
+    <div class="lbl-cont"><ion-label class="des-lbl">Expertise</ion-label></div>
+    <div class="expert-cont" id="Container">
+      <ion-col *ngFor="let item of expList">
+        <ion-button (click)="expetLevel(item)" size="small" color="medium" shape="round"  >{{item.label}}</ion-button>
+      </ion-col>
+    </div>
+    
+    <div class="lbl-cont"><ion-label class="des-lbl">Ubicación</ion-label></div>
+    <div class="location-cont" id="Container">
+      <p>Calle Las Begonias 347, San Isidro</p>
+    </div>
+    <div class="btn-cont">
+      <div class="btn-img" (click)="contact()"><p>CONTACTAR</p></div>
+    </div>
+    <div class="detail-cont">
+      <h2>Solicitud enviada</h2>
+      <p>"The contact button dissapear if the user already"</p>
+    </div>
+  </div>
+  <!--Review Content-->
+  <div class="review-cont" [hidden]="!showInformation">
+    <ion-content class="comment-list" >
+      <ion-list >
+        <ion-item *ngFor="let item of userList" (click)="selectUser(item)">
+          <ion-avatar slot="start">
+            <img [src]="item.avatar">
+          </ion-avatar>
+          <div class="details-cont">
+            <h3>{{item.type}}</h3>
+            <p>{{item.detail}}</p>
+            <div class="star">
+              <ion-col *ngFor=" let start of userList">
+                <ion-icon name="star"></ion-icon>
+              </ion-col>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    
+    <div class="more-cont">
+      <ion-label>Ver comentarios ({{moreCount}})</ion-label>
+    </div>
+    <div class="btn-cont">
+      <div class="btn-img" (click)="comment()"><p>Comentar</p></div>
+    </div>
+  </div>
+
+  
+</ion-content>

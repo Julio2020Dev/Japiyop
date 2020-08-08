@@ -27,11 +27,13 @@ export class ConfirmProfilePage implements OnInit {
     this.router.navigateByUrl('/signup', {queryParams:param});
   }
   signUpWithJob(){
+    console.log('CONFIRM PROFILE PAGE>>>>>>>> SIGNUP AS JOBHUNTER');
+    return;
     this.userType = 'job';
     let param = {
       type: this.userType
     }
-    this.router.navigateByUrl('/signup',  {queryParams:param});
+    // this.router.navigateByUrl('/signup',  {queryParams:param});
   }
   back(){
     this.navCtrl.back();

@@ -13,20 +13,26 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { SelectAccountPage } from './Modal/select-account/select-account.page';
-
+import { ComponentsModule } from './components/components.module';
+import { CommentModalComponent } from './components/comment-modal/comment-modal.component';
+import { RequestModalComponent } from './components/request-modal/request-modal.component';
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ComponentsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
   ],
-  // entryComponents: [SelectAccountPage],
+  entryComponents: [
+    CommentModalComponent,
+    RequestModalComponent
+  ],
   declarations: [AppComponent],
   providers: [InAppBrowser, SplashScreen, StatusBar],
   bootstrap: [AppComponent]

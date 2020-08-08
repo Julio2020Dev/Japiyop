@@ -1,0 +1,95 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: black;
+    color:white;
+}
+ion-title{
+    font-weight: bold;
+    text-align: center;
+}
+#reviewCont{
+    --background:#1a1a1a;
+    ion-list{
+            background-color: #1a1a1a;
+            
+        }   
+        .comment-list{
+            height: 300px;
+            // position: absolute;
+            width: 100%;
+        } 
+        ion-item{
+            --background: #1a1a1a;
+            color: white;
+            --inner-border-width: 0px;
+            padding: 10px 10px;
+            border-bottom: 1px solid #232323;
+        }
+        ion-avatar{
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            margin-inline-end: 5px;
+        }
+        ion-label{
+            color:white;
+        }
+        .circle{
+            background: url("../../../assets/img/dot.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            border-radius: 50%;
+            bottom: 25%;
+            left: 2px;
+        }
+        .details-cont{
+            margin-left: 20px;
+            .star{
+                font-size: 15px;
+                margin-top: 15px;
+                margin-left: -5px;
+            }
+        }
+        h3{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        p{
+            margin: 0px;
+            font-size: 12px;
+        }
+        .more-cont{
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .btn-cont{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            .btn-img{
+                background: url("../../../assets/img/btn_background.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 80%;
+                height: 35px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                p{
+                    color: white;
+                    font-size: 15px;
+                    
+                }
+            }
+        }
+    
+}

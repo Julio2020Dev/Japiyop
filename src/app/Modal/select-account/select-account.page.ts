@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
- 
-import { 
-  ModalController, 
-  NavParams 
-  } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 @Component({
   selector: 'app-select-account',
   templateUrl: './select-account.page.html',
