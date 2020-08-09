@@ -27,7 +27,7 @@ export class RequestPage implements OnInit {
     public modalCtrl: ModalController,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private alertCtrl: AlertController,
+    private alertCtrl: AlertController
   ) {
     this.jobList = [
       {id: 0, title:'Project Manager'},
