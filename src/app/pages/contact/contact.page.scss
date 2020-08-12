@@ -1,0 +1,25 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: black;
+    border-bottom: 1px solid #1a1a1a;
+}
+ion-title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+ion-content{
+    --background:black;
+}
+#contactCont{
+    p{
+        color: white;
+    }
+    .link-cont{
+        p{
+            color: #19f1ca;
+        }
+        
+    }
+    
+}

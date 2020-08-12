@@ -89,6 +89,59 @@ const routes: Routes = [
     path: 'request',
     loadChildren: () => import('./pages/request/request.module').then( m => m.RequestPageModule)
   },
+  {
+    path: 'chatroom',
+    loadChildren: () => import('./pages/chatroom/chatroom.module').then( m => m.ChatroomPageModule)
+  },
+  {
+    path: 'profile-dash',
+    loadChildren: () => import('./pages/profile-dash/profile-dash.module').then( m => m.ProfileDashPageModule)
+  },
+  {
+    path: 'general',
+    loadChildren: () => import('./pages/general/general.module').then( m => m.GeneralPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'show-me',
+    loadChildren: () => import('./pages/show-me/show-me.module').then( m => m.ShowMEPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./pages/notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'addpayment',
+    loadChildren: () => import('./pages/addpayment/addpayment.module').then( m => m.AddpaymentPageModule)
+  },
+  {
+    path: 'ask',
+    loadChildren: () => import('./pages/ask/ask.module').then( m => m.AskPageModule)
+  },
+  {
+    path: 'policy',
+    loadChildren: () => import('./pages/policy/policy.module').then( m => m.PolicyPageModule)
+  },
+  {
+    path: 'terms',
+    loadChildren: () => import('./pages/terms/terms.module').then( m => m.TermsPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'block',
+    loadChildren: () => import('./pages/block/block.module').then( m => m.BlockPageModule)
+  },
+   
    
   
    

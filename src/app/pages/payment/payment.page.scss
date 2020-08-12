@@ -1,0 +1,17 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: black;
+    border-bottom: 1px solid #1a1a1a;
+}
+ion-title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+ion-content{
+    --background:black;
+}
+ion-item{
+    --inner-border-width: 0px;
+    border: 2px solid #484848;
+}

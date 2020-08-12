@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-item>
+          <img [src]="hunter.avatar" slot="start"/>
+          <p>{{hunter.author}}</p>
+      </ion-item>
+      
+    </ion-title>
+    <ion-buttons slot="start">
+        <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+          <ion-button class="back-btn" (click)="call()"><ion-icon name="call" style="color: white;"></ion-icon></ion-button>
+          <ion-button class="back-btn" (click)="more()"><ion-icon name="ellipsis-vertical" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="chatroomCont">
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <div class="bottom-bar">
+          <ion-icon name="camera" (click)="takeFile()"></ion-icon>
+          <ion-input type="text" placeholder="Type text" [(ngModel)]="textData"> </ion-input>
+          <ion-icon name="send" (click)="sendMessage()" ></ion-icon>
+      </div>
+      
+    </ion-toolbar>
+  </ion-footer>

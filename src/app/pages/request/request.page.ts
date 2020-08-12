@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MenuController, LoadingController, AlertController, NavController, ToastController, ModalController } from '@ionic/angular';
 import { RequestModalComponent } from '../../components/request-modal/request-modal.component';
+import { DeleteModalComponent } from '../../components/delete-modal/delete-modal.component';
 @Component({
   selector: 'app-request',
   templateUrl: './request.page.html',
@@ -10,6 +11,17 @@ import { RequestModalComponent } from '../../components/request-modal/request-mo
 export class RequestPage implements OnInit {
 
   dataReturned:         any;
+  selectedItem:         any;
+  public requestData = {
+    jobTitle: '',
+    industy: '',
+    available: '',
+    available_date: '',
+    remuner: '',
+    maxValue: '',
+    minValue: ''
+    
+  };
 
   public jobList:       any = [];
   public selectedList:  any = [];
@@ -48,8 +60,22 @@ export class RequestPage implements OnInit {
 
   ngOnInit() {
   }
+  initDatas(){
+    this.requestData = {
+      jobTitle: '',
+      industy: '',
+      available: '',
+      available_date: '',
+      remuner: '',
+      maxValue: '',
+      minValue: ''
+      
+    };
+    this.selectedItem = null;
+  }
   back(){
     console.log('REQUEST.PAGE>>>>>> BACK BUTTON CLICKED!');
+    this.navCtrl.back();
   }
   addTitle(event: any){
     console.log('REQUEST.PAGE<<<<< ADd ITEM', event)
@@ -58,6 +84,11 @@ export class RequestPage implements OnInit {
   }
   removeSelect(item:any){
     console.log('REQUEST.PAGE<<<<< REMOVE ITEM', item);
+    this.selectedItem = item;
+    this.showDeleteModal();
+  }
+  deleteSelectItem(){
+    let item = this.selectedItem;
     if(this.selectedList.length == 0){
       return;
     }else{
@@ -87,12 +118,31 @@ export class RequestPage implements OnInit {
       }
     });
     modal.onDidDismiss().then((dataReturned) => {
+      console.log('DataReturned', dataReturned);
       if (dataReturned.data !== null) {
         this.dataReturned = dataReturned.data;
-        console.log('Returned Data', this.dataReturned);
       }else{
+        this.navCtrl.navigateForward('profile');
       }
-      this.navCtrl.navigateForward('reviews');
+
+    });
+    return await modal.present();
+  }
+  async showDeleteModal(){
+    const modal = await this.modalCtrl.create({
+      component: DeleteModalComponent,
+      cssClass: 'deleteModal',
+      componentProps: {
+        'name': 'request'
+      }
+    });
+    modal.onDidDismiss().then((dataReturned) => {
+      if (dataReturned.data !== null) {
+        this.deleteSelectItem();
+      }else{
+        
+      }
+
     });
     return await modal.present();
   }

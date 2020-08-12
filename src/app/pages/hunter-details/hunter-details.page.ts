@@ -11,9 +11,13 @@ export class HunterDetailsPage implements OnInit {
   public job:       any;
   public expList:   any =[];
   public userList:  any = [];
+  
   dataReturned:     any;
   showInformation:  boolean;
   moreCount:        number;
+
+  viewType: boolean;
+
   constructor(
     public activatedRoute : ActivatedRoute,
     private navCtrl: NavController,
@@ -26,6 +30,11 @@ export class HunterDetailsPage implements OnInit {
     this.activatedRoute.queryParams.subscribe((res)=>{
       this.job = res;
       console.log('HUNTERDETAILS.TS====HUNTER DATA',res);
+      if(res.type == 'main'){
+        this.viewType = false;
+      }else{
+        this.viewType = true;
+      }
      
     });
     this.showInformation = false;
@@ -81,7 +90,8 @@ export class HunterDetailsPage implements OnInit {
       component: CommentModalComponent,
       cssClass: 'commentModal',
       componentProps: {
-        'name': 'Hello User'
+        'type': 'comment',
+        'name': this.job.author
       }
     });
     modal.onDidDismiss().then((dataReturned) => {

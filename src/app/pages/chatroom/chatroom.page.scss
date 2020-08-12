@@ -1,0 +1,38 @@
+ion-toolbar{
+    --min-height: 65px;
+    --background: black;
+    color:white;
+}
+ion-title{
+    font-weight: bold;
+    text-align: center;
+    
+    ion-item{
+        --inner-border-width: 0px;
+        img{
+            margin-inline-end: 10px;
+            width:20%;
+            max-width: 100%;
+        }
+    }
+    
+}
+.bottom-bar{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    ion-input{
+        border: 1px solid #1a1a1a;
+        margin: 0px 10px;
+        --padding-start: 10px;
+        --padding-end: 10px;
+        border-radius: 15px;
+    }
+    ion-icon{
+        font-size: 25px;
+    }
+}
+
+#chatroomCont{
+    --background: #1a1a1a;
+}

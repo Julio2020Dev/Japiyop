@@ -23,20 +23,30 @@ export class RequestModalComponent implements OnInit {
     this.requestData = {
       jobTitle: '',
       industy: '',
+      available: '',
+      available_date: '',
+      remuner: '',
+      maxValue: '',
+      minValue: ''
       
     }
   }
   userProfile(){
-    this.navCtrl.navigateForward('profile');
+    console.log('REQUEST_COMPONENT>>>> USER PROFILE BUTTON CLICKED!');
+    this.closeModalWithProfile();
+    
   }
   sendRequest(){
-
+    console.log('REQUEST_COMPONENT>>>> SEND REQUEST BUTTON CLICKED!');
+    this.closeModalWithRequest();
   }
   async closeModalWithProfile() {
     const onClosedData: string = "Wrapped Up!";
-    await this.modalCtrl.dismiss();
+    this.requestData = null;
+    await this.modalCtrl.dismiss(this.requestData);
   }
   async closeModalWithRequest(){
-
+    const onClosedData: string = "Wrapped Up!";
+    await this.modalCtrl.dismiss(this.requestData);
   }
 }

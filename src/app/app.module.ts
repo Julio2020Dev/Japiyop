@@ -12,10 +12,14 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { Toast } from '@ionic-native/toast/ngx';
+
+
 import { SelectAccountPage } from './Modal/select-account/select-account.page';
 import { ComponentsModule } from './components/components.module';
 import { CommentModalComponent } from './components/comment-modal/comment-modal.component';
 import { RequestModalComponent } from './components/request-modal/request-modal.component';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -31,10 +35,11 @@ import { RequestModalComponent } from './components/request-modal/request-modal.
   ],
   entryComponents: [
     CommentModalComponent,
-    RequestModalComponent
+    RequestModalComponent,
+    DeleteModalComponent
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [InAppBrowser, SplashScreen, StatusBar, Toast],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

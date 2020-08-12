@@ -1,0 +1,114 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: black;
+}
+ion-title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+ion-content{
+    --background:black;
+}
+#editProfileCont{
+    --background:black;
+    .profile-cont{
+        padding: 20px 0px;
+        background-color: #1a1a1a;
+        border-bottom: 5px solid #484848;
+        .avatar-col{
+            max-width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .img-cont{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .avatar-img{
+                    max-width: 100%;
+                }
+            }
+        }
+        .edit-col{
+            max-width: 40%;
+            display: inline-grid;
+            justify-content: left;
+            padding-left: 30px;
+            ion-icon{
+                font-size: 25px;
+                color:#484848;
+            }
+        }
+    }
+    .seg-cont{
+        padding: 10px 20px;
+        background-color: #1a1a1a;
+        border-bottom: 5px solid #212020;
+        ion-segment-button{
+            --indicator-color:white;
+        }
+    }
+    .bar-cont{
+
+    }
+
+    #personCont{
+        padding: 5px 20px;
+        ion-lable{
+            color: black;
+        }
+        ion-input{
+            border: 1px solid gray;
+            border-radius: 2px;
+            padding: 2px 10px !important;
+            margin-top: 10px;
+            color: white;
+        }
+        ion-select{
+            color: black!important;
+            border: 1px solid gray;
+            border-radius: 2px;
+            padding: 2px 10px !important;
+            margin-top: 10px;
+            height: 44px;
+        }
+        ion-item{
+            --background: black;
+            color: white;
+        }
+        ion-label{
+            color: white;
+        }
+        ion-list{
+            background-color: black;
+        }
+        .lbl-cont{
+            margin-top: 20px;
+        }
+        .btn-cont{
+            margin-top: 20px;
+            width: 80%;
+            margin-left: 10%;
+            .btn-img{
+                background: url("../../../assets/img/btn_background.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                p{
+                    color: white;
+                    font-size: 12px;
+                    
+                }
+            }
+        }
+    }   
+    #experienceCont{
+
+    }
+    #studyCont{
+
+    }
+}

@@ -81,7 +81,7 @@
       </ion-list>
   
       <div class="btn-cont">
-        <ion-button (click)="onSignup(signupForm)" type="submit" color="success" size="small">Registrame</ion-button>
+        <ion-button (click)="onSignup(signupForm)" type="submit" [disabled]="!signupForm.valid" color="success" size="small">Registrame</ion-button>
       </div>
     </form>
   </div>

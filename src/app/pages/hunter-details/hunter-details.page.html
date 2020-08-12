@@ -77,12 +77,19 @@
     <div class="location-cont" id="Container">
       <p>Calle Las Begonias 347, San Isidro</p>
     </div>
-    <div class="btn-cont">
-      <div class="btn-img" (click)="contact()"><p>CONTACTAR</p></div>
+    <div [hidden]="viewType">
+        <div class="btn-cont">
+            <div class="btn-img" (click)="contact()"><p>CONTACTAR</p></div>
+          </div>
+          <div class="detail-cont">
+            <h2>Solicitud enviada</h2>
+            <p>"The contact button dissapear if the user already"</p>
+        </div>
     </div>
-    <div class="detail-cont">
-      <h2>Solicitud enviada</h2>
-      <p>"The contact button dissapear if the user already"</p>
+    <div [hidden]="!viewType">
+        <div class="detail-cont">
+            <h2>Ya enviaste solicitud</h2>
+        </div>
     </div>
   </div>
   <!--Review Content-->

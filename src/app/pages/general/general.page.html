@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>General</ion-title>
+    <ion-buttons slot="start">
+        <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content lass="ion-padding" id="generalCont">
+    <ion-item>
+        <ion-icon name="notifications" slot="start"></ion-icon>
+        <p>Notificaciones push</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="notification()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="card" slot="start"></ion-icon>
+        <p>Métodos de pago</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="payment()"></ion-icon>
+    </ion-item>
+
+   
+    <ion-item>
+        <ion-icon name="help-circle" slot="start"></ion-icon>
+        <p>Preguntas frecuentes</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="ask()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="beaker" slot="start"></ion-icon>
+        <p>Politicas de uso</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="policy()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="newspaper" slot="start"></ion-icon>
+        <p>Términos y condiciones</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="termAndCondition()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <p>Contactar Japiyop</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="contact()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="close-circle" slot="start"></ion-icon>
+        <p>Bloqueados</p>
+        <ion-icon name="arrow-forward" slot="end" (click)="blocked()"></ion-icon>
+    </ion-item>
+
+    <ion-item class="logout-lbl" (click)="logout()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <p style="color:aqua">Cerrar sesión</p>
+        <ion-icon name="arrow-forward" slot="end" ></ion-icon>
+    </ion-item>
+    
+</ion-content>

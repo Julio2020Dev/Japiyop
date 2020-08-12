@@ -36,9 +36,6 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 # Estos archivos se autogeneran con comandos de GULP
-/config.xml
-/src/config/config.ts
-/src/config/parameters.ts
 /resources/icon.png.md5
 /resources/splash.png.md5
 /resources/android/

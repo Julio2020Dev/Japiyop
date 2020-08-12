@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+    <ion-buttons slot="end">
+        <ion-button class="back-btn" (click)="next()"><ion-icon name="arrow-forward" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="profileCont">
+  <ion-item>
+    <ion-icon name="person" slot="start"></ion-icon>
+    <p>Editar información</p>
+    <ion-icon name="arrow-forward" slot="end" (click)="editProfile()"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="archive" slot="start"></ion-icon>
+    <p>Mostrar perfil en Japiyop</p>
+    <ion-icon name="arrow-forward" slot="end" (click)="showProfile()"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="settings" slot="start"></ion-icon>
+    <p>General</p>
+    <ion-icon name="arrow-forward" slot="end" (click)="general()"></ion-icon>
+  </ion-item>
+  <ion-item class="share-item">
+    <img src="assets/icons/sharing.png" slot="start">
+    <p>Compartir App</p>
+    <ion-icon name="arrow-forward" slot="end" (click)="shareApp()"></ion-icon>    
+  </ion-item>
+
+</ion-content>

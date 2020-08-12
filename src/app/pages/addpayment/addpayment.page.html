@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar método de pago</ion-title>
+    <ion-buttons slot="start">
+        <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button class="back-btn" (click)="add()"><ion-icon name="add" style="color: white;"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="addPaymentCont">
+    <div class="lbl-cont">
+        <ion-label style="color:white">Nombre del propietario</ion-label>
+    </div>
+    <div class="jobsTitle-cont">
+       <ion-input type="text" [(ngModel)]="card.name" placeholder="Tarjeta Nombre"></ion-input>
+    </div>
+    
+    <div class="lbl-cont">
+        <ion-label style="color:white">Número de tarjeta</ion-label>
+    </div>
+    <div class="jobsTitle-cont">
+       <ion-input type="text" [(ngModel)]="card.name" placeholder="Tarjeta Número"></ion-input>
+    </div>
+
+    <div class="lbl-cont">
+        <ion-label style="color:white">Expiración:</ion-label>
+    </div>
+    <div class="row-cont">
+      <ion-row>
+          <ion-col><ion-input type="text" [(ngModel)]="card.month" placeholder="mm"></ion-input></ion-col>
+          <ion-col><ion-input type="text" [(ngModel)]="card.year" placeholder="año"></ion-input></ion-col>
+      </ion-row>
+      
+    </div>
+
+    <div class="lbl-cont">
+        <ion-label style="color:white">CVV:</ion-label>
+    </div>
+    <div class="cvv-cont">
+        <ion-input type="text" [(ngModel)]="card.cvv" placeholder="cvv"></ion-input>
+    </div>
+    <div class="btn-cont">
+        <div class="btn-img" (click)="requestService()"><p>Agregar tarjeta</p></div>
+      </div>
+</ion-content>

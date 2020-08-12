@@ -1,0 +1,39 @@
+<div id="deleteModal" [hidden]="viewType !='request'">
+  <div class="title-cont"><h3>Desea eliminar esta posicion?</h3></div>
+  <div class="btn-cont">
+    <div class="btn-img" (click)="delete()"><p>Si</p> </div>
+  </div>
+  <div class="btn-cont">
+    <div  (click)="close()"><p>No, Volver atrás</p> </div>
+  </div>
+</div>
+
+<div id="deleteCardModal" [hidden]="viewType != 'payment'">
+    <div class="title-cont"><h3>¿Confirm que desea eliminar el medio de pago?</h3></div>
+    <div class="btn-cont">
+      <div class="btn-img" (click)="delete()"><p>Si, eliminar tarjeta</p> </div>
+    </div>  
+    <div class="btn-cont">
+      <div  (click)="close()"><p>No, mantenner tarjeta</p> </div>
+    </div>
+</div>
+
+<div id="unlockModal" [hidden]="viewType !='block'">
+    <div class="title-cont"><h3>¿Desea desbloquear a este usuario/ Jobhunter?</h3></div>
+    <div class="btn-cont">
+      <div class="btn-img" (click)="delete()"><p>Si</p> </div>
+    </div>  
+    <div class="btn-cont">
+      <div  (click)="close()"><p>No, Volver atrás</p> </div>
+    </div>
+</div>
+
+<div id="unlockModal" [hidden]="viewType !='logout'">
+    <div class="title-cont"><h3>¿Seguro que desea salir de la aplicación?</h3></div>
+    <div class="btn-cont">
+      <div class="btn-img" (click)="delete()"><p>Si, cerrar sesión</p> </div>
+    </div>  
+    <div class="btn-cont">
+      <div  (click)="close()"><p>No, continuar en Japiyop</p> </div>
+    </div>
+</div>

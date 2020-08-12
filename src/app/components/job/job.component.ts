@@ -19,6 +19,8 @@ export class JobComponent implements OnInit {
 
   }
   gotoJobDetails(){
+    this.p.type = this.type;
+    console.log("TYPE>>>", this.p.type);
     this.navCtrl.navigateForward('hunter-details', {queryParams: this.p});
 
   }

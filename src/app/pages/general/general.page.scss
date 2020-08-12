@@ -1,0 +1,22 @@
+ion-toolbar{
+    --min-height: 55px;
+    --background: black;
+}
+ion-title{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+ion-content{
+    --background:black;
+}
+#generalCont{
+    ion-item{
+        // border-bottom: 5px solid #1a1a1a;
+        --inner-border-width: 0px;
+    }
+    .logout-lbl{
+        margin-top: 30px;
+        
+    }
+}

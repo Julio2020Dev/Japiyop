@@ -13,7 +13,7 @@
   </div>
   <div class="jobsTitle">
     <ion-select  placeholder="Product Manager" interface="alert" style="color: white!important;" (ionChange)="addTitle($event)">
-      <ion-select-option *ngFor="let item of jobList;" style="color: white!important;" (value)="item.title">
+      <ion-select-option *ngFor="let item of jobList;" style="color: white!important;" [value]="requestData.jobTitle">
           {{item.title}}
       </ion-select-option>
     </ion-select>
@@ -32,7 +32,7 @@
     <ion-label style="color:white">Industrias de interés</ion-label>
   </div>
   <div class="jobsTitle-cont">
-    <ion-input type="text" [(ngModel)]="industrial" placeholder="Industrias"></ion-input>
+    <ion-input type="text" [(ngModel)]="requestData.industy" placeholder="Industrias"></ion-input>
   </div>
   <p class="comment-lbl">Agregar más</p>
 
@@ -41,21 +41,21 @@
   </div>
   <div class="jobsTitle-cont">
     <ion-select  placeholder="A Partir De" interface="alert" style="color: white!important;">
-      <ion-select-option *ngFor="let item of availableList;" style="color: white!important;">
+      <ion-select-option *ngFor="let item of availableList;" style="color: white!important;" [value]="requestData.available">
           {{item.name}}
       </ion-select-option>
     </ion-select>
   </div>
   <p class="comment-lbl">Fecha de disponibilidad</p>
   <div class="date-cont">
-    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="availableDate"></ion-input>
+    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="requestData.available_date"></ion-input>
   </div>
 
   <div class="lbl-cont">
     <ion-label style="color:white">Última remuneración</ion-label>
   </div>
   <div class="jobsTitle-cont">
-    <ion-input type="text" [(ngModel)]="lastPay" placeholder="Industrias"></ion-input>
+    <ion-input type="text" [(ngModel)]="requestData.remuner" placeholder="Industrias"></ion-input>
   </div>
   <p class="comment-lbl">*Salario bruto mensual</p>
 
@@ -64,8 +64,8 @@
   </div>
   <div class="jobsTitle-cont">
     <ion-row>
-      <ion-col><ion-input type="number" placeholder="S/. min" [(ngModel)]="minSalary"></ion-input></ion-col>
-      <ion-col><ion-input type="number" placeholder="S/. max" [(ngModel)]="maxSalary"></ion-input></ion-col>
+      <ion-col><ion-input type="number" placeholder="S/. min" [(ngModel)]="requestData.minValue"></ion-input></ion-col>
+      <ion-col><ion-input type="number" placeholder="S/. max" [(ngModel)]="requestData.maxValue"></ion-input></ion-col>
     </ion-row>
   </div>
   <p class="comment-lbl">*Salario bruto mensual</p>
