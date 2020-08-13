@@ -141,9 +141,14 @@ const routes: Routes = [
     path: 'block',
     loadChildren: () => import('./pages/block/block.module').then( m => m.BlockPageModule)
   },
-   
-   
-  
+  {
+    path: 'weekreview',
+    loadChildren: () => import('./pages/weekreview/weekreview.module').then( m => m.WeekreviewPageModule)
+  },
+  {
+    path: 'huter-tabs',
+    loadChildren: () => import('./pages/Hunter/huter-tabs/huter-tabs.module').then( m => m.HuterTabsPageModule)
+  },
    
 ];
 

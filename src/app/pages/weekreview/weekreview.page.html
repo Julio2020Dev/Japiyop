@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Revisión semanal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="reviewCont">
+  <div class="lbl-cont"><p>Cliente</p></div>
+  <div class="lbl-cont"><p style="color: #19f1ca;">Juan Perez</p></div>
+  <div class="lbl-cont"><p>Hay avances en el proyecto ..</p></div>
+  <div class="item-cont">
+    <ion-select  placeholder="Advaces" interface="alert" style="color: white!important;">
+      <ion-select-option *ngFor="let item of projectList;" style="color: white!important;" [value]="project">
+          {{item.name}}
+      </ion-select-option>
+    </ion-select>
+  </div>
+  <div class="lbl-cont"><p>Comentarios</p></div>
+  <div class="item-cont">
+    <ion-textarea rows="10"></ion-textarea>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-img" (click)="sendReviews()"><p>Enviar</p></div>
+  </div>
+
+</ion-content>
