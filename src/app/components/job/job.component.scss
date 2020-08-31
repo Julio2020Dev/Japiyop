@@ -1,8 +1,8 @@
 .job-cont{
     padding: 10px 10px;
     border-radius: 10px;
-    background-color: black;
-    border: 1px solid black;
+    // background-color: black;
+    border: 1px solid gray;
     .fav-cont{
         display: flex;
         justify-content: flex-end;
@@ -44,17 +44,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        // color: white;
         font-weight: bold;
         font-size: 20px;
     }
     .detail-cont{
         text-align: center;
-        color: white;
+        // color: white;
         font-size: 15px;
         .detail-lbl{
-            background-color: black;
-            color: white;
+            // background-color: black;
+            // color: white;
             width: 100%;
             border: none;
             text-align: center;

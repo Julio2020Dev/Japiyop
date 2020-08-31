@@ -1,16 +1,16 @@
 .hunterDetails-toolbar{
     --min-height: 55px;
-    --background: black;
-    color:white;
+    // --background: black;
+    // color:white;
 }
 ion-title{
     font-weight: bold;
     text-align: center;
 }
 #pageCont{
-    --background:black;
+    // --background:black;
     #Container{
-        background-color: #1a1a1a;
+        // background-color: #1a1a1a;
         border-bottom-color: #212020;
         border-bottom-style: solid;
         border-bottom-width: 10px;
@@ -20,7 +20,7 @@ ion-title{
     }
     
     .fab-cont{
-        background-color: black;
+        // background-color: black;
         border-bottom: 5px solid #212020;    
         padding: 10px 20px;
         font-size: 20px;
@@ -61,7 +61,7 @@ ion-title{
             .name-col{
                 max-width: 75%;
                 text-align: right;
-                color: white;
+                // color: white;
             }
             .fav-col{
                 max-width: 25%;
@@ -88,17 +88,17 @@ ion-title{
 
     .seg-cont{
         padding: 10px 20px;
-        background-color: #1a1a1a;
+        // background-color: #1a1a1a;
         border-bottom: 5px solid #212020;
         ion-segment-button{
-            --indicator-color:white;
+            // --indicator-color:white;
         }
     }
 
     .info-cont{
         .motto-cont{
             padding: 15px 15px;
-            color: white;
+            // color: white;
             text-align: justify;
         }
         .pres-cont{
@@ -106,14 +106,14 @@ ion-title{
         }
         .hours-cont{
             padding: 20px 15px;
-            color:white;
+            // color:white;
         }
         .expert-cont{
             padding: 20px 15px;
         }
         .location-cont{
             padding: 15px 15px;
-            color: white;
+            // color: white;
         }
         .btn-cont{
             .btn-img{
@@ -124,7 +124,7 @@ ion-title{
                 display: flex;
                 justify-content: center;
                 p{
-                    color: white;
+                    // color: white;
                     font-size: 12px;
                     
                 }
@@ -135,7 +135,7 @@ ion-title{
             text-align: center;
             padding: 20px 30px;
             h2{
-                color:white;
+                // color:white;
                 font-size: 20px;
             }
             p{
@@ -146,14 +146,14 @@ ion-title{
         .lbl-cont{
             padding: 15px 20px;
             ion-label{
-                color:white;
+                // color:white;
                 font-size: 1.2rem;
             }
         }
     }
     .review-cont{
         ion-list{
-            background-color: #1a1a1a;
+            // background-color: #1a1a1a;
             
         }   
         .comment-list{
@@ -162,8 +162,8 @@ ion-title{
             width: 100%;
         } 
         ion-item{
-            --background: #1a1a1a;
-            color: white;
+            // --background: #1a1a1a;
+            // color: white;
             --inner-border-width: 0px;
             padding: 10px 10px;
             border-bottom: 1px solid #232323;
@@ -176,7 +176,7 @@ ion-title{
             margin-inline-end: 5px;
         }
         ion-label{
-            color:white;
+            // color:white;
         }
         .circle{
             background: url("../../../assets/img/dot.png");
@@ -207,7 +207,7 @@ ion-title{
             font-size: 12px;
         }
         .more-cont{
-            color: white;
+            // color: white;
             font-size: 1.2rem;
             text-align: center;
             margin-top: 10px;
@@ -230,7 +230,7 @@ ion-title{
                 align-items: center;
                 justify-content: center;
                 p{
-                    color: white;
+                    // color: white;
                     font-size: 15px;
                     
                 }

@@ -1,19 +1,19 @@
 
 .home-toolbar{
     --min-height: 55px;
-    --background: black;
+    // --background: black;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 #pageCont{
-    --background:#1a1a1a;
+    // --background:#1a1a1a;
     
 }
 .person-btn{
-    background-color: black;
+    // background-color: black;
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -23,8 +23,8 @@ ion-title{
 }
 .search-cont{
     ion-searchbar{
-        background-color: black;
-        color: white;
+        // background-color: black;
+        // color: white;
     }
     .cancel-btn{
         position: absolute;

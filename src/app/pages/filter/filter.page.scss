@@ -5,25 +5,25 @@ ion-title{
 }
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
-    color:white;
+    // --background: black;
+    // color:white;
 }
 #pageCont{
-    --background:black;
+    // --background:black;
 }
 .form-cont{
     // padding: 5px 5px;
     ion-label{
-        color: white;
+        // color: white;
     }
     ion-item{
         margin-top: 20px;
-        --background: black;
-        --color:white;
-        --border-color: black;
+        // --background: black;
+        // --color:white;
+        --border-color: transparent;
     }
     ion-select{
-        color: white!important;
+        // color: white!important;
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
@@ -38,7 +38,7 @@ ion-toolbar{
         ion-button{
             width: 150px;
             height: 44px;
-            --color:white;
+            // --color:white;
             background: url("../../../assets/img/btn_background.png");
             background-size: cover;
             background-repeat: no-repeat;

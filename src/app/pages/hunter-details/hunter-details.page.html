@@ -2,7 +2,7 @@
   <ion-toolbar class="hunterDetails-toolbar" >
     <!-- <ion-title>{{job.author}}</ion-title> -->
     <ion-buttons slot="start">
-      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -40,10 +40,10 @@
   <div class="seg-cont">
     <ion-segment (ionChange)="segmentChanged($event)" value="information">
       <ion-segment-button value="information">
-        <ion-label style="color: white;">Información</ion-label>
+        <ion-label>Información</ion-label>
       </ion-segment-button>
       <ion-segment-button value="reviews">
-        <ion-label style="color: white;">Reseñas</ion-label>
+        <ion-label>Reseñas</ion-label>
       </ion-segment-button>
     </ion-segment>
   </div>

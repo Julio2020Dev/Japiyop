@@ -1,23 +1,23 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
+    // --background: black;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 ion-content{
-    --background:black;
+    // --background:black;
 }
 ion-item{
     --inner-border-width: 0px;
-    border-bottom: 5px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
 }
 ion-toggle {
     --background: rgb(4, 214, 116);
     --background-checked: rgb(4, 214, 116);
   
-    --handle-background: #ffffff;
-    --handle-background-checked: rgb(250, 250, 250);
+    // --handle-background: #ffffff;
+    // --handle-background-checked: rgb(250, 250, 250);
 }

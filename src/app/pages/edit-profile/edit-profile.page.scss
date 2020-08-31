@@ -1,20 +1,20 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
+    // --background: black;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 ion-content{
-    --background:black;
+    // --background:black;
 }
 #editProfileCont{
-    --background:black;
+    // --background:black;
     .profile-cont{
         padding: 20px 0px;
-        background-color: #1a1a1a;
+        // background-color: #1a1a1a;
         border-bottom: 5px solid #484848;
         .avatar-col{
             max-width: 60%;
@@ -43,10 +43,10 @@ ion-content{
     }
     .seg-cont{
         padding: 10px 20px;
-        background-color: #1a1a1a;
+        // background-color: #1a1a1a;
         border-bottom: 5px solid #212020;
         ion-segment-button{
-            --indicator-color:white;
+            // --indicator-color:white;
         }
     }
     .bar-cont{
@@ -56,14 +56,14 @@ ion-content{
     #personCont{
         padding: 5px 20px;
         ion-lable{
-            color: black;
+            // color: black;
         }
         ion-input{
             border: 1px solid gray;
             border-radius: 2px;
             padding: 2px 10px !important;
             margin-top: 10px;
-            color: white;
+            // color: white;
         }
         ion-select{
             color: black!important;
@@ -74,14 +74,14 @@ ion-content{
             height: 44px;
         }
         ion-item{
-            --background: black;
-            color: white;
+            // --background: black;
+            // color: white;
         }
         ion-label{
-            color: white;
+            // color: white;
         }
         ion-list{
-            background-color: black;
+            // background-color: black;
         }
         .lbl-cont{
             margin-top: 20px;
@@ -98,7 +98,7 @@ ion-content{
                 display: flex;
                 justify-content: center;
                 p{
-                    color: white;
+                    // color: white;
                     font-size: 12px;
                     
                 }

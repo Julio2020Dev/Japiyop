@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start">
-          <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+          <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -23,13 +23,13 @@
   <div class="seg-cont">
       <ion-segment (ionChange)="segmentChanged($event)" value="information">
         <ion-segment-button value="personal">
-          <ion-label style="color: white;">Personal</ion-label>
+          <ion-label  >Personal</ion-label>
         </ion-segment-button>
         <ion-segment-button value="experience">
-          <ion-label style="color: white;">Experiencia</ion-label>
+          <ion-label  >Experiencia</ion-label>
         </ion-segment-button>
         <ion-segment-button value="studio">
-            <ion-label style="color: white;">Estudios</ion-label>
+            <ion-label  >Estudios</ion-label>
           </ion-segment-button>
       </ion-segment>
   </div>
@@ -39,38 +39,38 @@
   </div>
 <!-- Personal Contaier -->
   <div id="personCont">
-      <div class="lbl-cont"><ion-label style="color:white">Nombre y Apellido</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Nombre y Apellido</ion-label></div>
       <div style="margin-top: 15px;"><ion-label class="name-lbl" style="color: #19f1ca;">Alberto Javier Rocca Pinto</ion-label></div>
 
-      <div class="lbl-cont"><ion-label style="color:white">Teléfono</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Teléfono</ion-label></div>
       <div class="input-cont">
           <ion-input   name="password" type="number" [(ngModel)]="phoneNumber" required></ion-input>
       </div>
       
-      <div class="lbl-cont"><ion-label style="color:white">Correo electrónico</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Correo electrónico</ion-label></div>
       <div class="input-cont">
           <ion-input   name="password" type="email" [(ngModel)]="email" required></ion-input>
       </div>
       
-      <div class="lbl-cont"><ion-label style="color:white">Contraseña</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Contraseña</ion-label></div>
       <div class="input-cont">
           <ion-input  name="password" type="text" [(ngModel)]="password" required></ion-input>
       </div>
       
-      <div class="lbl-cont"><ion-label style="color:white">DNI</ion-label></div>
+      <div class="lbl-cont"><ion-label  >DNI</ion-label></div>
       <div class="input-cont">
           <ion-input   name="dni" type="text" [(ngModel)]="DNI" required></ion-input>
       </div>
        
-      <div class="lbl-cont"><ion-label style="color:white">Fecha de nacimiento</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Fecha de nacimiento</ion-label></div>
       <div class="date-cont">
             <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="birthday"></ion-input>
       </div>
        
-      <div class="lbl-cont"><ion-label style="color:white">Ciudad</ion-label></div>
+      <div class="lbl-cont"><ion-label  >Ciudad</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="Lima Metropolitana" interface="alert" style="color: white!important;">
-              <ion-select-option *ngFor="let item of cityList;" [value]="city" style="color: white!important;">
+          <ion-select  placeholder="Lima Metropolitana" interface="alert">
+              <ion-select-option *ngFor="let item of cityList;" [value]="city">
                   {{item.name}}
               </ion-select-option>
             </ion-select>
@@ -78,10 +78,10 @@
           
      
 
-      <div class="lbl-cont"><ion-label style="color:white">Distrito</ion-label></div>
+      <div class="lbl-cont"><ion-label>Distrito</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="San Borja" interface="alert" style="color: white!important;">
-              <ion-select-option *ngFor="let item of districtList;"  [value]="district" style="color: white!important;">
+          <ion-select  placeholder="San Borja" interface="alert">
+              <ion-select-option *ngFor="let item of districtList;"  [value]="district">
                   {{item.name}}
               </ion-select-option>
             </ion-select>

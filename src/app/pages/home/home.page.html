@@ -2,15 +2,15 @@
   <ion-toolbar class="home-toolbar" [hidden]="showSearch">
     <ion-title>Jobhunters</ion-title>
     <ion-buttons slot="start">
-      <ion-button class="person-btn"  (click)="profile()"><ion-icon name="person-outline"></ion-icon></ion-button>
+      <ion-button class="person-btn"  (click)="profile()"><ion-icon name="person-outline" color="dark"></ion-icon></ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button  (click)="filter()"><ion-icon name="options-outline" style="color:white;"></ion-icon></ion-button>
-      <ion-button (click)="searchJob()"><ion-icon name="search-outline"  style="color:white;"></ion-icon></ion-button>
+      <ion-button  (click)="filter()"><ion-icon name="options-outline" color="dark"></ion-icon></ion-button>
+      <ion-button (click)="searchJob()"><ion-icon name="search-outline"  color="dark"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
   <div class="search-cont" [hidden]="!showSearch" >
-    <ion-searchbar  placeholder="Search..." ></ion-searchbar>
+    <ion-searchbar  placeholder="Search..."  color="dark"></ion-searchbar>
     <div class="cancel-btn" (click)="closeSearch()"><ion-icon name="close" color="light"></ion-icon></div>
   </div>
 </ion-header>
