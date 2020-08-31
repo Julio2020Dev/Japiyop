@@ -30,8 +30,8 @@ export class HomePage implements OnInit {
   }
   //-- Goto Filter Page
   filter(){
-    // this.navCtrl.navigateForward('/filter');
-    this.navCtrl.navigateForward('/weekreview');
+    this.navCtrl.navigateForward('/filter');
+    // this.navCtrl.navigateForward('/weekreview');
 
   }
   //-- Show Search Field

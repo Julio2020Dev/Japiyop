@@ -1,22 +1,22 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
+    // --background: black;
     border-bottom: 1px solid #1a1a1a;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 ion-content{
-    --background:black;
+    // --background:black;
 }
 p{
-    color: white;
+    // color: white;
 }
 #policyCont{
     ion-item{
-        --background: black;
+        // --background: black;
         color: white;
         --inner-border-width: 0px;
     }
@@ -33,7 +33,7 @@ p{
         .btn{
             max-width: 10%;
             font-size: 25px;
-            color: white;
+            // color: white;
             display: flex;
             align-items: center;
             justify-content: center;

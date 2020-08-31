@@ -42,8 +42,6 @@ export class ChatroomPage implements OnInit {
   sendMessage(){
 
   }
-
-
   async showModal(){
     const modal = await this.modalCtrl.create({
       component: CommentModalComponent,
@@ -57,5 +55,35 @@ export class ChatroomPage implements OnInit {
        console.log('Data Returned', dataReturned);
     });
     return await modal.present();
+  }
+  async showPorposalModal(){
+    const modal = await this.modalCtrl.create({
+      component: CommentModalComponent,
+      cssClass: 'securityModal',
+      componentProps: {
+        'type': 'proposal',
+        'name': this.hunter.name
+      }
+    });
+    modal.onDidDismiss().then((dataReturned) => {
+       console.log('Data Returned', dataReturned);
+       this.navCtrl.navigateForward('request-proposal');
+    });
+    return await modal.present();
+  }
+  proposal(){
+    this.showPorposalModal();
+  }
+  payment(){
+
+  }
+  accept(){
+
+  }
+  decline(){
+
+  }
+  conclud(){
+
   }
 }

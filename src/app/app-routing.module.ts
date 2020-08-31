@@ -146,9 +146,46 @@ const routes: Routes = [
     loadChildren: () => import('./pages/weekreview/weekreview.module').then( m => m.WeekreviewPageModule)
   },
   {
-    path: 'huter-tabs',
-    loadChildren: () => import('./pages/Hunter/huter-tabs/huter-tabs.module').then( m => m.HuterTabsPageModule)
+    path: 'hunter-home',
+    loadChildren: () => import('./pages/Hunter/hunter-home/hunter-home.module').then( m => m.HunterHomePageModule)
   },
+  {
+    path: 'hunter-filter',
+    loadChildren: () => import('./pages/Hunter/hunter-filter/hunter-filter.module').then( m => m.HunterFilterPageModule)
+  },
+  {
+    path: 'hunter-chat',
+    loadChildren: () => import('./pages/Hunter/hunter-chat/hunter-chat.module').then( m => m.HunterChatPageModule)
+  },
+  {
+    path: 'hunter-profile',
+    loadChildren: () => import('./pages/Hunter/hunter-profile/hunter-profile.module').then( m => m.HunterProfilePageModule)
+  },
+  {
+    path: 'hunterequest',
+    loadChildren: () => import('./pages/Hunter/hunterequest/hunterequest.module').then( m => m.HunterequestPageModule)
+  },
+  {
+    path: 'request-profile',
+    loadChildren: () => import('./pages/Hunter/request-profile/request-profile.module').then( m => m.RequestProfilePageModule)
+  },
+  {
+    path: 'experiences',
+    loadChildren: () => import('./pages/Hunter/experiences/experiences.module').then( m => m.ExperiencesPageModule)
+  },
+  {
+    path: 'request-proposal',
+    loadChildren: () => import('./pages/request-proposal/request-proposal.module').then( m => m.RequestProposalPageModule)
+  },
+  {
+    path: 'accept-contract',
+    loadChildren: () => import('./pages/accept-contract/accept-contract.module').then( m => m.AcceptContractPageModule)
+  },
+  {
+    path: 'confirmpayment',
+    loadChildren: () => import('./pages/confirmpayment/confirmpayment.module').then( m => m.ConfirmpaymentPageModule)
+  },
+      
    
 ];
 

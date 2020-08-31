@@ -1,0 +1,45 @@
+ion-toolbar{
+    --min-height: 55px;
+    
+}
+ion-title{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#requestCont{
+     
+    ion-item{
+        --inner-border-width:0px;
+        border: 1px solid #484848;
+        border-radius: 15px;
+        padding: 15px 0px;
+    }
+    ion-avatar{
+        width: 80px;
+        height: 80px;
+    }
+    p{
+        font-size: 18px
+    }
+    h3{
+        font-weight: bold;
+        font-size: 20px
+    }
+    .btn-cont{
+        .icon-cont{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 25px;
+            font-size: 25px;
+        }
+        .lbl-cont{
+            p{
+                font-size: 15px;
+            }
+            
+        }
+    }
+}

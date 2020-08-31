@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear propuessta</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="proposalCont">
+  <div class="lbl-cont" style="margin-top: 5px;"><ion-label>Pago inicial</ion-label></div>
+  <div class="data-cont">
+    <ion-input type="text" placeholder="s/ 3000"   name="price" id="price" [(ngModel)]="initPrice"></ion-input>
+  </div>
+  <div class="details-cont">
+    <p>*Este pago se gestiona como garantia y se desenmbolsa ai jobhunter tras tu conformidad</p>
+    <p>EL servicio implica:</p>
+    <ul>
+      <li>preparación  para la entrevista</li>
+      <li>Lorem ipsum</li>
+      <li>Lorem ipsum</li>
+    </ul>
+  </div>
+
+  <div class="lbl-cont" style="margin-top: 5px;"><ion-label>Pago final</ion-label></div>
+  <div class="data-cont">
+    <ion-input type="text" placeholder="s/ 3000"   name="price" id="price" [(ngModel)]="finalPrice"></ion-input>
+  </div>
+  <div class="details-cont">
+    <p>*Se realiza después de la recolocación laboral exitosa.</p>
+    <p>Se devuelve la garantía</p>
+  </div>
+  <div class="comment-cont">
+    <h5>Ver contrato</h5>
+    <p>*Leerlo antes de enviar</p>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-img" (click)="accept()"><p>Enviar</p></div>
+  </div>
+</ion-content>

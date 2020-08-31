@@ -1,0 +1,112 @@
+ion-title{
+    text-align: center;
+}
+#expCont{
+    .profile-cont{
+        padding: 20px 0px;
+        padding-bottom: 0px;
+        .avatar-col{
+            max-width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .img-cont{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .avatar-img{
+                    max-width: 100%;
+                }
+            }
+        }
+        .edit-col{
+            max-width: 40%;
+            display: inline-grid;
+            justify-content: right;
+            padding-left: 30px;
+            ion-icon{
+                font-size: 25px;
+                color:#484848;
+            }
+        }
+    }
+    .seg-cont{
+         .seg-row{
+             padding: 1px 15px;
+             .seg-first{
+                border: 1px solid gray;
+                 margin-right: 10px;
+             }
+             .seg-second{
+                 border: 1px solid gray;
+                 margin-left: 10px;
+             }
+         }
+    }
+    .title-cont{
+        text-align: center;
+        h3, h4{
+            margin:0px;
+        }
+        h4{
+            font-weight: 600;
+        }
+        p{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    .details-cont{
+        text-align: justify;
+        padding: 10px 5px;
+        ion-label{
+            font-style: italic;
+            color: #51dfe6;
+        }
+        p{
+            color: gray;
+        }
+    }
+    .lbl-cont{
+        margin-top: 20px;
+        ion-label{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    .reference-cont{
+        ion-row{
+            margin-top: -10px;
+        }
+        ion-col{
+            display: flex;
+            align-items: center;
+            p{
+                margin-left: 5px;
+                font-size: 13px;
+            }
+            ion-icon{
+                font-size: 20px;
+            }
+        }
+        
+    }
+    .text-cont{
+        h5{
+            font-style: italic;
+            font-weight: 200;
+            margin-top: 2px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}
+ion-footer{
+    ion-col{
+        text-align: center;
+    }
+    ion-icon{
+        font-size: 3.3rem;
+    }
+}

@@ -9,18 +9,26 @@ import { DeleteModalComponent } from '../../components/delete-modal/delete-modal
 export class PaymentPage implements OnInit {
   public paymentList: any = [];
   selectedItem: any;
+
+  public selectedCard: any;
+  public userType: any;
+
   constructor(
     public navCtrl:  NavController,
     public toastController: ToastController,
     private loadingCtrl: LoadingController,
     public modalCtrl: ModalController
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
     this.paymentList = [
       {id:0, type:'card', number:'Visa****111', expireData: ''}
     ];
     this.selectedItem = null;
+
+    this.userType = "user";
   }
   back(){
     this.navCtrl.back();
@@ -64,5 +72,8 @@ export class PaymentPage implements OnInit {
     });
     return await modal.present();
   }
-
+  
+  makePayment(){
+    this.navCtrl.navigateForward('confirmpayment');
+  }
 }

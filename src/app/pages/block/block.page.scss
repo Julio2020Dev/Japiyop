@@ -1,19 +1,19 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
-    border-bottom: 1px solid #1a1a1a;
+    // --background: black;
+    // border-bottom: 1px solid #1a1a1a;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 ion-content{
-    --background:black;
+    // --background:black;
 }
 
 #blockCont{
-    color:white;
+    // color:white;
      
     ion-item{
         --inner-border-width:0px;
@@ -26,7 +26,7 @@ ion-content{
         height: 80px;
     }
     p{
-        color: white;
+        // color: white;
         font-size: 18px
     }
     h3{
@@ -44,7 +44,7 @@ ion-content{
         .lbl-cont{
             p{
                 font-size: 15px;
-                color: white;
+                // color: white;
             }
             
         }

@@ -1,17 +1,17 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
+    // --background: black;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 #profileCont{
-    --background:black;
-    border-top: 1px solid #1a1a1a;
+    // --background:black;
+    // border-top: 1px solid #1a1a1a;
     ion-item{
-        border-bottom: 5px solid #1a1a1a;
+        // border-bottom: 5px solid #1a1a1a;
         --inner-border-width: 0px;
     }
     .share-item{

@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{hunter.author}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="expCont"> 
+  <div class="content">
+    <div class="seg-cont">
+      <ion-row class="seg-row">
+        <ion-col class="seg-first" (click)="firstCol()"></ion-col>
+        <ion-col class="seg-second" (click)="secondCol()"></ion-col>
+      </ion-row>
+   </div>
+
+    <div class="profile-cont">
+      <ion-row>
+        <ion-col class="avatar-col">
+          <div class="img-cont">
+            <div><img src="assets/img/avatar_00.png"  class="avata-img"/></div>
+          </div>
+        </ion-col>
+        <ion-col class="edit-col">
+          <ion-icon name="home" style="margin-bottom: 10px;"></ion-icon>
+          <ion-icon name="airplane" style="margin-top: 10px;transform: rotate(-90deg);"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="title-cont">
+      <h3>Juan P., 27</h3>
+      <h4>Product Manager at Lalala</h4>
+      <p>San Borja, Lima PE</p>
+      <p style="margin-top: 10px; color:#2cca7b">Rango salarial: S/3000 - S/4500 netos</p>
+    </div>
+    <div class="details-cont">
+      <ion-label>Disponibilidad inmediata, 01/05/2020</ion-label>
+      <p>industrias de interés: tech, textil, automotriz, farmacia, finanzas.</p>
+    </div>
+    <div [hidden]="showStudy">
+        <div class="expert-cont" id="Container">
+          <ion-col *ngFor="let item of expList">
+            <ion-button (click)="expetLevel(item)" size="small" color="medium" shape="round"  >{{item.label}}</ion-button>
+          </ion-col>
+        </div>
+    
+        <div class="lbl-cont"><ion-label class="des-lbl">Experiencia</ion-label></div>
+        
+        <div class="lbl-cont"><ion-label class="des-lbl">Product Manager</ion-label></div>
+        <div class="text-cont">
+          <h5>Japiyop - textil</h5>
+          <p>01/03/2019 - 15/03/2020</p>
+        </div>
+        
+        <div class="reference-cont">
+          <p style="margin-bottom: 0px;">Referencia</p>
+          <ion-row>
+            <ion-col style="max-width: 30%;"><ion-icon name="person" color="dark"></ion-icon><p>Sebastian F.</p></ion-col>
+            <ion-col style="max-width: 40%;"><ion-icon name="list" color="dark"></ion-icon><p>Gerente general</p></ion-col>
+            <ion-col style="max-width: 30%;"><ion-icon name="man" color="dark"></ion-icon><p>Ex - jefe</p></ion-col>
+          </ion-row>
+        </div>
+
+        <div class="lbl-cont"><ion-label class="des-lbl">Product Manager</ion-label></div>
+        <div class="text-cont">
+          <h5>Japiyop - textil</h5>
+          <p>01/03/2019 - 15/03/2020</p>
+        </div>
+
+        <div class="reference-cont">
+          <p style="margin-bottom: 0px;">Referencia</p>
+          <ion-row>
+            <ion-col style="max-width: 30%;"><ion-icon name="person" color="dark"></ion-icon><p>Sebastian F.</p></ion-col>
+            <ion-col style="max-width: 40%;"><ion-icon name="list" color="dark"></ion-icon><p>Gerente general</p></ion-col>
+            <ion-col style="max-width: 30%;"><ion-icon name="man" color="dark"></ion-icon><p>Ex - jefe</p></ion-col>
+          </ion-row>
+        </div>
+    </div>
+    <div [hidden]="!showStudy">
+      <div class="lbl-cont"><ion-label class="des-lbl">Conocimientos</ion-label></div>
+      
+      <div class="lbl-cont"><ion-label class="des-lbl">Universidad del Pacifico</ion-label></div>
+      <div class="text-cont">
+        <h5>Bachiller en Administratcion</h5>
+        <p>01/2019 - 06/2015</p>
+      </div>
+
+      <div class="lbl-cont"><ion-label class="des-lbl">Universidad del Pacifico</ion-label></div>
+      <div class="text-cont">
+        <h5>Diplomado en ventas</h5>
+        <p>01/2019 - 06/2015</p>
+      </div>
+
+      <div class="lbl-cont"><ion-label class="des-lbl">Universidad del Pacifico</ion-label></div>
+      <div class="text-cont">
+        <h5>Curso de especializcion en metodologias agiles</h5>
+        <p>01/2019 - 06/2015</p>
+      </div>
+
+      <div class="lbl-cont"><ion-label class="des-lbl">Idiomas y Otros</ion-label></div>
+      <div class="text-cont">
+        <h6>Idiomas: Espanol (lengua nativa); Ingles</h6>
+        <p>(Certificado TOEFL 1028-2020)</p>
+      </div>
+
+      <div class="text-cont">
+        <h6>Otros: Decencia (PUCP); Voluntariado</h6>
+        <p>(Grupo Convergencia)</p>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col (click)="delete()">
+        <ion-icon name="close-circle" color="dark" style="margin-left: 50px;"></ion-icon> 
+      </ion-col>
+      <ion-col (click)="chat()">
+        <ion-icon name="chatbubbles" color="dark" style="margin-right: 50px;"></ion-icon> 
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  
+</ion-footer>

@@ -2,18 +2,37 @@
   <ion-toolbar>
     <ion-title>Métodos de pago</ion-title>
     <ion-buttons slot="start">
-        <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+        <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-        <ion-button class="back-btn" (click)="add()"><ion-icon name="add" style="color: white;"></ion-icon></ion-button>
+        <ion-button class="back-btn" (click)="add()"><ion-icon name="add" color="dark"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item *ngFor="let item of paymentList">
-    <ion-icon name="card" slot="start"></ion-icon>
-    <p>{{item.number}}</p>
-    <ion-icon name="trash" slot="end" (click)="delete(item)"></ion-icon>
-  </ion-item>
+   
+  <div [hidden]="userType == 'user'">
+    <ion-item *ngFor="let item of paymentList">
+      <ion-icon name="card" slot="start"></ion-icon>
+      <p>{{item.number}}</p>
+      <ion-icon name="trash" slot="end" (click)="delete(item)"></ion-icon>
+    </ion-item>
+  </div>
+    
+  <div class="select-cont" [hidden]="userType != 'user'">
+     <ion-row>
+       <ion-col style="max-width: 10%"><ion-checkbox [(ngModel)]="selectedCard"></ion-checkbox></ion-col>
+       <ion-col style="max-width: 90%">
+        <ion-item *ngFor="let item of paymentList">
+          <ion-icon name="card" slot="start"></ion-icon>
+          <p>{{item.number}}</p>
+          <!-- <ion-icon name="trash" slot="end" (click)="delete(item)" [hidden]="userType != 'user'"></ion-icon> -->
+        </ion-item> </ion-col>
+     </ion-row>
+  </div>
+
+  <div class="btn-cont" [hidden]="userType != 'user'">
+        <div class="btn-img" (click)="makePayment()"><p>Realizar pago</p></div>
+  </div>
 </ion-content>

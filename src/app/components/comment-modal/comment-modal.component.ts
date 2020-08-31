@@ -14,8 +14,9 @@ export class CommentModalComponent implements OnInit {
 
   blockHunter: boolean;
   reportHunter: boolean;
+  createProposal: boolean;
 
-
+  viewType = '';
   constructor(
     public navParams: NavParams,
     private modalController: ModalController,
@@ -31,14 +32,11 @@ export class CommentModalComponent implements OnInit {
 
   ngOnInit() {
     console.log('Comment.PAGE>> Name', this.type, this.name);
-    if(this.type == "comment"){
-      this.viewComment = false;
-    }else if(this.type == "security"){
-      this.viewComment = true;
-    }
+    this.viewType = this.type;
 
     this.blockHunter = false;
     this.reportHunter = false;
+    this.createProposal = false;
   }
   sentComment(){
     this.closeModal();

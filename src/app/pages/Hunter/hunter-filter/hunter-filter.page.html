@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Filtros</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button  (click)="filter()"><ion-icon name="create"  md="md-create" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="hunterFilter">
+  
+  <div class="lbl-cont" style="margin-top: 5px;"><ion-label>Tipo De cargo</ion-label></div>
+  <div class="select-cont">
+    <ion-select  placeholder="Lorem ipsum" interface="alert">
+        <ion-select-option *ngFor="let item of chargeList;"  [value]="charge">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Expertise</ion-label></div>
+  <div class="titleList-cont">
+    <ion-col *ngFor="let item of selectedList">
+      <ion-row>
+        <ion-col class="title-col"><ion-label class="title-item">{{item.title}}</ion-label></ion-col>
+        <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
+      </ion-row>
+    </ion-col>
+  </div>
+  <p class="comment-lbl">Agregar expertise</p>
+  <div class="select-cont">
+    <ion-select  placeholder="Cobranzas" interface="alert" style="color:#23d8f9;">
+        <ion-select-option *ngFor="let item of expertList;"  [value]="expert">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Rango Salarial</ion-label></div>
+  <div class="rang-cont">
+    <ion-row>
+      <ion-col><ion-input type="number" placeholder="min" [(ngModel)]="minValue"></ion-input></ion-col>
+      <ion-col><ion-input type="number" placeholder="max" [(ngModel)]="maxValue"></ion-input></ion-col>
+    </ion-row>
+    <p>*Salario bruto mensual</p>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Disponibilidad</ion-label></div>
+  <div class="select-cont">
+    <ion-select  placeholder="Cobranzas" interface="alert">
+        <ion-select-option *ngFor="let item of availableList;"  [value]="available">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+  <div class="date-cont">
+    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="startDateChage"></ion-input>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Industria</ion-label></div>
+  <div class="select-cont">
+    <ion-select  placeholder="Cobranzas" interface="alert">
+        <ion-select-option *ngFor="let item of indusList;"  [value]="available">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Fecha de solicitud</ion-label></div>
+  <h6> Fecha de inicio</h6>
+  <div class="date-cont">
+    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()"  [(ngModel)]="startDate"></ion-input>
+  </div>
+  <h6> Fecha de finalizacion</h6>
+  <div class="date-cont">
+    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()"  [(ngModel)]="endDate"></ion-input>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Ciudad</ion-label></div>
+  <div class="select-cont">
+    <ion-select  placeholder="Lima" interface="alert">
+        <ion-select-option *ngFor="let item of cityList;"  [value]="city">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="lbl-cont"><ion-label>Distrito</ion-label></div>
+  <div class="select-cont">
+    <ion-select  placeholder="San Borja" interface="alert">
+        <ion-select-option *ngFor="let item of disList;"  [value]="city">
+            {{item.name}}
+        </ion-select-option>
+    </ion-select>
+  </div>
+  <div class="check-cont">
+    <ion-checkbox slot="start" [(ngModel)]="remote"></ion-checkbox>
+    <ion-label>Trabajo remoto</ion-label>
+  </div>
+
+  <div class="check-cont">
+    <ion-checkbox slot="start" [(ngModel)]="relocation"></ion-checkbox>
+    <ion-label>Reubicación en otra región</ion-label>
+  </div>
+
+  <div class="btn-cont">
+    <div class="btn-img" (click)="saveFilter()"><p>Aplicar</p></div>
+  </div>
+</ion-content>

@@ -48,6 +48,14 @@ ion-content{
     p{
         color: #19f1ca;
     }
+    .check-cont{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        ion-label{
+            margin-left: 15px;
+        }
+    }
     .btn-cont{
         justify-content: center;
         display: flex;

@@ -13,6 +13,8 @@ export class AddpaymentPage implements OnInit {
     month:'',
     cvv:''
   }
+  public frequence: boolean;
+
   constructor(
     public navCtrl:  NavController,
     public toastController: ToastController,
@@ -20,6 +22,7 @@ export class AddpaymentPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.frequence = false;
   }
   back(){
     this.navCtrl.back();
@@ -28,7 +31,8 @@ export class AddpaymentPage implements OnInit {
     console.log('ADDPAYMENT.PAGE>>>>>>>ADD BUTTON !');
   }
 
-  addCard(){
-    
+  
+  addPayment(){
+
   }
 }

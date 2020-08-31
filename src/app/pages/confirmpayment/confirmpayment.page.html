@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>1er pago del servicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="confirmCont">
+  <div class="lbl-cont" style="margin-top: 5px;"><ion-label>{{username}}</ion-label></div>
+  <p>Servicios:</p>
+    <ul>
+      <li>Servicio 1</li>
+      <li>Servicio 2</li>
+      <li>Servicio 3</li>
+      <li>Servicio 4</li>
+      <li>Servicio 5</li>
+      <li>Servicio 6</li>
+    </ul>
+  <div class="line-cont"></div>
+  <div class="lbl-cont" style="margin-top: 5px;"><ion-label>Resumen</ion-label></div>
+  <div class="payment-cont">
+    <ion-row>
+      <ion-col><p>Servicio</p></ion-col>
+      <ion-col><p>S/2450</p></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><p>IGV</p></ion-col>
+      <ion-col><p>S/550</p></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><p>Total</p></ion-col>
+      <ion-col><p>S/3000</p></ion-col>
+    </ion-row>
+  </div>
+  <div class="btn-cont" >
+    <div class="btn-img" (click)="confirmPayment()"><p>Finalizar compra</p></div>
+  </div>
+</ion-content>

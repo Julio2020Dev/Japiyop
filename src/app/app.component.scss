@@ -98,8 +98,9 @@ ion-menu.ios ion-item.selected ion-icon {
 }
 ion-list{
   background-color: black;
+  ion-item{
+    --background: black;
+    color: white;
+  }
 }
-ion-item{
-  --background: black;
-  color: white;
-}
+

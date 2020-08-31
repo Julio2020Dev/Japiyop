@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aceptar Contrato</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="accepCont">
+  <ion-textarea rows="20" [(ngModel)]="contactDetails" readonly="true">
+
+  </ion-textarea>
+  <div class="check-cont">
+    <ion-checkbox slot="start" [(ngModel)]="readCondition"></ion-checkbox>
+    <ion-label>He leído los términos y condiciones</ion-label>
+  </div>
+  <div class="check-cont">
+    <ion-checkbox slot="start" [(ngModel)]="acceptCondition"></ion-checkbox>
+    <ion-label>Acepto los términos y condiciones</ion-label>
+  </div>
+  <div class="btn-cont" [hidden]="userAccept">
+    <div class="btn-img" (click)="accept()"><p>Aceptar</p></div>
+  </div>
+  <div class="btn-cont" [hidden]="!userAccept">
+    <div class="btn-img" (click)="follow()"><p>Siguiente</p></div>
+  </div>
+</ion-content>

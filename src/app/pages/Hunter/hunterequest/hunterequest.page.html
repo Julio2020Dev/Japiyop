@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Solicitudes</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="requestCont">
+  <ion-col *ngFor="let item of requestUserList">
+    <ion-item color="light" (click)="viewJobDetail(item)">
+        <ion-avatar slot="start">
+            <img [src]="item.avatar">
+        </ion-avatar>
+        <ion-label>
+            <p>{{item.date}}</p>
+            <h3>{{item.name}}</h3>
+        </ion-label>
+        <div class="btn-cont" slot="end">
+          <div class="icon-cont">
+              <ion-icon name="close" (click)="remove(item)"></ion-icon>
+          </div>
+          <div class="lbl-cont">
+              <p>{{item.time}}</p>
+          </div>
+
+          
+        </div>
+    </ion-item>
+  </ion-col>
+</ion-content>

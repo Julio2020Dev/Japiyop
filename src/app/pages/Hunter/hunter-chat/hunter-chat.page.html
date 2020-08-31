@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Japiyop</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="hunterChatPage">
+  <div class="lbl-cont">
+    <p style="font-weight: bold;">Prospectos</p>
+  </div>
+
+  <div class="avatar-cont">
+    <ion-slides #recentSlider [options]="sliderConfig" class="slider">
+      <ion-slide *ngFor="let u of userList">
+        <div class="img-cont">
+          <ion-avatar (click)="selectUser(u)">
+            <img [src]="u.avatar" class="avatar-img">
+            <div class="circle-online" [hidden]="!u.online"></div>
+            <div class="circle-offline" [hidden]="u.online"></div>
+          </ion-avatar>
+        </div>       
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="lbl-cont">
+    <ion-row>
+      <ion-col class="lbl-col"><p>Conversaciónes</p></ion-col>
+      <ion-col class="icon-col"><ion-icon name="options-outline" (click)="filter()"></ion-icon></ion-col>
+    </ion-row>
+  </div>
+  <div class="list-cont">
+    <ion-list>
+      <ion-item *ngFor="let item of userList" (click)="selectUser(item)" color="light">
+        <ion-avatar slot="start">
+          <img [src]="item.avatar">
+        </ion-avatar>
+        <div class="circle" [hidden]="!item.online"></div>
+        <div class="details-cont">
+          <h3>{{item.type}}</h3>
+          <p>{{item.details}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

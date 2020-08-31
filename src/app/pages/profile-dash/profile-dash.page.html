@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Mi Perfil</ion-title>
     <ion-buttons slot="end">
-        <ion-button class="back-btn" (click)="next()"><ion-icon name="arrow-forward" style="color: white;"></ion-icon></ion-button>
+        <ion-button class="back-btn" (click)="next()"><ion-icon name="arrow-forward" color="dark"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -26,7 +26,8 @@
     <ion-icon name="arrow-forward" slot="end" (click)="general()"></ion-icon>
   </ion-item>
   <ion-item class="share-item">
-    <img src="assets/icons/sharing.png" slot="start">
+    <ion-icon name="share" slot="start"></ion-icon>
+    <!-- <img src="assets/icons/sharing.png" slot="start"> -->
     <p>Compartir App</p>
     <ion-icon name="arrow-forward" slot="end" (click)="shareApp()"></ion-icon>    
   </ion-item>

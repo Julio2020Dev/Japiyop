@@ -1,4 +1,4 @@
-<div id="commentModal" [hidden]="viewComment">
+<div id="commentModal"   [hidden]="viewType !='viewComment'">
   <div class="title-cont"><h3>Comentatrio</h3></div>
   <div class="comment-cont"><ion-textarea rows="5"></ion-textarea></div>
   <div class="star-cont">
@@ -10,7 +10,7 @@
     <div class="btn-img" (click)="sentComment()"><p>Comentar</p> </div>
   </div>
 </div>
-<div id="securityModal" [hidden]="!viewComment">
+<div id="securityModal"  [hidden]="viewType !='security'">
     <div class="title-cont"><h3>Seguridad</h3></div>
     <div class="check-cont">
         <ion-checkbox slot="start" [(ngModel)]="blockHunter"></ion-checkbox>
@@ -23,4 +23,15 @@
     <div class="btn-cont">
       <div class="btn-img" (click)="accept()"><p>Aceptar</p> </div>
     </div>
+</div>
+<div id="securityModal" [hidden]="viewType !='proposal'">
+  <div class="title-cont"><h3>Seguridad</h3></div>
+  <div class="check-cont">
+      <ion-checkbox slot="start" [(ngModel)]="createProposal"></ion-checkbox>
+      <ion-label>Crear propuesta</ion-label>
+  </div>
+   
+  <div class="btn-cont">
+    <div class="btn-img" (click)="accept()"><p>Aceptar</p> </div>
+  </div>
 </div>

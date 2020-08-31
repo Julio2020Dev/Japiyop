@@ -1,17 +1,47 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
-    border-bottom: 1px solid #1a1a1a;
+    // --background: black;
+    // border-bottom: 1px solid #1a1a1a;
 }
 ion-title{
-    color: white;
+    // color: white;
     text-align: center;
     font-weight: bold;
 }
 ion-content{
-    --background:black;
+    // --background:black;
 }
 ion-item{
     --inner-border-width: 0px;
     border: 2px solid #484848;
+}
+ion-row{
+    display: flex;
+    align-items: center;
+}
+.btn-cont{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    .btn-img{
+        background: url("../../../assets/img/btn_background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 80%;
+        height: 35px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            color: white;
+            font-size: 15px;
+            
+        }
+    }
 }
