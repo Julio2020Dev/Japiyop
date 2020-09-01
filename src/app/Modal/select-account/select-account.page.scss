@@ -2,8 +2,8 @@
  .myModal{
     --border-radius: 20px;
     padding: 15px 5px !important;
-    --background: black;
-    color: white;
+   //  --background: black;
+   //  color: white;
      .logo-cont{
         display: flex;
         align-items: center;
@@ -36,7 +36,7 @@
             width: 35px;
             height: 35px;
             img{
-               border: 1px solid white;
+               // border: 1px solid white;
             }
          }
       }
@@ -62,13 +62,13 @@
             align-items: center;
          }
          ion-label{
-            color: white;
+            // color: white;
             margin-left: 20px;
          }
       }
      }
      .lbl-cont{
-      color: white;
+      // color: white;
       padding: 10px 25px;
       text-align: justify;
       margin-top: 50px;

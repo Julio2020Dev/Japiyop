@@ -8,26 +8,26 @@
 </ion-header>
 
 <ion-content class="ion-padding" id="profileCont">
-    <div class="lbl-cont"><ion-label style="color:white">Profesión</ion-label></div>
+    <div class="lbl-cont"><ion-label>Profesión</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="profession" placeholder="Administracion de Empresas"></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Grado de instrucción</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Grado de instrucción</ion-label></div>
     <div class="select-cont">
-        <ion-select  placeholder="Bachiller" interface="alert" style="color: white!important;">
-            <ion-select-option *ngFor="let item of degreeList;" style="color: white!important;" [value]="degree">
+        <ion-select  placeholder="Bachiller" interface="alert"  >
+            <ion-select-option *ngFor="let item of degreeList;"  [value]="degree">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Fecha de inicio</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Fecha de inicio</ion-label></div>
     <div class="date-cont">
         <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="startDate"></ion-input>
     </div>
     
-    <div class="lbl-cont"><ion-label style="color:white">Fecha de finalización de estudios</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Fecha de finalización de estudios</ion-label></div>
     <div class="date-cont">
         <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="endDate"></ion-input>
     </div>
@@ -41,18 +41,18 @@
           <ion-label>Reubicación en otra región</ion-label>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Cargo en empleo 1</ion-label></div>
+    <div class="lbl-cont"><ion-label >Cargo en empleo 1</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="chargeEmploy" placeholder=""></ion-input>
     </div>
 
 
-    <div class="lbl-cont"><ion-label style="color:white">Fecha de incio</ion-label></div>
+    <div class="lbl-cont"><ion-label>Fecha de incio</ion-label></div>
     <div class="date-cont">
         <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="startDateChage"></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Fecha de finalización</ion-label></div>
+    <div class="lbl-cont"><ion-label >Fecha de finalización</ion-label></div>
     <div class="date-cont">
         <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="endDateCharge"></ion-input>
     </div>
@@ -61,45 +61,45 @@
         <ion-label>Último empleo</ion-label>
     </div>
     
-    <div class="lbl-cont"><ion-label style="color:white"><span>Tipo de cargo</span> en empleo 1</ion-label></div>
+    <div class="lbl-cont"><ion-label  ><span>Tipo de cargo</span> en empleo 1</ion-label></div>
     <div class="select-cont">
-        <ion-select  placeholder="Directivo" interface="alert" style="color: white!important;">
-            <ion-select-option *ngFor="let item of jobTypeList;" style="color: white!important;" [value]="jobTitle">
+        <ion-select  placeholder="Directivo" interface="alert" >
+            <ion-select-option *ngFor="let item of jobTypeList;"  [value]="jobTitle">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Indestria del empleo</ion-label></div>
+    <div class="lbl-cont"><ion-label >Indestria del empleo</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="indusEmploy" placeholder=""></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Nombre del centro laboral</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Nombre del centro laboral</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="workspaceName" placeholder=""></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Razón social del centro laboral</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Razón social del centro laboral</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="companyName" placeholder=""></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Número de empleados a centro</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Número de empleados a centro</ion-label></div>
     <div class="select-cont">
-        <ion-select  placeholder="0 a 100" interface="alert" style="color: white!important;">
-            <ion-select-option *ngFor="let item of chargeList;" style="color: white!important;" [value]="employCount">
+        <ion-select  placeholder="0 a 100" interface="alert" >
+            <ion-select-option *ngFor="let item of chargeList;"[value]="employCount">
                 {{item.value}}
             </ion-select-option>
           </ion-select>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Número de empleados a cargo</ion-label></div>
+    <div class="lbl-cont"><ion-label >Número de empleados a cargo</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="employCharge" placeholder=""></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Expertise</ion-label></div>
+    <div class="lbl-cont"><ion-label>Expertise</ion-label></div>
     <div class="titleList-cont">
         <ion-col *ngFor="let item of selectedList">
           <ion-row>
@@ -110,14 +110,14 @@
     </div>
     <p class="comment-lbl">Agregar expertise</p>
     <div class="select-cont">
-        <ion-select  placeholder="0 a 100" interface="alert" style="color: white!important;">
-            <ion-select-option *ngFor="let item of expertList;" style="color: white!important;" >
+        <ion-select  placeholder="0 a 100" interface="alert" >
+            <ion-select-option *ngFor="let item of expertList;">
                 {{item.value}}
             </ion-select-option>
           </ion-select>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Rango salarial (lo que busco)</ion-label></div>
+    <div class="lbl-cont"><ion-label>Rango salarial (lo que busco)</ion-label></div>
     <div class="rang-cont">
         <ion-row>
           <ion-col><ion-input type="number" placeholder="S/. min" [(ngModel)]="minValue"></ion-input></ion-col>
@@ -126,26 +126,26 @@
     </div>
     <p class="comment-lbl">*Salario bruto mensual</p>
     
-    <div class="lbl-cont"><ion-label style="color:white">Situación laboral actual</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Situación laboral actual</ion-label></div>
     <div class="select-cont">
-        <ion-select  placeholder="0 a 100" interface="alert" style="color: white!important;">
-            <ion-select-option *ngFor="let item of jobList;" style="color: white!important;" >
+        <ion-select  placeholder="0 a 100" interface="alert">
+            <ion-select-option *ngFor="let item of jobList;">
                 {{item.value}}
             </ion-select-option>
           </ion-select>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Referencias laborales(opcional)</ion-label></div>
+    <div class="lbl-cont"><ion-label  >Referencias laborales(opcional)</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="jobReference" placeholder="Nombres y apellidos"></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Posición  y empresa(opcional)</ion-label></div>
+    <div class="lbl-cont"><ion-label>Posición  y empresa(opcional)</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="postionCompany" placeholder="Nombres y apellidos"></ion-input>
     </div>
 
-    <div class="lbl-cont"><ion-label style="color:white">Relación (opcional)</ion-label></div>
+    <div class="lbl-cont"><ion-label>Relación (opcional)</ion-label></div>
     <div class="input-cont">
         <ion-input type="text" [(ngModel)]="relationShip" placeholder="Jefe de último trabajo"></ion-input>
     </div>

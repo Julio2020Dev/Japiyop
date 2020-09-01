@@ -2,18 +2,18 @@
   <ion-toolbar>
     <ion-title>Solicitar Servicio</ion-title>
     <ion-buttons slot="start">
-      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" style="color: white;"></ion-icon></ion-button>
+      <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" id="requestCont">
   <div class="lbl-cont">
-    <ion-label style="color:white">Posiciones laborales que quiero</ion-label>
+    <ion-label >Posiciones laborales que quiero</ion-label>
   </div>
   <div class="jobsTitle">
-    <ion-select  placeholder="Product Manager" interface="alert" style="color: white!important;" (ionChange)="addTitle($event)">
-      <ion-select-option *ngFor="let item of jobList;" style="color: white!important;" [value]="requestData.jobTitle">
+    <ion-select  placeholder="Product Manager" interface="alert"   (ionChange)="addTitle($event)">
+      <ion-select-option *ngFor="let item of jobList;"   [value]="requestData.jobTitle">
           {{item.title}}
       </ion-select-option>
     </ion-select>
@@ -29,7 +29,7 @@
   <p class="comment-lbl" style="margin-top: 5px;">Agregar más</p>
  
   <div class="lbl-cont">
-    <ion-label style="color:white">Industrias de interés</ion-label>
+    <ion-label  >Industrias de interés</ion-label>
   </div>
   <div class="jobsTitle-cont">
     <ion-input type="text" [(ngModel)]="requestData.industy" placeholder="Industrias"></ion-input>
@@ -37,11 +37,11 @@
   <p class="comment-lbl">Agregar más</p>
 
   <div class="lbl-cont">
-    <ion-label style="color:white">Disponibilidad de trabajo</ion-label>
+    <ion-label  >Disponibilidad de trabajo</ion-label>
   </div>
   <div class="jobsTitle-cont">
-    <ion-select  placeholder="A Partir De" interface="alert" style="color: white!important;">
-      <ion-select-option *ngFor="let item of availableList;" style="color: white!important;" [value]="requestData.available">
+    <ion-select  placeholder="A Partir De" interface="alert" >
+      <ion-select-option *ngFor="let item of availableList;" [value]="requestData.available">
           {{item.name}}
       </ion-select-option>
     </ion-select>
@@ -52,7 +52,7 @@
   </div>
 
   <div class="lbl-cont">
-    <ion-label style="color:white">Última remuneración</ion-label>
+    <ion-label  >Última remuneración</ion-label>
   </div>
   <div class="jobsTitle-cont">
     <ion-input type="text" [(ngModel)]="requestData.remuner" placeholder="Industrias"></ion-input>
@@ -60,7 +60,7 @@
   <p class="comment-lbl">*Salario bruto mensual</p>
 
   <div class="lbl-cont">
-    <ion-label style="color:white">Rango salarial (lo que busco)</ion-label>
+    <ion-label  >Rango salarial (lo que busco)</ion-label>
   </div>
   <div class="jobsTitle-cont">
     <ion-row>

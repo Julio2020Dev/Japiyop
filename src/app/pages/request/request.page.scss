@@ -1,26 +1,26 @@
 ion-toolbar{
     --min-height: 55px;
-    --background: black;
-    color:white;
+    // --background: black;
+    // color:white;
 }
 ion-title{
     font-weight: bold;
     text-align: center;
 }
 #requestCont{
-    --background: black;
+    // --background: black;
     ion-lable{
-        color: black;
+        // color: black;
     }
     ion-input{
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
-        color: white;
+        // color: white;
     }
     ion-select{
-        color: black!important;
+        // color: black!important;
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
@@ -28,14 +28,14 @@ ion-title{
         height: 44px;
     }
     ion-item{
-        --background: black;
-        color: white;
+        // --background: black;
+        // color: white;
     }
     ion-label{
-        color: white;
+        // color: white;
     }
     ion-list{
-        background-color: black;
+        // background-color: black;
     }
     p{
         color: #19f1ca;
@@ -51,7 +51,7 @@ ion-title{
         .title-col{
             max-width: 90%;
             padding: 0px;
-            color: white;
+            // color: white;
             ion-item{
                 --padding-start: 10px;
                 --inner-border-width: 0px;
@@ -62,12 +62,12 @@ ion-title{
             max-width: 10%;
             display: flex;
             align-items: center;
-            color: white;
+            // color: white;
             font-size: 2.0rem;
         }
     }
     .lbl-cont{
-        color: white;
+        // color: white;
         text-align: left;
         margin-top: 25px;
     }
@@ -99,7 +99,7 @@ ion-title{
             align-items: center;
             justify-content: center;
             p{
-                color: white;
+                // color: white;
                 font-size: 15px;
                 
             }

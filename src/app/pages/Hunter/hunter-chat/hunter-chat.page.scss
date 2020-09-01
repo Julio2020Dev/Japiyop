@@ -60,11 +60,11 @@ ion-title{
             // background-color: #1a1a1a;
         }    
         ion-item{
-            // --background: #1a1a1a;
-            // color: white;
-            // --inner-border-width: 0px;
+            --inner-border-width: 0px;
             padding: 10px 10px;
-            // border-bottom: 1px solid #232323;
+            border: 1px solid #807d7d;
+            margin: 10px 2px;
+            border-radius: 5px;
         }
         ion-avatar{
             width: 80px;

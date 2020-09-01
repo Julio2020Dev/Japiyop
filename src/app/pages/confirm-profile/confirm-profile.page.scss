@@ -1,5 +1,5 @@
 #pageCont{
-    --background:black;
+    // --background:black;
 }
 .title-cont{
     display: flex;
@@ -11,7 +11,7 @@
     text-align: center;
     margin-top: 10%;
     .title-lbl{
-        color:white;
+        // color:white;
     }
 }
 .user-cont{
@@ -28,7 +28,7 @@
         margin-top: 10px;
         .user-logo{
             border-radius: 50%;
-            border: 1px solid white;
+            // border: 1px solid white;
         }
     }
     .user-lbl{
@@ -37,7 +37,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        color: white;
+        // color: white;
     }
 }
 .job-cont{
@@ -49,7 +49,7 @@
     padding: 10px;
     margin-top: 20px;
     background-color: gray;
-    color: white;
+    // color: white;
     .logo-img{
         display: flex;
         justify-content: center;
@@ -68,7 +68,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        color: white;
+        // color: white;
     }
 }
 .btn-cont{
