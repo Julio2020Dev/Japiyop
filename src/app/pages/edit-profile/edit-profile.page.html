@@ -6,17 +6,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content   id="editProfileCont">
+<ion-content id="editProfileCont">
   <div class="profile-cont">
     <ion-row>
       <ion-col class="avatar-col">
         <div class="img-cont">
-          <div><img src="assets/img/avatar_00.png"  class="avata-img"/></div>
+          <div style="width: 100px;height: 100px;"><img src="assets/img/avatar_00.png"  class="avatar-img"/></div>
         </div>
       </ion-col>
       <ion-col class="edit-col">
-        <ion-icon name="create" style="margin-bottom: 10px;"></ion-icon>
-        <ion-icon name="happy" style="margin-top: 10px"></ion-icon>
+        <ion-icon name="create" style="margin-bottom: 10px;" color="dark"></ion-icon>
+        <ion-icon name="happy" style="margin-top: 10px" color="dark" (click)="showOptions()"></ion-icon>
       </ion-col>
     </ion-row>
   </div>
@@ -35,7 +35,11 @@
   </div>
 
   <div class="bar-cont">
-
+    <ion-progress-bar [value]="barStatus"></ion-progress-bar>
+    <ion-row class="bar-row">
+      <ion-col class="des-col"><p>Tu perfil ya está casi completo</p></ion-col>
+      <ion-col class="state-col"><p>{{completeStatus}}%/ 100%</p></ion-col>
+    </ion-row>
   </div>
 <!-- Personal Contaier -->
   <div id="personCont" [hidden]="viewState !='personal'">

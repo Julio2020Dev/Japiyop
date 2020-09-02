@@ -15,7 +15,7 @@ export class HunterHomePage implements OnInit {
     public toastController: ToastController,
     private loadingCtrl: LoadingController
   ) { 
-    this.showStudy = true;
+    
   }
 
   ngOnInit() {
@@ -27,6 +27,9 @@ export class HunterHomePage implements OnInit {
       }
       this.expList.push(item);
     }
+    this.showStudy = false;
+    document.getElementById('first').style.backgroundColor = "gray";
+    document.getElementById('second').style.backgroundColor = "white";
   }
 
   //Toolbar Functions -----
@@ -45,16 +48,23 @@ export class HunterHomePage implements OnInit {
   //-- Footer Functions ------
   refresh(){
     console.log('HUNTER_HOME.PAGE>>>>>> REFRESH BUTTON!');
+    this.showStudy = true;
+    document.getElementById('first').style.backgroundColor = "white";
+    document.getElementById('second').style.backgroundColor = "gray";
   }
 
   check(){
     console.log('HUNTER_HOME.PAGE>>>>>> CHECK BUTTON!');
+    this.togglePage();
+        
   }
   close(){
     console.log('HUNTER_HOME.PAGE>>>>>> CLOSE BUTTON!');
+    this.togglePage();
   }
   chat(){
     console.log('HUNTER_HOME.PAGE>>>>>> CHAT BUTTON!');
+    this.togglePage();
   }
 
   segmentChanged($ev){
@@ -63,10 +73,28 @@ export class HunterHomePage implements OnInit {
   expetLevel(item){
     console.log('HUNTER_HOME.PAGE>>>>>> EXP BUTTON!',item);
   }
-  firstCol(){
+  firstCol($ev){
     this.showStudy = false;
+    console.log('HUNTER_HOME.PAGE.TS>>>>>> FIRST COL', $ev.target.id);
+    document.getElementById('first').style.backgroundColor = "gray";
+    document.getElementById('second').style.backgroundColor = "white";
   }
-  secondCol(){
+  secondCol($ev){
     this.showStudy = true;
+    document.getElementById('first').style.backgroundColor = "white";
+    document.getElementById('second').style.backgroundColor = "gray";
+    console.log('HUNTER_HOME.PAGE.TS>>>>>> SECOND COL', $ev);
   }
+
+  togglePage(){
+    if(!this.showStudy){
+      this.showStudy = true;
+      document.getElementById('first').style.backgroundColor = "white";
+      document.getElementById('second').style.backgroundColor = "gray";
+    }else{
+      this.showStudy = false;
+      document.getElementById('first').style.backgroundColor = "gray";
+      document.getElementById('second').style.backgroundColor = "white";
+    }
+  } 
 }

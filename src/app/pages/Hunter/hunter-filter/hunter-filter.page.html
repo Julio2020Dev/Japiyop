@@ -23,12 +23,10 @@
 
   <div class="lbl-cont"><ion-label>Expertise</ion-label></div>
   <div class="titleList-cont">
-    <ion-col *ngFor="let item of selectedList">
-      <ion-row>
+    <ion-item *ngFor="let item of selectedList">
         <ion-col class="title-col"><ion-label class="title-item">{{item.title}}</ion-label></ion-col>
         <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
-      </ion-row>
-    </ion-col>
+    </ion-item>
   </div>
   <p class="comment-lbl">Agregar expertise</p>
   <div class="select-cont">
@@ -45,7 +43,7 @@
       <ion-col><ion-input type="number" placeholder="min" [(ngModel)]="minValue"></ion-input></ion-col>
       <ion-col><ion-input type="number" placeholder="max" [(ngModel)]="maxValue"></ion-input></ion-col>
     </ion-row>
-    <p>*Salario bruto mensual</p>
+    <p class="common-lbl">*Salario bruto mensual</p>
   </div>
 
   <div class="lbl-cont"><ion-label>Disponibilidad</ion-label></div>
@@ -96,12 +94,12 @@
         </ion-select-option>
     </ion-select>
   </div>
-  <div class="check-cont">
+  <div class="check-cont" style="margin-top: 20px;">
     <ion-checkbox slot="start" [(ngModel)]="remote"></ion-checkbox>
     <ion-label>Trabajo remoto</ion-label>
   </div>
 
-  <div class="check-cont">
+  <div class="check-cont" style="margin-top: 10px;">
     <ion-checkbox slot="start" [(ngModel)]="relocation"></ion-checkbox>
     <ion-label>Reubicación en otra región</ion-label>
   </div>

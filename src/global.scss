@@ -76,3 +76,11 @@
     --height: 40%;
     --border-radius: 12px;
 }
+.optionModal .modal-wrapper{
+    --width: 80%;
+    --min-width: auto;
+    --max-width: auto;
+    --height: 250px;
+    --border-radius: 12px;
+    border: 1px solid gray;
+}

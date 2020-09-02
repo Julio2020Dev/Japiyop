@@ -21,35 +21,50 @@ ion-title{
         margin-top: 2px;
         margin-bottom: 0px;
     }
+    h6{
+        font-weight: 300;
+    }
     .comment-lbl{
         margin-top: 5px;
         font-style: italic; 
-        color:rgb(114, 61, 236)
+        font-size: 15px;
+        color:#3d8af7;
+    }
+    .common-lbl{
+        font-size: 15px;
     }
     .lbl-cont{
         text-align: left;
         margin-top: 25px;
+        font-size: 18px;
+        font-weight: 500;
     }
     .titleList-cont{
+        ion-item{
+            --border-width: 0px;
+            --border-color: transparent;
+            --min-height:30px;
+        }
         .title-col{
             max-width: 80%;
             display: flex;
             align-items: center;
-            padding-left: 20px;
+            padding: 0px;
             .title-item{
                 color:#23d8f9;
-                font-size: 20px;
+                font-size: 15px;
             }
         }
         .close-col{
             max-width: 20%;
             display: flex;
             align-items: center;
-            font-size: 2.0rem;
+            font-size: 1.5rem;
+            padding: 0px;
         }
     }
     .check-cont{
-        margin-top: 20px;
+        // margin-top: 20px;
         display: flex;
         align-items: center;
         ion-label{

@@ -5,7 +5,7 @@
        <ion-col class="detail-col">
         <div>
           <div class="time-cont">
-            <ion-label style="color:gray;">{{p.time}}</ion-label>
+            <ion-label>{{p.time}}</ion-label>
           </div>
         </div>
         <div [hidden]="!p.select">
@@ -18,11 +18,11 @@
        </ion-col>
        <ion-col class="rate-col">
         <div class="fav-cont">
-          <ion-icon name="heart" style="color:gray"></ion-icon>
+          <ion-icon name="heart-outline" color="dark"></ion-icon>
         </div>
         <div class="review-cont">
-          <p>{{p.rate}}</p>
-          <ion-icon name="star"></ion-icon>
+          <p style="font-weight: bold;">{{p.rate}}</p>
+          <ion-icon name="star" color="dark"></ion-icon>
         </div>
         
        </ion-col>

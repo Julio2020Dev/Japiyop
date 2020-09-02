@@ -1,7 +1,7 @@
 ion-toolbar{
     --min-height: 55px;
     ion-icon{
-        font-size:2.0rem;
+        font-size:1.5rem;
     }
     ion-title{
         text-align: center;
@@ -9,6 +9,12 @@ ion-toolbar{
     }
 }
 #homePage{
+    
+    .container{
+        border: 2px solid gray;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
     .profile-cont{
         padding: 20px 0px;
         padding-bottom: 0px;
@@ -39,10 +45,13 @@ ion-toolbar{
     }
     .seg-cont{
          .seg-row{
-             padding: 1px 15px;
+             padding: 1px 5px;
+             ion-col{
+                border-radius: 5px;
+             }
              .seg-first{
                 border: 1px solid gray;
-                 margin-right: 10px;
+                margin-right: 10px;
              }
              .seg-second{
                  border: 1px solid gray;
@@ -56,7 +65,7 @@ ion-toolbar{
             margin:0px;
         }
         h4{
-            font-weight: 600;
+            font-weight: 300;
         }
         p{
             margin-top: 5px;
@@ -66,9 +75,10 @@ ion-toolbar{
     .details-cont{
         text-align: justify;
         padding: 10px 5px;
+        margin-top: 20px;
         ion-label{
             font-style: italic;
-            color: #51dfe6;
+            color: #3d8af7;
         }
         p{
             color: gray;
@@ -77,29 +87,31 @@ ion-toolbar{
     .lbl-cont{
         margin-top: 20px;
         ion-label{
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 500;
         }
     }
-    //  .expert-cont{
-    //         padding: 20px 15px;
-    //     }
+    
     .text-cont{
         h5{
             font-style: italic;
             font-weight: 200;
             margin-top: 2px;
+            font-size: 15px;
         }
         p{
             font-size: 12px;
         }
     }
 }
-ion-footer{
+.footer{
+    ion-toolbar{
+        --border-width:0px;
+    }
     ion-col{
         text-align: center;
     }
     ion-icon{
-        font-size: 3.0rem;
+        font-size: 2.8rem;
     }
 }

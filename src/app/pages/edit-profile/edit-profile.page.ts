@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController,  NavController, ToastController } from '@ionic/angular';
+import { LoadingController,  NavController, ToastController, ModalController } from '@ionic/angular';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
@@ -16,6 +17,8 @@ export class EditProfilePage implements OnInit {
   city:         any;
   district:     any;
 
+  public completeStatus: any;
+  public barStatus:      any;
   public viewState: any;
 
   public currentJobList: any = [];
@@ -62,19 +65,29 @@ export class EditProfilePage implements OnInit {
   constructor(
     public navCtrl:  NavController,
     public toastController: ToastController,
-    private loadingCtrl: LoadingController,
+    public modalCtrl: ModalController
   ) { }
 
   ngOnInit() {
     this.viewState = "personal";
+    this.barStatus = 0.5;
+    this.completeStatus = this.barStatus * 100;
   }
 
   back(){
     this.navCtrl.back();
   }
+//--- Click Smile Icon Actions ---
+  showOptions(){
+    console.log('EDIT PROFILE.TS>>>>>> SMILE ICON CLICK!');
+    this.showOptionModal();
+  }
+//--- Click Save Button in Person Segment --
   savePerson(){
     console.log('EDIT PROFILE.TS>>>>>> SAVE BUTTON!');
   }
+
+//--- Segment Change Action --
   segmentChanged($ev){
     console.log('EDIT PROFILE.TS>>>>>> SEGMENT CLICK!', $ev);
     this.viewState = $ev.detail.value;
@@ -83,10 +96,35 @@ export class EditProfilePage implements OnInit {
   dateFocus(){
 
   }
+//--- Click Save Button in Experiences
   saveExperience(){
     console.log('EDIT PROFILE.TS>>>>>> SAVE EXPERIENCES BUTTON!');
   }
+//--- Click Save Button in Studies --
   saveStudies(){
     console.log('EDIT PROFILE.TS>>>>>> SAVE STUDIES BUTTON!');
+  }
+
+  async showOptionModal(){
+    const modal = await this.modalCtrl.create({
+      component: DialogComponent,
+      cssClass: 'optionModal',
+      componentProps: {
+        'type': 'option',
+        'name': "dialog"
+      }
+    });
+    modal.onDidDismiss().then((res) => {
+       console.log('Data Returned', res);
+       if(res.data ==''){
+         return;
+       }else if(res.data == 'hunter'){
+        this.navCtrl.navigateForward('hunter-home');  
+       }else if(res.data == 'request'){
+        this.navCtrl.navigateForward('experiences');
+       }
+      
+    });
+    return await modal.present();
   }
 }

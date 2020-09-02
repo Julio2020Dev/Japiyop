@@ -2,6 +2,11 @@ ion-title{
     text-align: center;
 }
 #expCont{
+    .container{
+        border: 2px solid gray;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
     .profile-cont{
         padding: 20px 0px;
         padding-bottom: 0px;
@@ -33,6 +38,9 @@ ion-title{
     .seg-cont{
          .seg-row{
              padding: 1px 15px;
+             ion-col{
+                border-radius: 5px;
+             }
              .seg-first{
                 border: 1px solid gray;
                  margin-right: 10px;
@@ -49,19 +57,21 @@ ion-title{
             margin:0px;
         }
         h4{
-            font-weight: 600;
+            font-weight: 300;
         }
         p{
             margin-top: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
+            font-size: 13px;
         }
     }
     .details-cont{
         text-align: justify;
         padding: 10px 5px;
+        margin-top: 20px;
         ion-label{
             font-style: italic;
-            color: #51dfe6;
+            color: #3d8af7;
         }
         p{
             color: gray;
@@ -70,8 +80,8 @@ ion-title{
     .lbl-cont{
         margin-top: 20px;
         ion-label{
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 550;
         }
     }
     .reference-cont{
@@ -93,6 +103,7 @@ ion-title{
     }
     .text-cont{
         h5{
+            font-size: 15px;
             font-style: italic;
             font-weight: 200;
             margin-top: 2px;
@@ -102,11 +113,11 @@ ion-title{
         }
     }
 }
-ion-footer{
+.footer{
     ion-col{
         text-align: center;
     }
     ion-icon{
-        font-size: 3.3rem;
+        font-size: 2.8rem;
     }
 }

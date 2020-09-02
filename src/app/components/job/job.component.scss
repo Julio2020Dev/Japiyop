@@ -25,14 +25,17 @@
                 align-items: center;
                 justify-content: flex-end;
                 margin-top: 20px;
-                font-size: 20px;
+                font-size: 2.0rem;
             }
             .review-cont{
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 color:gray;        
-                margin-top: 30px;
+                margin-top: 15px;
+                ion-icon{
+                    font-size: 1.5rem;
+                }
                 p{
                     margin-right: 5px;
                 }

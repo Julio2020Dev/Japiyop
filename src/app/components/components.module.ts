@@ -6,18 +6,21 @@ import { JobComponent} from './job/job.component'
 import { CommentModalComponent  } from './comment-modal/comment-modal.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { DialogComponent } from './dialog/dialog.component';
 @NgModule({
   declarations: [
     JobComponent,
     CommentModalComponent,
     RequestModalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    DialogComponent
   ],
   exports: [
     JobComponent,
     CommentModalComponent,
     RequestModalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

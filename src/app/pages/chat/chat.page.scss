@@ -1,20 +1,15 @@
  
 ion-toolbar{
     --min-height: 55px;
-    // --background: #010101;
 }
 ion-title{
-    // color: white;
     text-align: center;
     font-weight: bold;
 }
 #pageCont{
-    // --background: #0a0a0a;
     .lbl-cont{
-        // color: white;
         padding: 0px 15px;
         .lbl-col{
-            // color: white;
             font-weight: bold;
         }
         .icon-col{
@@ -25,7 +20,6 @@ ion-title{
         }
     }
     .avatar-cont{
-        // background-color: #1a1a1a;
         height: 100px;
         display: flex;
         align-items: center;
@@ -64,15 +58,9 @@ ion-title{
         }
     }
     .list-cont{
-        ion-list{
-            // background-color: #1a1a1a;
-        }    
         ion-item{
-            // --background: #1a1a1a;
-            // color: white;
             --inner-border-width: 0px;
             padding: 10px 10px;
-            border-bottom: 1px solid #232323;
         }
         ion-avatar{
             width: 80px;
@@ -81,9 +69,7 @@ ion-title{
             align-items: center;
             margin-inline-end: 5px;
         }
-        ion-label{
-            // color:white;
-        }
+        
         .circle{
             background: url("../../../assets/img/dot.png");
             background-size: cover;

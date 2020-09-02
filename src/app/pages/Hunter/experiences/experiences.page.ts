@@ -39,15 +39,21 @@ export class ExperiencesPage implements OnInit {
       }
       this.expList.push(item);
     }
+    this.showStudy = false;
+    document.getElementById('first').style.backgroundColor = "gray";
   }
   back(){
     this.navCtrl.back();
   }
   firstCol(){
     this.showStudy = false;
+    document.getElementById('first').style.backgroundColor = "gray";
+    document.getElementById('second').style.backgroundColor = "white";
   }
   secondCol(){
     this.showStudy = true;
+    document.getElementById('first').style.backgroundColor = "white";
+    document.getElementById('second').style.backgroundColor = "gray";
   }
   delete(){
     this.showDeleteModal();

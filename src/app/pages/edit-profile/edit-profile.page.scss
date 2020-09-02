@@ -23,7 +23,10 @@ ion-title{
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+                
                 .avatar-img{
+                    width: 100px;
+                    height: 100px;
                     max-width: 100%;
                 }
             }
@@ -34,18 +37,32 @@ ion-title{
             justify-content: left;
             padding-left: 30px;
             ion-icon{
-                font-size: 25px;
+                font-size: 2.5rem;
                 color:#484848;
             }
         }
     }
     .seg-cont{
         padding: 10px 20px;
-        border-bottom: 5px solid #212020;
+        // border-bottom: 5px solid #212020;
          
     }
     .bar-cont{
-
+        margin-top: 20px;
+        padding: 1px 20px;
+        ion-progress-bar{
+            height: 10px;
+            border-radius: 5px;
+            --buffer-background: white;
+            --progress-background: gray;
+            border: 1px solid black;
+        }
+        .des-col{
+            text-align: left;
+        }
+        .state-col{
+            text-align: right;
+        }
     }
     .lbl-cont{
         margin-top: 20px;

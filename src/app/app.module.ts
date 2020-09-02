@@ -20,6 +20,7 @@ import { ComponentsModule } from './components/components.module';
 import { CommentModalComponent } from './components/comment-modal/comment-modal.component';
 import { RequestModalComponent } from './components/request-modal/request-modal.component';
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { DeleteModalComponent } from './components/delete-modal/delete-modal.com
   entryComponents: [
     CommentModalComponent,
     RequestModalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    DialogComponent
   ],
   declarations: [AppComponent],
   providers: [InAppBrowser, SplashScreen, StatusBar, Toast],
