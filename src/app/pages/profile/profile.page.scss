@@ -14,25 +14,35 @@ ion-title{
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
-        // color: white;
+        color: #3d8af7;
     }
     ion-select{
-        // color: black!important;
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
         height: 44px;
+        color: #3d8af7;
+    }
+    ion-datetime{
+        border: 1px solid gray;
+        color: cornflowerblue;
+        word-spacing: 10px;
+        text-align: left;
+        margin-top: 10px;
     }
      
-    p{
-        color: #19f1ca;
+    .comment-lbl{
         font-size: 12px;
-        
     }
     span{
-        color: #19f1ca;
+        color:#3d8af7;;
         font-weight: bold;
+    }
+    .common-lbl{
+        color:#3d8af7;
+        font-size: 12px;
+        font-style: italic;
     }
     .lbl-cont{
         // color: white;
@@ -40,15 +50,17 @@ ion-title{
         margin-top: 25px;
     }
     .titleList-cont{
+        ion-item{
+            --border-width: 0px;
+            --border-color: transparent;
+            --min-height:30px;
+        }
         .title-col{
             max-width: 90%;
             padding: 0px;
-            // color: white;
-            ion-item{
-                --padding-start: 10px;
-                --inner-border-width: 0px;
-                border: 1px solid;
-            }
+            display: flex;
+            align-items: center;
+            color:#3d8af7;
         }
         .close-col{
             max-width: 10%;

@@ -43,12 +43,12 @@ export class RequestPage implements OnInit {
   ) {
     this.jobList = [
       {id: 0, title:'Project Manager'},
-      {id: 0, title:'Mobile Developer'},
-      {id: 0, title:'C Programmer'},
-      {id: 0, title:'Web Designer'},
-      {id: 0, title:'Front-End Developer'},
-      {id: 0, title:'Back-End Developer'},
-      {id: 0, title:'Mobile Game Expert'},
+      {id: 1, title:'Mobile Developer'},
+      {id: 2, title:'C Programmer'},
+      {id: 3, title:'Web Designer'},
+      {id: 4, title:'Front-End Developer'},
+      {id: 5, title:'Back-End Developer'},
+      {id: 6, title:'Mobile Game Expert'},
 
     ]
     this.selectedList = [

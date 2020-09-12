@@ -13,8 +13,8 @@
       <div class="select-cont">
         <ion-item>
           <ion-label position="stacked" color="dark">Categorias</ion-label>
-          <ion-select  placeholder="Hero" interface="popover"   >
-            <ion-select-option *ngFor="let item of categoryList;" [value]="filter.category"   >
+          <ion-select  placeholder="Hero" interface="alert" [(ngModel)]="filter.category" [ngModelOptions]="{standalone: true}">
+            <ion-select-option *ngFor="let item of CATEGORIAS;" [value]="item.name" >
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -23,8 +23,8 @@
 
         <ion-item>
           <ion-label position="stacked" color="dark">Industrias especialiadas</ion-label>
-          <ion-select  placeholder="Publicidad" interface="popover"  >
-            <ion-select-option *ngFor="let item of indusList;" [value]="filter.indus"  >
+          <ion-select  placeholder="Publicidad" interface="alert" [(ngModel)]="filter.indus" [ngModelOptions]="{standalone: true}">
+            <ion-select-option *ngFor="let item of INDUSTRIAS_ESPECIALIZADAS;" [value]="item.name"  >
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -32,8 +32,8 @@
         
         <ion-item>
           <ion-label position="stacked" color="dark">Cargo</ion-label>
-          <ion-select  placeholder="Mando medio" interface="popover" >
-            <ion-select-option *ngFor="let item of positionList;" [value]="filter.position">
+          <ion-select  placeholder="Mando medio" interface="alert" [(ngModel)]="filter.position" [ngModelOptions]="{standalone: true}">
+            <ion-select-option *ngFor="let item of CARGO;" [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -41,8 +41,8 @@
     
         <ion-item>
           <ion-label position="stacked" color="dark">CaCiudad</ion-label>
-          <ion-select  placeholder="Mando medio" interface="popover"  >
-            <ion-select-option *ngFor="let item of cityList;" [value]="filter.city"  >
+          <ion-select  placeholder="Mando medio" interface="alert" [(ngModel)]="filter.city" [ngModelOptions]="{standalone: true}" >
+            <ion-select-option *ngFor="let item of CIUDAD;" [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>

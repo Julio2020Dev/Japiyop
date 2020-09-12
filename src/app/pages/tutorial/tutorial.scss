@@ -12,30 +12,38 @@ ion-toolbar {
     padding-right: 25px;
     padding-bottom: 25px;
     .person-cont{
-      margin-top: 110%;
+      margin-top: 100%;
       // display: flex;
       text-align: left;
       .person-img{
         width: 12%;
       }
+      ion-icon{
+        font-size: 3.0rem;
+        font-weight: 100;
+      }
     }
     .title-cont{
-      margin-top: 20px;
-      .title-lbl{
-        word-spacing: 1px;
-        font-size: 25px;
-        color: #19f1ca;
-        text-align: justify;
+        margin-top: 25px;
+        .title-lbl{
+          word-spacing: 1px;
+          font-size: 25px;
+          color: #19f1ca;
+          text-align: justify;
+          letter-spacing: 0.5px;
 
-      }
+        }
     }
     .detail-cont{
-      margin-top: 20px;
-      font-size: 12px;
-      .detail-lbl{
-        color:white;
-        text-align: justify;
-      }
+        margin-top: 20px;
+        font-size: 18px;
+        .detail-lbl{
+          color:white;
+          text-align: justify;
+          word-spacing: 0px;
+          letter-spacing: 0.5px;
+          line-height: 20px;
+        }
     }
 }
 #opaCont{

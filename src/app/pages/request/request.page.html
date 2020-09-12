@@ -12,8 +12,8 @@
     <ion-label >Posiciones laborales que quiero</ion-label>
   </div>
   <div class="jobsTitle">
-    <ion-select  placeholder="Product Manager" interface="alert"   (ionChange)="addTitle($event)">
-      <ion-select-option *ngFor="let item of jobList;"   [value]="requestData.jobTitle">
+    <ion-select  placeholder="Product Manager" interface="alert" (ionChange)="addTitle($event)">
+      <ion-select-option *ngFor="let item of jobList;" [value]="item.title">
           {{item.title}}
       </ion-select-option>
     </ion-select>
@@ -26,18 +26,18 @@
       </ion-row>
     </ion-col>
   </div>
-  <p class="comment-lbl" style="margin-top: 5px;">Agregar más</p>
+  <p class="common-lbl" style="margin-top: 5px;">Agregar más</p>
  
   <div class="lbl-cont">
-    <ion-label  >Industrias de interés</ion-label>
+    <ion-label>Industrias de interés</ion-label>
   </div>
   <div class="jobsTitle-cont">
     <ion-input type="text" [(ngModel)]="requestData.industy" placeholder="Industrias"></ion-input>
   </div>
-  <p class="comment-lbl">Agregar más</p>
+  <p class="common-lbl">Agregar más</p>
 
   <div class="lbl-cont">
-    <ion-label  >Disponibilidad de trabajo</ion-label>
+    <ion-label >Disponibilidad de trabajo</ion-label>
   </div>
   <div class="jobsTitle-cont">
     <ion-select  placeholder="A Partir De" interface="alert" >
@@ -48,7 +48,8 @@
   </div>
   <p class="comment-lbl">Fecha de disponibilidad</p>
   <div class="date-cont">
-    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="requestData.available_date"></ion-input>
+    <!-- <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="requestData.available_date"></ion-input> -->
+    <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="requestData.available_date"></ion-datetime>
   </div>
 
   <div class="lbl-cont">
@@ -57,7 +58,7 @@
   <div class="jobsTitle-cont">
     <ion-input type="text" [(ngModel)]="requestData.remuner" placeholder="Industrias"></ion-input>
   </div>
-  <p class="comment-lbl">*Salario bruto mensual</p>
+  <p>*Salario bruto mensual</p>
 
   <div class="lbl-cont">
     <ion-label  >Rango salarial (lo que busco)</ion-label>
@@ -68,7 +69,7 @@
       <ion-col><ion-input type="number" placeholder="S/. max" [(ngModel)]="requestData.maxValue"></ion-input></ion-col>
     </ion-row>
   </div>
-  <p class="comment-lbl">*Salario bruto mensual</p>
+  <p>*Salario bruto mensual</p>
 
   <div class="check-cont">
     <ion-checkbox slot="start" [(ngModel)]="saveDefault"></ion-checkbox>

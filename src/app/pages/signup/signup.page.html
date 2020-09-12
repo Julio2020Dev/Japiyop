@@ -61,7 +61,7 @@
         <ion-item>
           <ion-label position="stacked" color="dark">Ciudad</ion-label>
           <ion-select  placeholder="Lima Metropolitana" interface="alert">
-            <ion-select-option *ngFor="let item of cityList;" [value]="signup.city"  >
+            <ion-select-option *ngFor="let item of CIUDAD;" [value]="signup.city"  >
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -71,7 +71,7 @@
         <ion-item>
           <ion-label position="stacked" color="dark">Distrito</ion-label>
           <ion-select  placeholder="San Borja" interface="alert">
-            <ion-select-option *ngFor="let item of districtList;"  [value]="signup.district">
+            <ion-select-option *ngFor="let item of DISTRITO;"  [value]="signup.district">
                 {{item.name}}
             </ion-select-option>
           </ion-select>

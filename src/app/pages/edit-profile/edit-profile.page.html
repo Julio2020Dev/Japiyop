@@ -68,21 +68,21 @@
        
       <div class="lbl-cont"><ion-label>Fecha de nacimiento</ion-label></div>
       <div class="date-cont">
-            <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()"  [(ngModel)]="birthday" style="color: #3d8af7;"></ion-input>
+            <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="birthday"></ion-datetime>
       </div>
        
       <div class="lbl-cont"><ion-label>Ciudad</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="Lima Metropolitana" interface="alert">
-              <ion-select-option *ngFor="let item of cityList;" [value]="city">
+          <ion-select  placeholder="Lima Metropolitana" interface="alert" [(ngModel)]='city'>
+              <ion-select-option *ngFor="let item of CIUDAD;" [value]="item.name">
                   {{item.name}}
               </ion-select-option>
             </ion-select>
       </div>
       <div class="lbl-cont"><ion-label>Distrito</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="San Borja" interface="alert">
-              <ion-select-option *ngFor="let item of districtList;"  [value]="district">
+          <ion-select  placeholder="San Borja" interface="alert" [(ngModel)]='district'>
+              <ion-select-option *ngFor="let item of DISTRITO;"  [value]="item.name">
                   {{item.name}}
               </ion-select-option>
             </ion-select>
@@ -99,23 +99,23 @@
   <div id="experienceCont" [hidden]="viewState !='experience'">
     <div class="lbl-cont"><ion-label>Situación laboral actual</ion-label></div>
     <div class="select-cont">
-      <ion-select  placeholder=" " interface="alert">
-          <ion-select-option *ngFor="let item of currentJobList;"  [value]="situation">
+      <ion-select  placeholder=" " interface="alert" [(ngModel)]='situation'>
+          <ion-select-option *ngFor="let item of SITUACION_LABORAL_ACTUAL_PERFILE;"  [value]="item.name">
               {{item.name}}
           </ion-select-option>
         </ion-select>
     </div>
     <div class="lbl-cont"><ion-label>Disponibilidad de trabajo</ion-label></div>
     <div class="select-cont">
-      <ion-select  placeholder="A partir de" interface="alert">
-          <ion-select-option *ngFor="let item of availablJobList;"  [value]="available">
+      <ion-select  placeholder="A partir de" interface="alert" [(ngModel)]='available'>
+          <ion-select-option *ngFor="let item of DISPONIBILIDAD;"  [value]="item.name">
               {{item.name}}
           </ion-select-option>
         </ion-select>
     </div>
     <p class="common-lbl" style="color:#3d8af7;">Fecha de disponibilidad</p>
     <div class="date-cont">
-      <ion-input type="date" placeholder="dd / mm / aaaa" [(ngModel)]="availableDate"></ion-input>
+        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="availableDate"></ion-datetime>
     </div>
 
     <div class="lbl-cont"><ion-label>Industrias de interés</ion-label></div>
@@ -153,12 +153,12 @@
 
     <div class="lbl-cont"><ion-label  >Fecha de inicio</ion-label></div>
     <div class="date-cont">
-        <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="startDate"></ion-input>
+        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startDate"></ion-datetime>
     </div>
     
-    <div class="lbl-cont"><ion-label  >Fecha de finalización de estudios</ion-label></div>
+    <div class="lbl-cont"><ion-label>Fecha de finalización de estudios</ion-label></div>
     <div class="date-cont">
-        <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="endDate"></ion-input>
+        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endDate"></ion-datetime>
     </div>
 
     <div class="check-cont">
@@ -166,10 +166,10 @@
       <ion-label>Último empleo</ion-label>
     </div>
     
-    <div class="lbl-cont"><ion-label  ><span>Tipo de cargo</span> en empleo 1</ion-label></div>
+    <div class="lbl-cont"><ion-label><span>Tipo de cargo</span> en empleo 1</ion-label></div>
     <div class="select-cont">
-        <ion-select  placeholder="Directivo" interface="alert" >
-            <ion-select-option *ngFor="let item of jobTypeList;"  [value]="jobTitle">
+        <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='employPosition'>
+            <ion-select-option *ngFor="let item of TIPO_DE_CARGO_EN_EMPLEO_PERFILE;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -177,8 +177,8 @@
 
     <div class="lbl-cont"><ion-label >Indestria del empleo</ion-label></div>
     <div class="select-cont">
-      <ion-select  placeholder="Directivo" interface="alert" >
-          <ion-select-option *ngFor="let item of employList;"  [value]="jobTitle">
+      <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='industrial'>
+          <ion-select-option *ngFor="let item of INDUSTRIA;"  [value]="item.name">
               {{item.name}}
           </ion-select-option>
         </ion-select>
@@ -190,7 +190,7 @@
     </div>
     <p>*Visible ara los jobhunters cuando les mandas una solicitud</p>
 
-    <div class="lbl-cont"><ion-label  >Número de empleados a centro</ion-label></div>
+    <div class="lbl-cont"><ion-label>Número de empleados a centro</ion-label></div>
     <div class="input-cont">
       <ion-input type="text" [(ngModel)]="employCentro" placeholder=""></ion-input>
     </div>
@@ -211,8 +211,8 @@
     </div>
     <p class="comment-lbl" style="font-style: italic;">Agregar expertise</p>
     <div class="select-cont">
-      <ion-select  placeholder="Cobranzas" interface="alert" >
-          <ion-select-option *ngFor="let item of expertList;"  [value]="jobTitle">
+      <ion-select  placeholder="Cobranzas" interface="alert" [(ngModel)]='expertise'>
+          <ion-select-option *ngFor="let item of EXPERTISE;"  [value]="item.name">
               {{item.name}}
           </ion-select-option>
         </ion-select>
@@ -264,8 +264,8 @@
       
       <div class="lbl-cont"><ion-label>Institución</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Universidad del Pacifico" interface="alert" >
-            <ion-select-option *ngFor="let item of institutionList;"  [value]="jobTitle">
+        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]="institution">
+            <ion-select-option *ngFor="let item of INSTITUCION;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -273,8 +273,8 @@
 
       <div class="lbl-cont"><ion-label>Grado de Instrucción</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Bachiller" interface="alert" >
-            <ion-select-option *ngFor="let item of instructList;"  [value]="jobTitle">
+        <ion-select  placeholder="Bachiller" interface="alert" [(ngModel)]="instruction">
+            <ion-select-option *ngFor="let item of GRADO_DE_INSTRUCCION_PERFIL;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -282,12 +282,12 @@
 
       <div class="lbl-cont"><ion-label >Fecha de inicio</ion-label></div>
       <div class="date-cont">
-          <ion-input type="date" placeholder="dd / mm /aaaa" [(ngModel)]="startStudyDate"></ion-input>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startStudyDate"></ion-datetime>
       </div>
       
       <div class="lbl-cont"><ion-label>Fecha de finalización</ion-label></div>
       <div class="date-cont">
-          <ion-input type="date" placeholder="dd / mm /aaaa" [(ngModel)]="endStudyDate"></ion-input>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endStudyDate"></ion-datetime>
       </div>
       <p class="common-lbl">Agregar otros estudios</p>
 
@@ -299,8 +299,8 @@
 
       <div class="lbl-cont"><ion-label>Institución</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Universidad del Pacifico" interface="alert" >
-            <ion-select-option *ngFor="let item of institutionList;"  [value]="jobTitle">
+        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]='institutionOne'>
+            <ion-select-option *ngFor="let item of INSTITUCION;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -308,20 +308,20 @@
 
       <div class="lbl-cont"><ion-label >Fecha de inicio</ion-label></div>
       <div class="date-cont">
-          <ion-input type="date" placeholder="dd / mm /aaaa" [(ngModel)]="startStudyDate"></ion-input>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startStudyOneDate"></ion-datetime>
       </div>
       
       <div class="lbl-cont"><ion-label>Fecha de finalización</ion-label></div>
       <div class="date-cont">
-          <ion-input type="date" placeholder="dd / mm /aaaa" [(ngModel)]="endStudyDate"></ion-input>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endStudyOneDate"></ion-datetime>
       </div>
       <p class="common-lbl">Eliminar expecialidad</p>
       <p class="common-lbl">Agregar otros estudios</p>
 
       <div class="lbl-cont"><ion-label>Idiomas</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Brazil" interface="alert" >
-            <ion-select-option *ngFor="let item of languageList;"  [value]="jobTitle">
+        <ion-select  placeholder="Brazil" interface="alert" [(ngModel)]='language'>
+            <ion-select-option *ngFor="let item of IDIOMAS;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>

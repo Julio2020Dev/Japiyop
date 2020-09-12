@@ -8,39 +8,42 @@ ion-title{
     text-align: center;
 }
 #requestCont{
-    // --background: black;
-    ion-lable{
-        // color: black;
-    }
     ion-input{
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
-        // color: white;
+        color: #3d8af7;
+        --placeholder-opacity: 1.0;
     }
     ion-select{
-        // color: black!important;
         border: 1px solid gray;
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
         height: 44px;
+        --placeholder-opacity: 1.0; 
+        color: #3d8af7;
     }
-    ion-item{
-        // --background: black;
-        // color: white;
-    }
-    ion-label{
-        // color: white;
-    }
-    ion-list{
-        // background-color: black;
+    ion-datetime{
+        border: 1px solid gray;
+        color: cornflowerblue;
+        word-spacing: 10px;
+        text-align: left;
+        margin-top: 10px;
     }
     p{
-        color: #19f1ca;
+        font-size: 12px;
+    }
+    .comment-lbl{
+        color: #3d8af7;
         font-size: 12px;
         
+    }
+    .common-lbl{
+        color:#3d8af7;
+        font-size: 12px;
+        font-style: italic;
     }
     .jobsTitle{
         ion-select{

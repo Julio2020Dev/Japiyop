@@ -14,8 +14,8 @@
   
   <div class="lbl-cont" style="margin-top: 5px;"><ion-label>Tipo De cargo</ion-label></div>
   <div class="select-cont">
-    <ion-select  placeholder="Lorem ipsum" interface="alert">
-        <ion-select-option *ngFor="let item of chargeList;"  [value]="charge">
+    <ion-select  placeholder="Lorem ipsum" interface="alert" [(ngModel)]='charge'>
+        <ion-select-option *ngFor="let item of TIPO_DE_CARGO;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
@@ -30,8 +30,8 @@
   </div>
   <p class="comment-lbl">Agregar expertise</p>
   <div class="select-cont">
-    <ion-select  placeholder="Cobranzas" interface="alert" style="color:#23d8f9;">
-        <ion-select-option *ngFor="let item of expertList;"  [value]="expert">
+    <ion-select  placeholder="Cobranzas" interface="alert" style="color:#23d8f9;" [(ngModel)]="expert">
+        <ion-select-option *ngFor="let item of EXPERTISE;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
@@ -48,20 +48,20 @@
 
   <div class="lbl-cont"><ion-label>Disponibilidad</ion-label></div>
   <div class="select-cont">
-    <ion-select  placeholder="Cobranzas" interface="alert">
-        <ion-select-option *ngFor="let item of availableList;"  [value]="available">
+    <ion-select  placeholder="A partir de" interface="alert" [(ngModel)]='available'>
+        <ion-select-option *ngFor="let item of DISPONIBILIDAD;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
   </div>
   <div class="date-cont">
-    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()" name="aDate" id="date" [(ngModel)]="startDateChage"></ion-input>
+    <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startDateCharge"></ion-datetime>
   </div>
 
   <div class="lbl-cont"><ion-label>Industria</ion-label></div>
   <div class="select-cont">
-    <ion-select  placeholder="Cobranzas" interface="alert">
-        <ion-select-option *ngFor="let item of indusList;"  [value]="available">
+    <ion-select  placeholder="Cobranzas" interface="alert" [(ngModel)]="industrial">
+        <ion-select-option *ngFor="let item of INDUSTRIA;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
@@ -70,17 +70,17 @@
   <div class="lbl-cont"><ion-label>Fecha de solicitud</ion-label></div>
   <h6> Fecha de inicio</h6>
   <div class="date-cont">
-    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()"  [(ngModel)]="startDate"></ion-input>
+    <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startDate"></ion-datetime>
   </div>
   <h6> Fecha de finalizacion</h6>
   <div class="date-cont">
-    <ion-input type="date" placeholder="dd / mm /aaaa" (ionFocus)="dateFocus()"  [(ngModel)]="endDate"></ion-input>
+    <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endDate"></ion-datetime>
   </div>
 
   <div class="lbl-cont"><ion-label>Ciudad</ion-label></div>
   <div class="select-cont">
-    <ion-select  placeholder="Lima" interface="alert">
-        <ion-select-option *ngFor="let item of cityList;"  [value]="city">
+    <ion-select  placeholder="Lima" interface="alert" [(ngModel)]='city'>
+        <ion-select-option *ngFor="let item of CIUDAD;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
@@ -88,8 +88,8 @@
 
   <div class="lbl-cont"><ion-label>Distrito</ion-label></div>
   <div class="select-cont">
-    <ion-select  placeholder="San Borja" interface="alert">
-        <ion-select-option *ngFor="let item of disList;"  [value]="city">
+    <ion-select  placeholder="San Borja" interface="alert" [(ngModel)]='district'>
+        <ion-select-option *ngFor="let item of DISTRITO;"  [value]="item.name">
             {{item.name}}
         </ion-select-option>
     </ion-select>
