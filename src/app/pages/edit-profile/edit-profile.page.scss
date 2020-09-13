@@ -90,7 +90,7 @@ ion-title{
         border-radius: 2px;
         padding: 2px 10px !important;
         margin-top: 10px;
-        // color: white;
+        --placeholder-opacity:1;
     }
     ion-select{
         border: 1px solid gray;
@@ -98,6 +98,7 @@ ion-title{
         padding: 2px 10px !important;
         margin-top: 10px;
         height: 44px;
+        --placeholder-opacity:1;
     }  
     ion-datetime{
         border: 1px solid gray;
@@ -143,20 +144,24 @@ ion-title{
         .input-cont, .date-cont, ion-select{
             color:#00a2e5;
         }
-        .titleList-cont{
+        .selectedList-cont{
+            ion-item{
+                --border-width: 0px;
+                --border-color: transparent;
+                --min-height:30px;
+            }
             .title-col{
                 max-width: 90%;
                 padding: 0px;
-                ion-item{
-                    --padding-start: 10px;
-                    --inner-border-width: 0px;
-                    border: 1px solid;
-                }
+                display: flex;
+                align-items: center;
+                color:#3d8af7;
             }
             .close-col{
                 max-width: 10%;
                 display: flex;
                 align-items: center;
+                // color: white;
                 font-size: 2.0rem;
             }
         }

@@ -12,7 +12,7 @@ import { UserOptions } from '../../interfaces/user-options';
 })
 export class SignupPage implements OnInit {
   
-  signup: UserOptions = { username: '', phonenumber: '', email: '', password: '', dni: '', city: '', district: '' };
+  signup: UserOptions = { id:'', userName: '', phoneNumber: '', email: '', password: '', dni: '', city: '', district: '', userPhoto:''};
   CIUDAD : any[]=[
     { id: 0, name:'Amazonas'},
     { id: 1, name:'Ancash'},
