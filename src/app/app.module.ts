@@ -10,17 +10,23 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { Toast } from '@ionic-native/toast/ngx';
 
-
-import { SelectAccountPage } from './Modal/select-account/select-account.page';
 import { ComponentsModule } from './components/components.module';
 import { CommentModalComponent } from './components/comment-modal/comment-modal.component';
 import { RequestModalComponent } from './components/request-modal/request-modal.component';
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,6 +36,11 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ComponentsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
@@ -41,7 +52,14 @@ import { DialogComponent } from './components/dialog/dialog.component';
     DialogComponent
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, Toast],
+  providers: [
+    InAppBrowser, 
+    SplashScreen, 
+    StatusBar, 
+    Toast, 
+    GooglePlus,
+    Facebook
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

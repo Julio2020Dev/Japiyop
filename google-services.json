@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "560375271294",
+    "firebase_url": "https://japiyop-125df.firebaseio.com",
+    "project_id": "japiyop-125df",
+    "storage_bucket": "japiyop-125df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560375271294:android:f2963f6a34c32805b02d2f",
+        "android_client_info": {
+          "package_name": "com.japiyop.org"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560375271294-ip3thm682hpcfuctk305l61hp95acrgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMdGlsnAVuxMnvT8VqnnSNSVS5_kqNxHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560375271294-ip3thm682hpcfuctk305l61hp95acrgs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.japiyop.org"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

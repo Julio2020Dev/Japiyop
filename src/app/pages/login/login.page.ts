@@ -1,29 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { SelectAccountPage } from '../../Modal/select-account/select-account.page';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { LoadingController, Platform } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  dataReturned:any;
+  
+  public dataReturned:any;
+  public loading: any;
+  public isGoogleLogin = false;
+  public user : any;
+
   constructor(
     public router: Router,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private google: GooglePlus,
+    private fb: Facebook,
+    public loadingController: LoadingController,
+    private fireAuth: AngularFireAuth,
+    private platform: Platform,
   ) { }
 
   ngOnInit() {
   }
   onSignWithGoogle(){
-     this.showModal();
+    //  this.showModal();
+    this.googleLogin();
   }
   onSignWithLinkedIn(){
-    this.showModal();
+    this.twLogin()
   }
   onSignWithFacebook(){
-    this.showModal();
+    this.fbLogin();
   }
   onSignup() {
     this.router.navigateByUrl('/signup');
@@ -31,24 +47,79 @@ export class LoginPage implements OnInit {
   onTermAndConditions(){
 
   }
-  async showModal() {
-    const modal = await this.modalController.create({
-      component: SelectAccountPage,
-      cssClass: 'select-modal',
-      componentProps: {
-        'name': 'Hello User'
+  //--------------------------------------------------------------------
+  //--------GOOGLE LOGIN PART--------
+  googleLogin(){
+    let params: any;
+    let self = this;
+    if (this.platform.is('cordova')) {
+      if (this.platform.is('android')) {
+        params = {
+          webClientId: '560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9.apps.googleusercontent.com', //  webclientID 'string'
+          offline: true
+        };
+      } else {
+        params = {};
       }
-    });
-    modal.onDidDismiss().then((dataReturned) => {
-      if (dataReturned.data !== null) {
-        this.dataReturned = dataReturned.data;
-        console.log('Returned Data', this.dataReturned);
-        this.router.navigateByUrl('/confirm-profile');
+      this.google.login(params)
+      .then((response) => {
+        const { idToken, accessToken } = response;
+        self.onGoogleLoginSuccess(idToken, accessToken);
+      }).catch((error) => {
+        console.log(error);
+        alert('error:' + JSON.stringify(error));
+      });
+    } else{
+      this.fireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(success => {
+        console.log('success in google login', success.user);
+        self.isGoogleLogin = true;
+        self.user =  success.user;
+        console.log('success in google login', self.user);
+        self.router.navigateByUrl('confirm-profile',{queryParams: self.user});
+      }).catch(err => {
+        console.log(err.message, 'error in google login');
+      });
+    }
+  }
+  onGoogleLoginSuccess(accessToken:any, accessSecret:any) {
+    let self = this;
+    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
+        .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
+            .credential(accessToken);
+    this.fireAuth.signInWithCredential(credential)
+      .then((success) => {
+        self.isGoogleLogin = true;
+        self.user =  success.user;
+        self.router.navigateByUrl('confirm-profile',{queryParams: self.user});
+        self.loading.dismiss();
+      });
 
-      }else{
-        this.router.navigateByUrl('/confirm-profile');
-      }
+  }
+  //--------------------------------------------------------------------
+  //--------GOOGLE LOGIN PART--------
+  fbLogin(){
+    this.fb.login(['email'])
+    .then((response: FacebookLoginResponse) => {
+      this.onFbLoginSuccess(response);
+      console.log(response.authResponse.accessToken);
+    }).catch((error) => {
+      console.log(error);
+      alert('error:' + error);
     });
-    return await modal.present();
+  }
+  onFbLoginSuccess(res: FacebookLoginResponse) {
+    // const { token, secret } = res;
+    let self = this;
+    const credential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
+    this.fireAuth.signInWithCredential(credential)
+      .then((response) => {
+        self.router.navigateByUrl('confirm-profile',{queryParams: response});
+      });
+
+  }
+  //--------------------------------------------------------------------
+  //--------GOOGLE LOGIN PART--------
+  twLogin(){
+
   }
 }

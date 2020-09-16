@@ -9,12 +9,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ConfirmProfilePage implements OnInit {
   
   userType: any;
-  
+  public user:any;
+
   constructor(
     public router: Router,
     public activatedRoute : ActivatedRoute,
     private navCtrl: NavController,
-  ) { }
+  ) {
+    this.activatedRoute.queryParams.subscribe((res)=>{
+      console.log('CONFIRM-PROFILE.TS====USER DATA',res);     
+    });
+   }
 
   ngOnInit() {
     this.userType = '';
