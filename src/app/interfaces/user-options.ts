@@ -9,6 +9,7 @@ export interface UserOptions {
   city:         string;
   district:     string;
   userPhoto:    string;
+  userType:     string;
 }
 //---------------------------------------------------
 export interface JobHunter{
@@ -118,13 +119,13 @@ export interface Language{
 }
 //---------------------------------------------------
 export interface District{
-  id:   string;
+  id?:   string;
   city: string;
   name: string;
 }
 
 export interface City{
-  id:   string;
+  id?:   string;
   name: string;
 }
 //---------------------------------------------------

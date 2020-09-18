@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoadingController, AlertController, NavController, ToastController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { UserOptions } from '../../interfaces/user-options';
-
+import { Applicant, JobHunter, UserOptions } from '../../interfaces/user-options';
+import { HunterService } from '../../services/hunter.service';
+import { UserService } from '../../services/user.service';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -12,7 +14,10 @@ import { UserOptions } from '../../interfaces/user-options';
 })
 export class SignupPage implements OnInit {
   
-  signup: UserOptions = { id:'', userName: '', phoneNumber: '', email: '', password: '', dni: '', city: '', district: '', userPhoto:''};
+  public signup: any = { id:'', userName: '', phoneNumber: '', email: '', password: '', dni: '', city: '', district: '', userPhoto:'', userType:''};
+  private applicant: Applicant;
+  private jobHunter: JobHunter;
+
   CIUDAD : any[]=[
     { id: 0, name:'Amazonas'},
     { id: 1, name:'Ancash'},
@@ -90,19 +95,127 @@ export class SignupPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    public activatedRoute : ActivatedRoute,
     private loadingCtrl: LoadingController,
-  ) { }
+    private hunterService: HunterService,
+    private userService: UserService,
+    public storage: Storage
+  ) { 
+    let self = this;
+      this.activatedRoute.queryParams.subscribe((res)=>{
+        console.log('SIGNUP.TS>>>>>> PARAM', res);
+        let name = res.first_name + " " + res.last_name;
+        let pNumber = '';
+        
+        if(res.mobile_phone == null){
+          pNumber = ' ';
+        }else{
+          pNumber = res.mobile_phone
+        }
+
+        self.signup = { 
+          id:           res.id, 
+          userName:     name,
+          phoneNumber:  pNumber, 
+          email:        res.email, 
+          password: '', 
+          dni: '', 
+          city: '', 
+          district: '', 
+          userPhoto:    res.photo, 
+          userType:     res.userType
+        };    
+        console.log('SIGNUP.TS>>>>>> PARAM', self.signup);
+      });
+      
+  }
    
    
   ngOnInit() {
-     
+     console.log('This Applicant and JobHunter', this.applicant, this.jobHunter);
+     this.applicant = {
+      id:                     '',
+      first_name:             '',
+      last_name:              '',
+      mobile_phone:           '',
+      password:               '',
+      identification_number:  '',
+      location:               '',
+      photo:                  '',
+      reported:               false,
+      job_situation:          null,
+      labor_availability:     null,
+      available_date:         null,
+      remote_work:            false,
+      relocation:             false,
+      work_experience:        null,
+      languages:              null,
+      show_to_job_hunters:    false,
+      people_forum_text_me:   null,
+      replies_forum:          null,
+      forum_message:          null,
+      job_hunters_messages:   null,
+     };
+
+     this.jobHunter = {
+      id:                     '',
+      first_name:             '',
+      last_name:              '',
+      mobile_phone:           '',
+      email:                  '',
+      password:               '',
+      identification_number:  '',
+      date_of_birth:          '',
+      location:               '',
+      photo:                  '',
+      reported:               '',
+      company_logo:           '',
+      company_name:           '',
+      creed:                  '',
+      presentation_video:     '',
+      attention_schedule:     '',
+      expertise:              '',
+      show_to_applicants:     false,
+      show_to_forum_contacts: false,
+      applicant_messages:     null,
+      requests:               null,
+      liked_by_applicants:    null,
+      forum_answers:          null,
+      rating_avarage:         '',
+     };
   }
   onSignup(form: NgForm) {
     this.submitted = true;
     console.log('Form Submitted!');
     if (form.valid) {
-      // this.userData.signup(this.signup.username);
-      this.router.navigateByUrl('/app/tabs/home');
+      if(this.signup.userType == 'applicant'){
+        this.applicantSingup();
+        console.log('adfasdf');
+      }else{
+        this.jobHunterSignup();
+        console.log('huntererere');
+      }
+      
     }
+  }
+  applicantSingup(){
+    this.userService.addApplicant(this.applicant).then(success=>{
+      console.log('Add Applicant Success!', success);
+      this.router.navigateByUrl('/app/tabs/home');
+    }), error =>{
+      console.log('Error Add Applicant', error);
+    }
+    
+  }
+
+  jobHunterSignup(){
+    console.log('Hunter Signup');
+    this.hunterService.addHunter(this.jobHunter).then(success=>{
+      console.log('Add Hunter Success!', success);
+      this.router.navigateByUrl('/hunter-home');
+    }), error =>{
+      console.log('Error Add Hunter', error);
+    }
+    
   }
 }

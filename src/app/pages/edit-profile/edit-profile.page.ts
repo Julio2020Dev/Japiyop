@@ -11,7 +11,7 @@ export class EditProfilePage implements OnInit {
     //----------------------------------------------
     //--- Personal --
     //----------------------------------------------
-      userInfo: UserOptions = {id:'', userName:'', phoneNumber:'', email:'', password:'',dni:'', city:'', district:'', userPhoto:''};
+      userInfo: UserOptions = {id:'', userName:'', phoneNumber:'', email:'', password:'',dni:'', city:'', district:'', userPhoto:'',userType:''};
       //--CITY OPTION
       city:         any;
       CIUDAD : any[]=[

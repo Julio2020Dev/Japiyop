@@ -19,7 +19,8 @@ import { RequestModalComponent } from './components/request-modal/request-modal.
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from '@angular/fire/';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -36,6 +37,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     ComponentsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
+    AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
@@ -58,7 +60,8 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     StatusBar, 
     Toast, 
     GooglePlus,
-    Facebook
+    Facebook,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

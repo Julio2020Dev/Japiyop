@@ -67,23 +67,23 @@ export class HunterHomePage implements OnInit {
     this.togglePage();
   }
 
-  segmentChanged($ev){
+  segmentChanged($ev:any){
 
   }
-  expetLevel(item){
+  expetLevel(item:any){
     console.log('HUNTER_HOME.PAGE>>>>>> EXP BUTTON!',item);
   }
-  firstCol($ev){
+  firstCol($ev:any){
     this.showStudy = false;
     console.log('HUNTER_HOME.PAGE.TS>>>>>> FIRST COL', $ev.target.id);
     document.getElementById('first').style.backgroundColor = "gray";
     document.getElementById('second').style.backgroundColor = "white";
   }
-  secondCol($ev){
+  secondCol($ev:any){
     this.showStudy = true;
     document.getElementById('first').style.backgroundColor = "white";
     document.getElementById('second').style.backgroundColor = "gray";
-    console.log('HUNTER_HOME.PAGE.TS>>>>>> SECOND COL', $ev);
+    console.log('HUNTER_HOME.PAGE.TS>>>>>> SECOND COL', $ev.target.id);
   }
 
   togglePage(){

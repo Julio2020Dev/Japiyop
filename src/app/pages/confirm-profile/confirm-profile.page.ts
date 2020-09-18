@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController, AlertController, NavController, ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-confirm-profile',
@@ -7,37 +7,46 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./confirm-profile.page.scss'],
 })
 export class ConfirmProfilePage implements OnInit {
-  
-  userType: any;
-  public user:any;
-
+  user:any
   constructor(
     public router: Router,
     public activatedRoute : ActivatedRoute,
     private navCtrl: NavController,
   ) {
-    this.activatedRoute.queryParams.subscribe((res)=>{
-      console.log('CONFIRM-PROFILE.TS====USER DATA',res);     
-    });
+      this.activatedRoute.queryParams.subscribe((res)=>{
+        this.user = res;
+        console.log('CONFIRM-PROFILE.TS====USER DATA',this.user);     
+      });
    }
 
   ngOnInit() {
-    this.userType = '';
+    
   }
   signUpWithUser(){
-    this.userType = "user";
+    console.log('CONFIRM PROFILE PAGE>>>>>>>> SIGNUP AS APPLICANT');
     let param = {
-      type: this.userType
+      id:           this.user.id, 
+      first_name:   this.user.first_name, 
+      last_name:    this.user.last_name, 
+      mobile_phone: this.user.mobile_phone, 
+      email:        this.user.email, 
+      photo:        this.user.photo, 
+      userType:     'applicant'
     }
-    this.router.navigateByUrl('/signup', {queryParams:param});
+    this.navCtrl.navigateForward('signup', {queryParams: param});
   }
   signUpWithJob(){
     console.log('CONFIRM PROFILE PAGE>>>>>>>> SIGNUP AS JOBHUNTER');
-    this.userType = 'job';
     let param = {
-      type: this.userType
+      id: this.user.id, 
+      first_name:this.user.first_name, 
+      last_name:this.user.last_name, 
+      mobile_phone:this.user.mobile_phone, 
+      email:this.user.email, 
+      photo:this.user.photo, 
+      userType:'jobHunter'
     }
-    this.router.navigateByUrl('/hunter-home',  {queryParams:param});
+    this.navCtrl.navigateForward('signup',  {queryParams:param});
   }
   back(){
     this.navCtrl.back();

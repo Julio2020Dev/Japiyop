@@ -1,38 +1,46 @@
 {
   "project_info": {
-    "project_number": "560375271294",
-    "firebase_url": "https://japiyop-125df.firebaseio.com",
-    "project_id": "japiyop-125df",
-    "storage_bucket": "japiyop-125df.appspot.com"
+    "project_number": "433647541505",
+    "firebase_url": "https://japiyop-7d0eb.firebaseio.com",
+    "project_id": "japiyop-7d0eb",
+    "storage_bucket": "japiyop-7d0eb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:560375271294:android:f2963f6a34c32805b02d2f",
+        "mobilesdk_app_id": "1:433647541505:android:34446301fb67d56daccf00",
         "android_client_info": {
           "package_name": "com.japiyop.org"
         }
       },
       "oauth_client": [
         {
-          "client_id": "560375271294-ip3thm682hpcfuctk305l61hp95acrgs.apps.googleusercontent.com",
+          "client_id": "433647541505-pt1llehj81rmvotm3ibb1ge3v8pmaluh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.japiyop.org",
+            "certificate_hash": "62ee7c76706fdd42675016439b3afa75bb228757"
+          }
+        },
+        {
+          "client_id": "433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMdGlsnAVuxMnvT8VqnnSNSVS5_kqNxHo"
+          "current_key": "AIzaSyDMBDiz8cSaWqTJp8iVr-IJFLnJ3DFmbc8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "560375271294-ip3thm682hpcfuctk305l61hp95acrgs.apps.googleusercontent.com",
+              "client_id": "433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9.apps.googleusercontent.com",
+              "client_id": "433647541505-pgjq2e3fuhv2t7b544lbb0iooffm4gsq.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.japiyop.org"

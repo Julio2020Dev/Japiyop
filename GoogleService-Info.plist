@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9.apps.googleusercontent.com</string>
+	<string>433647541505-pgjq2e3fuhv2t7b544lbb0iooffm4gsq.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9</string>
+	<string>com.googleusercontent.apps.433647541505-pgjq2e3fuhv2t7b544lbb0iooffm4gsq</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBehTPxRTiGSo6lHKEVOUJQ4uAXrGmze9s</string>
+	<string>AIzaSyAu2LwNtf8RIZ6vVpQVHa70HERcHqhBZkc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>560375271294</string>
+	<string>433647541505</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.japiyop.org</string>
 	<key>PROJECT_ID</key>
-	<string>japiyop-125df</string>
+	<string>japiyop-7d0eb</string>
 	<key>STORAGE_BUCKET</key>
-	<string>japiyop-125df.appspot.com</string>
+	<string>japiyop-7d0eb.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:560375271294:ios:f289ba52f8f9dd22b02d2f</string>
+	<string>1:433647541505:ios:a26eec2fa92507d1accf00</string>
 	<key>DATABASE_URL</key>
-	<string>https://japiyop-125df.firebaseio.com</string>
+	<string>https://japiyop-7d0eb.firebaseio.com</string>
 </dict>
 </plist>
