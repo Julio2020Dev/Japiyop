@@ -27,8 +27,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
-
-@NgModule({
+// import { LinkedIn } from '@ionic-native/linkedin';
+@NgModule({ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,6 +61,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     Toast, 
     GooglePlus,
     Facebook,
+    // LinkedIn,
     AngularFirestore
   ],
   bootstrap: [AppComponent]

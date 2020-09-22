@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Applicant, JobHunter, UserOptions } from '../../interfaces/user-options';
 import { HunterService } from '../../services/hunter.service';
 import { UserService } from '../../services/user.service';
+import { UserData } from '../../providers/user-data';
 import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-signup',
@@ -14,10 +15,10 @@ import { Storage } from '@ionic/storage';
 })
 export class SignupPage implements OnInit {
   
-  public signup: any = { id:'', userName: '', phoneNumber: '', email: '', password: '', dni: '', city: '', district: '', userPhoto:'', userType:''};
+  public signup: any = { id:'', first_name: '', last_name:'', phoneNumber: '', email: '', password: '', dni: '', city: '', district: '', userPhoto:'', userType:''};
   private applicant: Applicant;
   private jobHunter: JobHunter;
-
+  private full_name: string;
   CIUDAD : any[]=[
     { id: 0, name:'Amazonas'},
     { id: 1, name:'Ancash'},
@@ -99,12 +100,13 @@ export class SignupPage implements OnInit {
     private loadingCtrl: LoadingController,
     private hunterService: HunterService,
     private userService: UserService,
+    private userData: UserData,
     public storage: Storage
   ) { 
     let self = this;
       this.activatedRoute.queryParams.subscribe((res)=>{
         console.log('SIGNUP.TS>>>>>> PARAM', res);
-        let name = res.first_name + " " + res.last_name;
+        this.full_name = res.first_name + " " + res.last_name;
         let pNumber = '';
         
         if(res.mobile_phone == null){
@@ -115,7 +117,8 @@ export class SignupPage implements OnInit {
 
         self.signup = { 
           id:           res.id, 
-          userName:     name,
+          first_name:   res.first_name,
+          last_name:    res.last_name,
           phoneNumber:  pNumber, 
           email:        res.email, 
           password: '', 
@@ -137,6 +140,8 @@ export class SignupPage implements OnInit {
       id:                     '',
       first_name:             '',
       last_name:              '',
+      email:                  '',
+      dni:                    '',
       mobile_phone:           '',
       password:               '',
       identification_number:  '',
@@ -195,25 +200,93 @@ export class SignupPage implements OnInit {
         this.jobHunterSignup();
         console.log('huntererere');
       }
-      
     }
   }
-  applicantSingup(){
+  async applicantSingup(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Creación de un solicitante...'
+    });
+    loading.present();
+    this.applicant = {
+      id:                     this.signup.id,
+      first_name:             this.signup.first_name,
+      last_name:              this.signup.last_name,
+      email:                  this.signup.email,
+      mobile_phone:           this.signup.phoneNumber,
+      password:               this.signup.password,
+      dni:                    this.signup.dni,
+      identification_number:  '',
+      location:               this.signup.city + ', '+ this.signup.district,
+      photo:                  this.signup.userPhoto,
+      reported:               false,
+      job_situation:          null,
+      labor_availability:     null,
+      available_date:         null,
+      remote_work:            false,
+      relocation:             false,
+      work_experience:        null,
+      languages:              null,
+      show_to_job_hunters:    false,
+      people_forum_text_me:   null,
+      replies_forum:          null,
+      forum_message:          null,
+      job_hunters_messages:   null,
+     };
+
     this.userService.addApplicant(this.applicant).then(success=>{
       console.log('Add Applicant Success!', success);
+      loading.dismiss();
+      let userName = this.applicant.first_name + ' ' + this.applicant.last_name;
+      this.userData.setUsername(userName);
+      this.userData.setUserId(success.id);
       this.router.navigateByUrl('/app/tabs/home');
     }), error =>{
+      loading.dismiss();
       console.log('Error Add Applicant', error);
     }
     
   }
-
-  jobHunterSignup(){
+  async jobHunterSignup(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Creando un cazador de empleo...'
+    });
+    loading.present();
+    this.jobHunter = {
+      id:                     this.signup.id,
+      first_name:             this.signup.first_name,
+      last_name:              this.signup.last_name,
+      mobile_phone:           this.signup.phoneNumber,
+      email:                  this.signup.email,
+      password:               this.signup.password,
+      identification_number:  '',
+      date_of_birth:          '',
+      location:               this.signup.city + ', '+ this.signup.district,
+      photo:                  this.signup.userPhoto,
+      reported:               '',
+      company_logo:           '',
+      company_name:           '',
+      creed:                  '',
+      presentation_video:     '',
+      attention_schedule:     '',
+      expertise:              '',
+      show_to_applicants:     false,
+      show_to_forum_contacts: false,
+      applicant_messages:     null,
+      requests:               null,
+      liked_by_applicants:    null,
+      forum_answers:          null,
+      rating_avarage:         '',
+     };
     console.log('Hunter Signup');
     this.hunterService.addHunter(this.jobHunter).then(success=>{
       console.log('Add Hunter Success!', success);
+      let userName = this.jobHunter.first_name + ' ' + this.jobHunter.last_name;
+      this.userData.setUsername(userName);
+      this.userData.setUserId(success.id);
       this.router.navigateByUrl('/hunter-home');
+      loading.dismiss();
     }), error =>{
+      loading.dismiss();
       console.log('Error Add Hunter', error);
     }
     

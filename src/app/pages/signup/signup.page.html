@@ -11,7 +11,7 @@
       <ion-list lines="none">
         <ion-item>
           <ion-label position="stacked" color="dark">Nombre Apellido</ion-label>
-          <ion-input [(ngModel)]="signup.userName" name="username" type="text" #username="ngModel" [placeholder]="signup.userName"  >
+          <ion-input [(ngModel)]="full_name" name="username" type="text" #username="ngModel" [placeholder]="full_name" >
           </ion-input>
         </ion-item>
         <ion-text color="danger">
@@ -54,14 +54,14 @@
 
         <ion-item>
           <ion-label position="stacked" color="dark">DNI</ion-label>
-          <ion-input [(ngModel)]="signup.dni" name="dni" type="text" #dni="ngModel"  >
+          <ion-input [(ngModel)]="signup.dni" name="dni" type="text" #dni="ngModel"  required>
           </ion-input>
         </ion-item>
  
         <ion-item>
           <ion-label position="stacked" color="dark">Ciudad</ion-label>
-          <ion-select  placeholder="Lima Metropolitana" interface="alert">
-            <ion-select-option *ngFor="let item of CIUDAD;" [value]="signup.city"  >
+          <ion-select  placeholder="Lima Metropolitana" interface="alert" [(ngModel)]="signup.city" [ngModelOptions]="{standalone: true}" required>
+            <ion-select-option *ngFor="let item of CIUDAD;" [value]="item.name"  >
                 {{item.name}}
             </ion-select-option>
           </ion-select>
@@ -70,8 +70,8 @@
 
         <ion-item>
           <ion-label position="stacked" color="dark">Distrito</ion-label>
-          <ion-select  placeholder="San Borja" interface="alert">
-            <ion-select-option *ngFor="let item of DISTRITO;"  [value]="signup.district">
+          <ion-select  placeholder="San Borja" interface="alert" [(ngModel)]="signup.district" [ngModelOptions]="{standalone: true}" required>
+            <ion-select-option *ngFor="let item of DISTRITO;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>

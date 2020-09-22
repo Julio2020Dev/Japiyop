@@ -24,7 +24,16 @@ export class HunterService {
   }
 
   getJobHunters() {
-    return this.jobHuner;
+    // return this.jobHuner;
+    return this.jobHunerCollection.snapshotChanges().pipe(map(
+      actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      }
+    ));
   }
 
   getJobHunter(id: string) {

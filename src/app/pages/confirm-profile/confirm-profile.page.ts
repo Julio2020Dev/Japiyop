@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UserData } from '../../providers/user-data';
 @Component({
   selector: 'app-confirm-profile',
   templateUrl: './confirm-profile.page.html',
@@ -12,6 +13,7 @@ export class ConfirmProfilePage implements OnInit {
     public router: Router,
     public activatedRoute : ActivatedRoute,
     private navCtrl: NavController,
+    private userData: UserData
   ) {
       this.activatedRoute.queryParams.subscribe((res)=>{
         this.user = res;
@@ -33,7 +35,9 @@ export class ConfirmProfilePage implements OnInit {
       photo:        this.user.photo, 
       userType:     'applicant'
     }
+    this.userData.setUserType(param.userType);
     this.navCtrl.navigateForward('signup', {queryParams: param});
+    
   }
   signUpWithJob(){
     console.log('CONFIRM PROFILE PAGE>>>>>>>> SIGNUP AS JOBHUNTER');
@@ -46,6 +50,7 @@ export class ConfirmProfilePage implements OnInit {
       photo:this.user.photo, 
       userType:'jobHunter'
     }
+    this.userData.setUserType(param.userType);
     this.navCtrl.navigateForward('signup',  {queryParams:param});
   }
   back(){

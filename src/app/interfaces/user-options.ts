@@ -80,6 +80,8 @@ export interface Applicant{
   id:                     string;
   first_name:             string;
   last_name:              string;
+  email:                  string;
+  dni:                    string;
   mobile_phone:           string;
   password:               string;
   identification_number:  string;

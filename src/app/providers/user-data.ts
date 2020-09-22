@@ -60,6 +60,24 @@ export class UserData {
       return value;
     });
   }
+  setUserType(username: string): Promise<any> {
+    return this.storage.set('usertype', username);
+  }
+
+  getUserType(): Promise<string> {
+    return this.storage.get('usertype').then((value) => {
+      return value;
+    });
+  }
+  setUserId(username: string): Promise<any> {
+    return this.storage.set('userId', username);
+  }
+
+  getUserId(): Promise<string> {
+    return this.storage.get('userId').then((value) => {
+      return value;
+    });
+  }
 
   isLoggedIn(): Promise<boolean> {
     return this.storage.get(this.HAS_LOGGED_IN).then((value) => {

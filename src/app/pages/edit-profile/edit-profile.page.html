@@ -44,11 +44,11 @@
 <!-- Personal Contaier -->
   <div id="personCont" [hidden]="viewState !='personal'">
       <div class="lbl-cont"><ion-label>Nombre y Apellido</ion-label></div>
-      <div style="margin-top: 15px;"><ion-label class="name-lbl" style="color: #3d8af7;">{{userInfo.userName}}</ion-label></div>
+      <div style="margin-top: 15px;"><ion-label class="name-lbl" style="color: #3d8af7;">{{userInfo.first_name}} {{userInfo.last_name}}</ion-label></div>
 
       <div class="lbl-cont"><ion-label>Teléfono</ion-label></div>
       <div class="input-cont">
-          <ion-input   name="password" type="number" [(ngModel)]='userInfo.phoneNumber' required></ion-input>
+          <ion-input name="number" type="number" [(ngModel)]="userInfo.mobile_phone" required></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label>Correo electrónico</ion-label></div>

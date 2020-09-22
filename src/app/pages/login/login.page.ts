@@ -5,6 +5,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { LoadingController, Platform } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
+// import { LinkedIn, LinkedInLoginScopes } from '@ionic-native/linkedin';
 import * as firebase from 'firebase';
 
 @Component({
@@ -28,6 +29,7 @@ export class LoginPage implements OnInit {
     public loadingController: LoadingController,
     private fireAuth: AngularFireAuth,
     private platform: Platform,
+    // private linkedin: LinkedIn
   ) { }
 
   ngOnInit() {
@@ -116,7 +118,7 @@ export class LoginPage implements OnInit {
     }else{
       this.fireAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(success=>{
         console.log('success in facbook login', success);
-        self.router.navigateByUrl('confirm-profile',{queryParams: success});
+        self.navCtrl.navigateForward('confirm-profile',{queryParams: success});
       }).catch(err => {
         console.log(err.message, 'error in facebook login');
       });
@@ -129,13 +131,45 @@ export class LoginPage implements OnInit {
     const credential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
     this.fireAuth.signInWithCredential(credential).then((response) => {
         alert('fb success:'+response);
-        self.router.navigateByUrl('confirm-profile',{queryParams: response});
+        self.navCtrl.navigateForward('confirm-profile',{queryParams: response});
     });
 
   }
   //--------------------------------------------------------------------
   //--------LINKEDIN LOGIN PART--------
   linkedInLogin(){
+    // let self = this;
+    // this.linkedin.hasActiveSession().then((active) => 
+    // {
+    //   console.log('has active session?', active);
+    //   let scopes:any = ["r_basicprofile", "r_emailaddress", "rw_company_admin", "w_share"];
+    //   this.linkedin.login(scopes, true).then((res) => {
+          
+    //     console.log('Logged in!',res)
+    //     this.linkedin.postRequest('~/shares', body).then(res => {
+    //       console.log(res);
+    //       self.navCtrl.navigateForward('confirm-profile',{queryParams: res});
+    //     }).catch(e => console.log(e));
+    //   }).catch(e => console.log('Error logging in', e));
 
+    // }).catch((e)=> console.log('has not active sessions?', e));
+    // // login
+    
+
+
+    // // get connections
+    // this.linkedin.getRequest('people/~')
+    //   .then(res => console.log(res))
+    //   .catch(e => console.log(e));
+
+    // // share something on profile
+    // const body = {
+    //   comment: 'Hello world!',
+    //   visibility: {
+    //     code: 'anyone'
+    //   }
+    // };
+
+    
   }
 }

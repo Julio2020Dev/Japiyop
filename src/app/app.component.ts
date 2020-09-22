@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
+    // this.checkLoginStatus();
+    // this.listenForLoginEvents();
 
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({

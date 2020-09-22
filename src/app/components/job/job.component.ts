@@ -13,7 +13,9 @@ export class JobComponent implements OnInit {
   constructor(
     public navCtrl:  NavController,
     public router: Router,
-  ) { }
+  ) { 
+    console.log('JOB COMPONENT.TS>>>>>>> data', this.p);
+  }
 
   ngOnInit() {
 

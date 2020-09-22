@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController,  NavController, ToastController } from '@ionic/angular';
-
+import { HunterService } from '../../services/hunter.service';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -13,6 +14,8 @@ export class HomePage implements OnInit {
     public navCtrl:  NavController,
     public toastController: ToastController,
     private loadingCtrl: LoadingController,
+    private hunterService: HunterService,
+    private userService: UserService
   ) { 
     this.showSearch = false;
     this.hunterList = [
@@ -23,6 +26,13 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    this.getHunterDatas();
+  }
+  async getHunterDatas(){
+    this.hunterService.getJobHunters().subscribe(res=>{
+      this.hunterList = res;
+      console.log('JobHunters', res);
+    });
   }
   //-- Goto Profile Page
   profile(){
@@ -31,7 +41,7 @@ export class HomePage implements OnInit {
   //-- Goto Filter Page
   filter(){
     this.navCtrl.navigateForward('/filter');
-    // this.navCtrl.navigateForward('/weekreview');
+    
 
   }
   //-- Show Search Field

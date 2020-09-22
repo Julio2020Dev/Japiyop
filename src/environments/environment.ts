@@ -14,8 +14,10 @@ export const environment = {
     appId: "1:433647541505:web:d5cb8903793c84aeaccf00",
     measurementId: "G-GKLBRMLCS3"
   },
-  linkedinClientId:'YOUR CLIENT ID',
-  linkedinClientSecret: 'YOUR_SECRET'
+  linkedinClientId:'86g831wln9b0p5',
+  linkedinClientSecret: '61diAWyOtsz9apEg',
+  Facebook_App_ID: '611046296236397',
+  Facebook_Secret_ID: '26ef2860dd73580f8f329d41259c04c5'
 };
 
 /*

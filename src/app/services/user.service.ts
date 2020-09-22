@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Applicant } from '../interfaces/user-options';
-
+import { AngularFireAuth } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +12,10 @@ export class UserService {
   private applicantCollection: AngularFirestoreCollection<Applicant>;
   private applicant: Observable<Applicant[]>;
   
-  constructor(private db: AngularFirestore) { 
+  constructor(
+    private db: AngularFirestore,
+    private auth: AngularFireAuth
+    ) { 
     this.applicantCollection = this.db.collection<Applicant>('Applicant');
     this.applicant = this.applicantCollection.snapshotChanges().pipe(map(
       actions => {
@@ -24,7 +27,13 @@ export class UserService {
       }
     ));
   }
-
+  getCurrentUser(){
+    return this.auth.currentUser.then(res=>{
+      return res;
+    }).catch(error=>{
+      return error;
+    })
+  }
   getApplicants() {
     return this.applicant;
   }
@@ -45,9 +54,7 @@ export class UserService {
     return this.applicantCollection.doc(id).delete();
   }
 
-  // sise(id: string) {
-  //   return this.restauranteCollection.doc(id).update({ viernes_Descuento: '' });
-  // }
+   
 
   getP(tasks: string) {
     return this.db.collection<Applicant>('Applicant', ref => ref.where('activated', '==', true)).snapshotChanges().pipe(map(

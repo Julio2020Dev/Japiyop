@@ -14,7 +14,7 @@
         <div [hidden]="p.select"></div>
        </ion-col>
        <ion-col class="img-col">
-        <img [src]="p.avatar">
+        <img [src]="p.photo">
        </ion-col>
        <ion-col class="rate-col">
         <div class="fav-cont">
@@ -29,7 +29,7 @@
      </ion-row>
    </div>
    <div class="title-cont">
-     <ion-label>{{p.author}}</ion-label>
+     <ion-label>{{p.first_name}} {{p.last_name}}</ion-label>
    </div>
    <div class="detail-cont">
      <ion-textarea  class="detail-lbl" readOnly="true">{{p.details}}</ion-textarea>

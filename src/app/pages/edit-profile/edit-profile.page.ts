@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController,  NavController, ToastController, ModalController } from '@ionic/angular';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import { UserOptions } from '../../interfaces/user-options';
+import { Applicant } from '../../interfaces/user-options';
+import { UserService } from '../../services/user.service';
+import { UserData } from '../../providers/user-data';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
@@ -11,7 +13,7 @@ export class EditProfilePage implements OnInit {
     //----------------------------------------------
     //--- Personal --
     //----------------------------------------------
-      userInfo: UserOptions = {id:'', userName:'', phoneNumber:'', email:'', password:'',dni:'', city:'', district:'', userPhoto:'',userType:''};
+      userInfo:any = {};
       //--CITY OPTION
       city:         any;
       CIUDAD : any[]=[
@@ -158,12 +160,8 @@ export class EditProfilePage implements OnInit {
       public selectedList: any = [];
       public industList: any =[];
 
-      
-
-      
-
+    
       public employ: any;
-      
 
       public startDate: any;
       public endDate: any;
@@ -183,9 +181,7 @@ export class EditProfilePage implements OnInit {
       public institutionList: any = [];
       public instructList: any = [];
 
-      
       public special: any;
-
       public languageList: any = [];
     //----------------------------------------------
     //--- Study --
@@ -326,18 +322,67 @@ export class EditProfilePage implements OnInit {
     othersInstituction: any;
 
   constructor(
-    public navCtrl:  NavController,
+    public navCtrl:         NavController,
     public toastController: ToastController,
-    public modalCtrl: ModalController
-  ) { }
+    public modalCtrl:       ModalController,
+    public loadCtrl:        LoadingController,
+    private userService:    UserService,
+    private userData:       UserData
+  ) { 
+    this.getUserInformationFromDB();  
+  }
 
   ngOnInit() {
     this.viewState = "personal";
     this.barStatus = 0.5;
     this.completeStatus = this.barStatus * 100;
-    this.userInfo.userName = 'Alberto Javier Rocca Pinto';
+    this.initUserInfo();
+    this.getUserInformationFromDB();
+  
   }
-
+  initUserInfo(){
+    this.userInfo = {
+      id:                     '',
+      first_name:             '',
+      last_name:              '',
+      email:                  '',
+      dni:                    '',
+      mobile_phone:           '',
+      password:               '',
+      identification_number:  '',
+      location:               '',
+      photo:                  '',
+      reported:               false,
+      job_situation:          null,
+      labor_availability:     null,
+      available_date:         null,
+      remote_work:            false,
+      relocation:             false,
+      work_experience:        null,
+      languages:              null,
+      show_to_job_hunters:    false,
+      people_forum_text_me:   null,
+      replies_forum:          null,
+      forum_message:          null,
+      job_hunters_messages:   null
+    }
+  }
+  async getUserInformationFromDB(){
+    const loading = await this.loadCtrl.create({
+      message: 'Cargando información...'
+    });
+    loading.present();
+    
+    this.userData.getUserId().then(res=>{
+      console.log('Get CURRNET USER',res);
+      this.userService.getApplicant(res).subscribe(res=>{
+        console.log('asdfasdf',res);
+        this.userInfo = res;
+        console.log('user infor',this.userInfo.id);
+        loading.dismiss();
+      })
+    });
+  }
   back(){
     this.navCtrl.back();
   }
