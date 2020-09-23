@@ -28,6 +28,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
 // import { LinkedIn } from '@ionic-native/linkedin';
+
+import { MatSnackBarModule } from '@angular/material';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { OverlayModule } from "@angular/cdk/overlay";
 @NgModule({ 
   imports: [
     BrowserModule,
@@ -43,6 +47,9 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     AngularFireDatabaseModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    OverlayModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
@@ -61,7 +68,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     Toast, 
     GooglePlus,
     Facebook,
-    // LinkedIn,
+    OverlayModule,
     AngularFirestore
   ],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  } from '@angular/co
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { JobComponent} from './job/job.component'
+import { HunterComponent } from './hunter/hunter.component';
 import { CommentModalComponent  } from './comment-modal/comment-modal.component';
 import { RequestModalComponent } from './request-modal/request-modal.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
@@ -10,6 +11,7 @@ import { DialogComponent } from './dialog/dialog.component';
 @NgModule({
   declarations: [
     JobComponent,
+    HunterComponent,
     CommentModalComponent,
     RequestModalComponent,
     DeleteModalComponent,
@@ -17,6 +19,7 @@ import { DialogComponent } from './dialog/dialog.component';
   ],
   exports: [
     JobComponent,
+    HunterComponent,
     CommentModalComponent,
     RequestModalComponent,
     DeleteModalComponent,

@@ -145,7 +145,10 @@ export class SignupPage implements OnInit {
       mobile_phone:           '',
       password:               '',
       identification_number:  '',
-      location:               '',
+      city:                   '',
+      district:               '',
+      studies:                null,
+      birthday:                '',
       photo:                  '',
       reported:               false,
       job_situation:          null,
@@ -171,7 +174,8 @@ export class SignupPage implements OnInit {
       password:               '',
       identification_number:  '',
       date_of_birth:          '',
-      location:               '',
+      city:                   '',
+      district:               '',
       photo:                  '',
       reported:               '',
       company_logo:           '',
@@ -216,7 +220,10 @@ export class SignupPage implements OnInit {
       password:               this.signup.password,
       dni:                    this.signup.dni,
       identification_number:  '',
-      location:               this.signup.city + ', '+ this.signup.district,
+      birthday:               '',
+      studies:                null,
+      city:                   this.signup.city,
+      district:               this.signup.district,
       photo:                  this.signup.userPhoto,
       reported:               false,
       job_situation:          null,
@@ -239,6 +246,8 @@ export class SignupPage implements OnInit {
       let userName = this.applicant.first_name + ' ' + this.applicant.last_name;
       this.userData.setUsername(userName);
       this.userData.setUserId(success.id);
+      this.applicant.id = success.id;
+      this.userService.updateApplicant(this.applicant, success.id);
       this.router.navigateByUrl('/app/tabs/home');
     }), error =>{
       loading.dismiss();
@@ -260,7 +269,8 @@ export class SignupPage implements OnInit {
       password:               this.signup.password,
       identification_number:  '',
       date_of_birth:          '',
-      location:               this.signup.city + ', '+ this.signup.district,
+      city:                   this.signup.city,
+      district:               this.signup.district,
       photo:                  this.signup.userPhoto,
       reported:               '',
       company_logo:           '',
@@ -283,6 +293,8 @@ export class SignupPage implements OnInit {
       let userName = this.jobHunter.first_name + ' ' + this.jobHunter.last_name;
       this.userData.setUsername(userName);
       this.userData.setUserId(success.id);
+      this.jobHunter.id = success.id;
+      this.hunterService.updateHunter(this.jobHunter,success.id);
       this.router.navigateByUrl('/hunter-home');
       loading.dismiss();
     }), error =>{

@@ -42,12 +42,12 @@ export class UserService {
     return this.applicantCollection.doc<Applicant>(id).valueChanges();
   }
 
-  updateApplicant(hunter: Applicant, id: string) {
-    return this.applicantCollection.doc(id).update(hunter);
+  updateApplicant(applicant: Applicant, id: string) {
+    return this.applicantCollection.doc(id).update(applicant);
   }
 
-  addApplicant(hunter: Applicant) {
-    return this.applicantCollection.add(hunter);
+  addApplicant(applicant: Applicant) {
+    return this.applicantCollection.add(applicant);
   }
 
   removeApplicant(id: string) {

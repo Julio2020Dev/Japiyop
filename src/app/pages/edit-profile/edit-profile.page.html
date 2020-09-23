@@ -43,37 +43,43 @@
   </div>
 <!-- Personal Contaier -->
   <div id="personCont" [hidden]="viewState !='personal'">
+    <form #personalForm="ngForm" novalidate>
       <div class="lbl-cont"><ion-label>Nombre y Apellido</ion-label></div>
       <div style="margin-top: 15px;"><ion-label class="name-lbl" style="color: #3d8af7;">{{userInfo.first_name}} {{userInfo.last_name}}</ion-label></div>
 
       <div class="lbl-cont"><ion-label>Teléfono</ion-label></div>
       <div class="input-cont">
-          <ion-input name="number" type="number" [(ngModel)]="userInfo.mobile_phone" required></ion-input>
+          <ion-input name="mobile_phone" type="number" [(ngModel)]="userInfo.mobile_phone" #mobile_phone="ngModel" [ngModelOptions]="{standalone: true}" required></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label>Correo electrónico</ion-label></div>
       <div class="input-cont">
-          <ion-input name="password" type="email" [(ngModel)]="userInfo.email" required></ion-input>
+          <ion-input name="email" type="email" [(ngModel)]="userInfo.email" #email="ngModel"  [ngModelOptions]="{standalone: true}" required></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label>Contraseña</ion-label></div>
       <div class="input-cont">
-          <ion-input  name="password" type="text" [(ngModel)]="userInfo.password" required></ion-input>
+          <ion-input  name="password" type="text" [(ngModel)]="userInfo.password" #password="ngModel" [ngModelOptions]="{standalone: true}" required></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label  >DNI</ion-label></div>
       <div class="input-cont">
-          <ion-input name="dni" type="text" [(ngModel)]="userInfo.dni" required></ion-input>
+          <ion-input name="dni" type="text" [(ngModel)]="userInfo.dni" #dni="ngModel" [ngModelOptions]="{standalone: true}" required></ion-input>
       </div>
        
       <div class="lbl-cont"><ion-label>Fecha de nacimiento</ion-label></div>
       <div class="date-cont">
-            <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="userInfo.birthday"></ion-datetime>
+            <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="userInfo.birthday" #birthday="ngModel" [ngModelOptions]="{standalone: true}" required></ion-datetime>
       </div>
        
+      <ion-text color="danger">
+        <p [hidden]="birthday.valid || submitted == false" class="ion-padding-start">
+          Birthday is required
+        </p>
+      </ion-text>
       <div class="lbl-cont"><ion-label>Ciudad</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="Lima Metropolitana" interface="alert" [(ngModel)]='userInfo.city'>
+          <ion-select  placeholder="Lima Metropolitana" interface="alert" [(ngModel)]='userInfo.city' [ngModelOptions]="{standalone: true}">
               <ion-select-option *ngFor="let item of CIUDAD;" [value]="item.name">
                   {{item.name}}
               </ion-select-option>
@@ -81,188 +87,221 @@
       </div>
       <div class="lbl-cont"><ion-label>Distrito</ion-label></div>
       <div class="select-cont">
-          <ion-select  placeholder="San Borja" interface="alert" [(ngModel)]='userInfo.district'>
+          <ion-select  placeholder="San Borja" interface="alert" [(ngModel)]='userInfo.district' [ngModelOptions]="{standalone: true}">
               <ion-select-option *ngFor="let item of DISTRITO;"  [value]="item.name">
                   {{item.name}}
               </ion-select-option>
             </ion-select>
       </div>
       
-      <div class="btn-cont">
-          <div class="btn-img" (click)="savePerson()"><p>Guardar</p> </div>
+      <div class="btn-cont" >
+          <!-- <div class="btn-img" (click)="savePerson(personalForm)" type="submit" [disabled]="!personalForm.valid"><p>Guardar</p> </div> -->
+          <ion-button (click)="savePerson(personalForm)" type="submit" [disabled]="!personalForm.valid " color="transparent" size="medium">Guardar</ion-button>
       </div>
-
-        
-        
+    </form>  
   </div>
 <!-- Experience Container -->
   <div id="experienceCont" [hidden]="viewState !='experience'">
-    <div class="lbl-cont"><ion-label>Situación laboral actual</ion-label></div>
-    <div class="select-cont">
-      <ion-select  placeholder=" " interface="alert" [(ngModel)]='currentSituation'>
-          <ion-select-option *ngFor="let item of SITUACION_LABORAL_ACTUAL_PERFILE;"  [value]="item.name">
-              {{item.name}}
-          </ion-select-option>
-        </ion-select>
-    </div>
-    <div class="lbl-cont"><ion-label>Disponibilidad de trabajo</ion-label></div>
-    <div class="select-cont">
-      <ion-select  placeholder="A partir de" interface="alert" [(ngModel)]='jobAvailable'>
-          <ion-select-option *ngFor="let item of DISPONIBILIDAD;"  [value]="item.name">
-              {{item.name}}
-          </ion-select-option>
-        </ion-select>
-    </div>
-    <p class="common-lbl" style="color:#3d8af7;">Fecha de disponibilidad</p>
-    <div class="date-cont">
-        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="availableDate"></ion-datetime>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Industrias de interés</ion-label></div>
-    <div class="selectedList-cont">
-      <ion-item *ngFor="let item of interestingIndusList">
-          <ion-col class="title-col"><ion-label class="title-item">{{item.name}}</ion-label></ion-col>
-          <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
-      </ion-item>
-    </div>
-    
-    <p class="comment-lbl">Agregar industria</p>
-    <div class="select-cont">
-      <ion-select  placeholder="Hoteleria y turismo" interface="alert" (ionChange)="addInteresting($event)">
-          <ion-select-option *ngFor="let item of  INDUSTRIA;"  [value]="available">
-              {{item.name}}
-          </ion-select-option>
-        </ion-select>
-    </div>
-
-    <div class="check-cont">
-      <ion-checkbox slot="start" [(ngModel)]="remoteAvailable"></ion-checkbox>
-      <ion-label>Trabajo remoto</ion-label>
-    </div>
-    <div class="check-cont">
-          <ion-checkbox slot="start" [(ngModel)]="relocateAvailable"></ion-checkbox>
-          <ion-label>Reubicación en otra región</ion-label>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Cargo de empleo 1</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employ" placeholder=""></ion-input>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Fecha de inicio</ion-label></div>
-    <div class="date-cont">
-        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startDate"></ion-datetime>
-    </div>
-    
-    <div class="lbl-cont"><ion-label>Fecha de finalización de estudios</ion-label></div>
-    <div class="date-cont">
-        <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endDate"></ion-datetime>
-    </div>
-
-    <div class="check-cont">
-      <ion-checkbox slot="start" [(ngModel)]="lastEmploy"></ion-checkbox>
-      <ion-label>Último empleo</ion-label>
-    </div>
-    
-    <div class="lbl-cont"><ion-label><span>Tipo de cargo</span> en empleo 1</ion-label></div>
-    <div class="select-cont">
-        <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='employPosition'>
-            <ion-select-option *ngFor="let item of TIPO_DE_CARGO_EN_EMPLEO_PERFILE;"  [value]="item.name">
+    <form #experienceForm="ngForm" novalidate>
+      <div class="lbl-cont"><ion-label>Situación laboral actual</ion-label></div>
+      <div class="select-cont">
+        <ion-select  placeholder=" " name="job_situation" #job_situation="ngModel" interface="alert" [(ngModel)]='userInfo.job_situation' [ngModelOptions]="{standalone: true}" required>
+            <ion-select-option *ngFor="let item of SITUACION_LABORAL_ACTUAL_PERFILE;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
           </ion-select>
-    </div>
+      </div>
+      <ion-text color="danger">
+        <p [hidden]="job_situation.valid || submittedExperience == false" class="ion-padding-start">
+          Job Situation is required
+        </p>
+      </ion-text>
+      <div class="lbl-cont"><ion-label>Disponibilidad de trabajo</ion-label></div>
+      <div class="select-cont">
+        <ion-select  placeholder="A partir de" interface="alert" name="labor_availability" #labor_availability="ngModel"  [ngModelOptions]="{standalone: true}" [(ngModel)]='userInfo.labor_availability'>
+            <ion-select-option *ngFor="let item of DISPONIBILIDAD;"  [value]="item.name">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+      </div>
+      <ion-text color="danger">
+        <p [hidden]="labor_availability.valid || submittedExperience == false" class="ion-padding-start">
+          Labor Availability is required
+        </p>
+      </ion-text>
+      <p class="common-lbl" style="color:#3d8af7;">Fecha de disponibilidad</p>
+      <div class="date-cont">
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="userInfo.available_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
+      </div>
+  
+      <div class="lbl-cont"><ion-label>Industrias de interés</ion-label></div>
+      <div class="selectedList-cont">
+        <ion-item *ngFor="let item of interestingIndusList">
+            <ion-col class="title-col"><ion-label class="title-item">{{item.name}}</ion-label></ion-col>
+            <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
+        </ion-item>
+      </div>
+      
+      <p class="comment-lbl">Agregar industria</p>
+      <div class="select-cont">
+        <ion-select  placeholder="Hoteleria y turismo" interface="alert" (ionChange)="addInteresting($event)">
+            <ion-select-option *ngFor="let item of  INDUSTRIA;"  [value]="available"  >
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+      </div>
+  
+      <div class="check-cont">
+        <ion-checkbox slot="start" [(ngModel)]="userInfo.remote_work" [ngModelOptions]="{standalone: true}" ></ion-checkbox>
+        <ion-label>Trabajo remoto</ion-label>
+      </div>
+      <div class="check-cont">
+            <ion-checkbox slot="start" [(ngModel)]="userInfo.relocation" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+            <ion-label>Reubicación en otra región</ion-label>
+      </div>
+  
+      <div class="lbl-cont"><ion-label>Cargo de empleo 1</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" name ="job_title" #job_title="ngModel" [(ngModel)]="workExperience.job_title" [ngModelOptions]="{standalone: true}" placeholder="" required></ion-input>
+      </div>
+      <ion-text color="danger">
+        <p [hidden]="job_title.valid || submittedExperience == false" class="ion-padding-start">
+          Job Title is required
+        </p>
+      </ion-text>
+      <div class="lbl-cont"><ion-label>Fecha de inicio</ion-label></div>
+      <div class="date-cont">
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="workExperience.job_start_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
+      </div>
+      
+      <div class="lbl-cont"><ion-label>Fecha de finalización de estudios</ion-label></div>
+      <div class="date-cont">
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="workExperience.job_end_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
+      </div>
+  
+      <div class="check-cont">
+        <ion-checkbox slot="start" [(ngModel)]="workExperience.last_job" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+        <ion-label>Último empleo</ion-label>
+      </div>
+      
+      <div class="lbl-cont"><ion-label><span>Tipo de cargo</span> en empleo 1</ion-label></div>
+      <div class="select-cont">
+          <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='workExperience.position' [ngModelOptions]="{standalone: true}">
+              <ion-select-option *ngFor="let item of TIPO_DE_CARGO_EN_EMPLEO_PERFILE;"  [value]="item.name">
+                  {{item.name}}
+              </ion-select-option>
+            </ion-select>
+      </div>
+  
+      <div class="lbl-cont"><ion-label >Indestria del empleo</ion-label></div>
+      <div class="select-cont">
+        <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='workExperience.industry' [ngModelOptions]="{standalone: true}">
+            <ion-select-option *ngFor="let item of INDUSTRIA;"  [value]="item.name">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+      </div>
+  
+      <div class="lbl-cont"><ion-label>Razón social del centro laboral</ion-label></div>
+      <div class="input-cont">
+          <ion-input type="text" name ="job_center_name" #job_center_name="ngModel" [(ngModel)]="workExperience.job_center_name" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
+      </div>
+      <ion-text color="danger">
+        <p [hidden]="job_center_name.valid || submittedExperience == false" class="ion-padding-start">
+          Job Center Name is required
+        </p>
+      </ion-text>
+      <p>*Visible ara los jobhunters cuando les mandas una solicitud</p>
+  
+      <div class="lbl-cont"><ion-label>Número de empleados a centro</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" name="job_center_business" #job_center_business="ngModel" [(ngModel)]="workExperience.job_center_business" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
+      </div>
 
-    <div class="lbl-cont"><ion-label >Indestria del empleo</ion-label></div>
-    <div class="select-cont">
-      <ion-select  placeholder="Directivo" interface="alert" [(ngModel)]='industrial'>
-          <ion-select-option *ngFor="let item of INDUSTRIA;"  [value]="item.name">
-              {{item.name}}
-          </ion-select-option>
-        </ion-select>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Razón social del centro laboral</ion-label></div>
-    <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="companyName" placeholder=""></ion-input>
-    </div>
-    <p>*Visible ara los jobhunters cuando les mandas una solicitud</p>
-
-    <div class="lbl-cont"><ion-label>Número de empleados a centro</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employCentro" placeholder=""></ion-input>
-    </div>
-
-    <div class="lbl-cont"><ion-label >Número de empleados a cargo</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employCharge" placeholder=""></ion-input>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Expertise</ion-label></div>
-    <div class="selectedList-cont">
-      <ion-col *ngFor="let item of expertSelectList">
-        <ion-row>
-          <ion-col class="title-col"><ion-item class="title-item">{{item.title}}</ion-item></ion-col>
-          <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
-        </ion-row>
-      </ion-col>
-    </div>
-    <p class="comment-lbl" style="font-style: italic;">Agregar expertise</p>
-    <div class="select-cont">
-      <ion-select  placeholder="Cobranzas" interface="alert" [(ngModel)]='expertise'>
-          <ion-select-option *ngFor="let item of EXPERTISE;"  [value]="item.name">
-              {{item.name}}
-          </ion-select-option>
-        </ion-select>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Referencias laborales 1</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employCharge" placeholder="Nombres y apellidos"></ion-input>
-    </div>
-
-    <div class="lbl-cont"><ion-label>Cargo y empresa de la referencia</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employCharge" placeholder="Nombres y apellidos"></ion-input>
-    </div>
+      <ion-text color="danger">
+        <p [hidden]="job_center_business.valid || submittedExperience == false" class="ion-padding-start">
+          Job Center Business is required
+        </p>
+      </ion-text>
+  
+      <div class="lbl-cont"><ion-label >Número de empleados a cargo</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" [(ngModel)]="workExperience.employees_quantity" [ngModelOptions]="{standalone: true}" placeholder=""></ion-input>
+      </div>
+      <ion-text color="danger">
+        <p [hidden]="job_center_name.valid || submittedExperience == false" class="ion-padding-start">
+          Job Center Name is required
+        </p>
+      </ion-text>
+      <div class="lbl-cont"><ion-label>Expertise</ion-label></div>
+      <div class="selectedList-cont">
+        <ion-col *ngFor="let item of expertSelectList">
+          <ion-row>
+            <ion-col class="title-col"><ion-item class="title-item">{{item.title}}</ion-item></ion-col>
+            <ion-col class="close-col"><ion-icon name="close-circle" (click)="removeSelect(item)"></ion-icon></ion-col>
+          </ion-row>
+        </ion-col>
+      </div>
+      <p class="comment-lbl" style="font-style: italic;">Agregar expertise</p>
+      <div class="select-cont">
+        <ion-select  placeholder="Cobranzas" interface="alert" [(ngModel)]='workExperience.expertise' [ngModelOptions]="{standalone: true}">
+            <ion-select-option *ngFor="let item of EXPERTISE;"  [value]="item.name">
+                {{item.name}}
+            </ion-select-option>
+          </ion-select>
+      </div>
+  
+      <div class="lbl-cont"><ion-label>Referencias laborales 1</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" [(ngModel)]="reference.work_reference_name" placeholder="Nombres y apellidos" [ngModelOptions]="{standalone: true}"></ion-input>
+      </div>
+  
+      <div class="lbl-cont"><ion-label>Cargo y empresa de la referencia</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" [(ngModel)]="reference.work_reference_company_position" placeholder="Nombres y apellidos" [ngModelOptions]="{standalone: true}"></ion-input>
+      </div>
+      
+      <div class="lbl-cont"><ion-label>Relacion con la referencia</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="text" [(ngModel)]="reference.work_reference_last_boss" placeholder="Jefe de ultimo trabajo" [ngModelOptions]="{standalone: true}"></ion-input>
+      </div>
+  
+      <p class="comment-lbl" style="font-style: italic;" (click)="removeJob()">Eliminar este empleo</p>
+      <p class="comment-lbl" style="font-style: italic;" (click)="addJob()">Agregar empleo</p>
+  
+      <div class="lbl-cont"><ion-label>Rango salarial (lo que busco)</ion-label></div>
+      <div class="rang-cont">
+          <ion-row>
+            <ion-col><ion-input type="number" placeholder="Min" [(ngModel)]="workExperience.min_value" [ngModelOptions]="{standalone: true}"></ion-input></ion-col>
+            <ion-col><ion-input type="number" placeholder="Max" [(ngModel)]="workExperience.max_value" [ngModelOptions]="{standalone: true}"></ion-input></ion-col>
+          </ion-row>
+      </div>
+      <p>*Salario bruto mensual</p>
+  
+      <div class="lbl-cont"><ion-label>Última remuneración</ion-label></div>
+      <div class="input-cont">
+        <ion-input type="number" [(ngModel)]="workExperience.real_value" [ngModelOptions]="{standalone: true}"></ion-input>
+      </div>
+      <p>*Visible para los jobhunters cuando les mandas una solicitud</p>
+  
+      <div class="btn-cont">
+        <!-- <div class="btn-img" (click)="saveExperience()"><p>Guardar</p></div> -->
+        <ion-button (click)="saveExperience(experienceForm)" type="submit" [disabled]="!experienceForm.valid " color="transparent" size="medium">Guardar</ion-button>
+      </div>
+    </form>
     
-    <div class="lbl-cont"><ion-label>Relacion con la referencia</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="employCharge" placeholder="Jefe de ultimo trabajo"></ion-input>
-    </div>
-
-    <p class="comment-lbl" style="font-style: italic;" (click)="removeJob()">Eliminar este empleo</p>
-    <p class="comment-lbl" style="font-style: italic;" (click)="addJob()">Agregar empleo</p>
-
-    <div class="lbl-cont"><ion-label>Rango salarial (lo que busco)</ion-label></div>
-    <div class="rang-cont">
-        <ion-row>
-          <ion-col><ion-input type="number" placeholder="Min" [(ngModel)]="minValue"></ion-input></ion-col>
-          <ion-col><ion-input type="number" placeholder="Max" [(ngModel)]="maxValue"></ion-input></ion-col>
-        </ion-row>
-    </div>
-    <p>*Salario bruto mensual</p>
-
-    <div class="lbl-cont"><ion-label>Última remuneración</ion-label></div>
-    <div class="input-cont">
-      <ion-input type="text" [(ngModel)]="bonus"></ion-input>
-    </div>
-    <p>*Visible para los jobhunters cuando les mandas una solicitud</p>
-
-    <div class="btn-cont">
-      <div class="btn-img" (click)="saveExperience()"><p>Guardar</p></div>
-    </div>
   </div>
 <!-- Studio Contatiner -->
   <div id="studyCont" [hidden]="viewState !='studio'">
+    <form #studyForm="ngForm" novalidate>
       <div class="lbl-cont"><ion-label>Profesión</ion-label></div>
       <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="profession" placeholder="Administración de Empresas"></ion-input>
+        <ion-input type="text" [(ngModel)]="studies.profession" placeholder="Administración de Empresas" [ngModelOptions]="{standalone: true}"></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label>Institución</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]="institution">
+        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]="studies.institution" [ngModelOptions]="{standalone: true}">
             <ion-select-option *ngFor="let item of INSTITUCION;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
@@ -271,7 +310,7 @@
 
       <div class="lbl-cont"><ion-label>Grado de Instrucción</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Bachiller" interface="alert" [(ngModel)]="instruction">
+        <ion-select  placeholder="Bachiller" interface="alert" [(ngModel)]="studies.degree" [ngModelOptions]="{standalone: true}">
             <ion-select-option *ngFor="let item of GRADO_DE_INSTRUCCION_PERFIL;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
@@ -280,24 +319,24 @@
 
       <div class="lbl-cont"><ion-label >Fecha de inicio</ion-label></div>
       <div class="date-cont">
-          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startStudyDate"></ion-datetime>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="studies.start_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </div>
       
       <div class="lbl-cont"><ion-label>Fecha de finalización</ion-label></div>
       <div class="date-cont">
-          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endStudyDate"></ion-datetime>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="studies.end_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </div>
       <p class="common-lbl">Agregar otros estudios</p>
 
       <div class="lbl-cont"><ion-label>Especialidad(max 1)</ion-label></div>
       <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="special" placeholder="Ventas"></ion-input>
+        <ion-input type="text" [(ngModel)]="special.special_name" placeholder="Ventas" [ngModelOptions]="{standalone: true}"></ion-input>
       </div>
       <p class="comment-lbl">*Colocar la más relevante</p>
 
       <div class="lbl-cont"><ion-label>Institución</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]='institutionOne'>
+        <ion-select  placeholder="Universidad del Pacifico" interface="alert" [(ngModel)]='special.institution' [ngModelOptions]="{standalone: true}">
             <ion-select-option *ngFor="let item of INSTITUCION;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
@@ -306,19 +345,19 @@
 
       <div class="lbl-cont"><ion-label >Fecha de inicio</ion-label></div>
       <div class="date-cont">
-          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="startStudyOneDate"></ion-datetime>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="special.start_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </div>
       
       <div class="lbl-cont"><ion-label>Fecha de finalización</ion-label></div>
       <div class="date-cont">
-          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="endStudyOneDate"></ion-datetime>
+          <ion-datetime displayFormat="DD / MM / YYYY" placeholder="dd / mm / aaaa" [(ngModel)]="special.end_date" [ngModelOptions]="{standalone: true}"></ion-datetime>
       </div>
       <p class="common-lbl">Eliminar expecialidad</p>
       <p class="common-lbl">Agregar otros estudios</p>
 
       <div class="lbl-cont"><ion-label>Idiomas</ion-label></div>
       <div class="select-cont">
-        <ion-select  placeholder="Brazil" interface="alert" [(ngModel)]='language'>
+        <ion-select  placeholder="Brazil" interface="alert" [(ngModel)]='language.language' [ngModelOptions]="{standalone: true}">
             <ion-select-option *ngFor="let item of IDIOMAS;"  [value]="item.name">
                 {{item.name}}
             </ion-select-option>
@@ -327,24 +366,27 @@
 
       <div class="lbl-cont"><ion-label>Certificado</ion-label></div>
       <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="certificate" placeholder="TOEFL"></ion-input>
+        <ion-input type="text" [(ngModel)]="language.certificate" placeholder="TOEFL" [ngModelOptions]="{standalone: true}"></ion-input>
       </div>
       <p class="common-lbl">Agregar idimas</p>
 
       <div class="lbl-cont"><ion-label>Otros</ion-label></div>
       <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="others" placeholder="Docencia"></ion-input>
+        <ion-input type="text" [(ngModel)]="others" placeholder="Docencia" [ngModelOptions]="{standalone: true}"></ion-input>
       </div>
       
       <div class="lbl-cont"><ion-label>Institución</ion-label></div>
       <div class="input-cont">
-        <ion-input type="text" [(ngModel)]="othersInstituction" placeholder="PUCP"></ion-input>
+        <ion-input type="text" [(ngModel)]="othersInstituction" placeholder="PUCP" [ngModelOptions]="{standalone: true}"></ion-input>
       </div>
       <p class="common-lbl">Agregar actividades</p>
 
       <div class="btn-cont">
-        <div class="btn-img" (click)="saveStudies()"><p>Guardar</p></div>
+        <!-- <div class="btn-img" (click)="saveStudies()"><p>Guardar</p></div> -->
+        <ion-button (click)="saveStudies(studyForm)" type="submit" [disabled]="!studyForm.valid " color="transparent" size="medium">Guardar</ion-button>
       </div>
+    </form>
+      
   </div>
 
 

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="hunterDetails-toolbar" >
-    <!-- <ion-title>{{job.author}}</ion-title> -->
+    <ion-title>{{job.first_name}} {{job.last_name}}</ion-title>
     <ion-buttons slot="start">
       <ion-button class="back-btn" (click)="back()"><ion-icon name="arrow-back" color="dark"></ion-icon></ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
     <ion-row class="avatar-row">
       <ion-col class="a-col">
         <div class="img-cont">
-          <img [src]="job.avatar" class="avatar-img"> 
+          <img [src]="job.photo" class="avatar-img"> 
         </div>
         
       </ion-col>

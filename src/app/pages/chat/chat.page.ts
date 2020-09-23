@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingController,  NavController, ToastController, IonContent } from '@ionic/angular';
 import { IonSlides } from '@ionic/angular';
+import { HunterService } from '../../services/hunter.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.page.html',
@@ -19,20 +20,19 @@ export class ChatPage implements OnInit {
     public navCtrl:  NavController,
     public toastController: ToastController,
     private loadingCtrl: LoadingController,
+    private huterService: HunterService
   ) {
     
-    this.hunterList = [
-      {id:0, type:'Job Hunter', title: 'Test Job', author: 'Chris Moscoso L', avatar:'assets/img/avatar_00.png', rate:'4.5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:true, online:true},
-      {id:1, type:'Job Hunter', title: 'Test Job', author: 'Emperatriz Paucar', avatar:'assets/img/avatar_01.png', rate:'5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false, online:false},
-      {id:2, type:'Job Hunter', title: 'Test Job', author: 'Aria Moscoso P', avatar:'assets/img/avatar_02.png', rate:'5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false, online:false},
-      {id:0, type:'Job Hunter', title: 'Test Job', author: 'Chris Moscoso L', avatar:'assets/img/avatar_00.png', rate:'4.5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:true, online:true},
-      {id:1, type:'Job Hunter', title: 'Test Job', author: 'Emperatriz Paucar', avatar:'assets/img/avatar_01.png', rate:'5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false, online:false},
-      {id:2, type:'Job Hunter', title: 'Test Job', author: 'Aria Moscoso P', avatar:'assets/img/avatar_02.png', rate:'5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false, online:false},
-      
-    ]
+     
    }
 
   ngOnInit() {
+    this.getHunters();
+  }
+  getHunters(){
+    this.huterService.getJobHunters().subscribe(res=>{
+      this.hunterList = res;
+    })
   }
   selectUser(item:any){
     item.type = "chat";

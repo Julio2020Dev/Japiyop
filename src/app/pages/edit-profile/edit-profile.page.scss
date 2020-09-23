@@ -71,6 +71,11 @@ ion-title{
         margin-top: 20px;
         width: 80%;
         margin-left: 10%;
+        text-align: center;
+        background: url("../../../assets/img/btn_background.png");
+        ion-button{
+            height: 35px;
+        }
         .btn-img{
             background: url("../../../assets/img/btn_background.png");
             background-size: cover;

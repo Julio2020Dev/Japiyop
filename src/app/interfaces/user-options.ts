@@ -21,7 +21,8 @@ export interface JobHunter{
   password:               string;
   identification_number:  string;
   date_of_birth:          string;
-  location:               string;
+  city:                   string;
+  district:               string;
   photo:                  string;
   reported:               string;
   company_logo:           string;
@@ -82,10 +83,13 @@ export interface Applicant{
   last_name:              string;
   email:                  string;
   dni:                    string;
+  birthday:               string;
+  studies:                any;
   mobile_phone:           string;
   password:               string;
   identification_number:  string;
-  location:               string;
+  city:                   string;
+  district:               string;
   photo:                  string;
   reported:               boolean;
   job_situation:          any;
@@ -184,3 +188,38 @@ export interface PaymentProposal{
   is_final_payment:   any;
 }
 //---------------------------------------------------
+export interface WorkExperience {
+  id:                             string;
+  job_title:                       string;
+  job_start_date:                 string;
+  job_end_date:                   string;
+  last_job:                       boolean;
+  postion:                        boolean;
+  industry:                       any;
+  job_center_name:                string;
+  job_center_business:            string;
+  employees_quantity:             string;
+  employees_in_charge_quantity:   string;
+  expertise:                      string;
+  reference:                      any;
+  min_value:                      string;
+  max_value:                      string;
+  real_value:                     string; 
+  bonus_value:                    string;
+}
+export interface Reference{
+  id:                              string;
+  work_reference_name:             string;
+  work_reference_company_position: string;
+  work_reference_last_boss:        string;
+}
+export interface Position{
+  id:     string;
+  name:   string
+}
+
+export interface ExperienceApplicant{
+  id:              string;
+  applicant:       string;
+  work_experience: string;
+}

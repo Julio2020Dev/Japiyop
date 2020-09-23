@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="content">
+      <div class="seg-cont">
+        <ion-row class="seg-row">
+          <ion-col class="seg-first" id="first" (click)="firstCol($event)"></ion-col>
+          <ion-col class="seg-second" id="second" (click)="secondCol($event)"></ion-col>
+        </ion-row>
+     </div>
+  
+      <div class="profile-cont">
+        <ion-row>
+          <ion-col class="avatar-col">
+            <div class="img-cont">
+              <div style="width: 50px;height: 50px;"><img [src]="job.photo"  class="avata-img"/></div>
+            </div>
+          </ion-col>
+          <ion-col class="edit-col">
+            <ion-icon name="home" style="margin-bottom: 10px;"></ion-icon>
+            <ion-icon name="airplane" style="margin-top: 10px;transform: rotate(-90deg);"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="title-cont">
+        <h3>{{job.first_name}} {{job.last_name}}</h3>
+        <h4>{{job.job_situation}}</h4>
+        <p>{{job.city}}  {{job.district}}</p>
+        <p style="margin-top: 10px; color:#2cca7b;font-size: 13px;">Rango salarial: S/{{job.work_experience.min_value}} - S/{{job.work_experience.max_value}} netos</p>
+      </div>
+      <div class="details-cont">
+        <ion-label>Disponibilidad inmediata, 01/05/2020</ion-label>
+        <p>industrias de interés: tech, textil, automotriz, farmacia, finanzas.</p>
+      </div>
+      <div [hidden]="showStudy">
+          <div class="expert-cont" id="Container">
+            <ion-col *ngFor="let item of expList">
+              <ion-button (click)="expetLevel(item)" size="small" color="medium" shape="round"  >{{item.label}}</ion-button>
+            </ion-col>
+          </div>
+      
+          <div class="lbl-cont"><ion-label class="des-lbl">Experiencia</ion-label></div>
+          
+          <div class="lbl-cont"><ion-label class="des-lbl">Product Manager</ion-label></div>
+          <div class="text-cont">
+            <h5>{{job.work_experience.job_title}}</h5>
+            <p>{{job.work_experience.job_start_date}} - {{job.work_experience.job_end_date}}</p>
+          </div>
+          
+          <div class="lbl-cont"><ion-label class="des-lbl">{{job.work_experience.job_title}}</ion-label></div>
+          <div class="text-cont">
+            <h5>Japiyop - Textil</h5>
+            <p>01/03/2019 - 15/03/2020</p>
+          </div>
+      </div>
+      <div [hidden]="!showStudy">
+        <div class="lbl-cont"><ion-label class="des-lbl" style="font-size: 18px;font-weight: bold;">Conocimientos</ion-label></div>
+        
+        <div class="lbl-cont"><ion-label class="des-lbl" style="font-weight: 400;">Universidad del Pacifico</ion-label></div>
+        <div class="text-cont">
+          <h5>Bachiller en Administratcion</h5>
+          <p>01/2019 - 06/2015</p>
+        </div>
+  
+        <div class="lbl-cont"><ion-label class="des-lbl" style="font-weight: 300;">Universidad del Pacifico</ion-label></div>
+        <div class="text-cont">
+          <h5>Diplomado en ventas</h5>
+          <p>01/2019 - 06/2015</p>
+        </div>
+  
+        <div class="lbl-cont"><ion-label class="des-lbl" style="font-weight: 300;">Universidad del Pacifico</ion-label></div>
+        <div class="text-cont">
+          <h5>Curso de especializcion en metodologias agiles</h5>
+          <p>01/2019 - 06/2015</p>
+        </div>
+  
+        <div class="lbl-cont"><ion-label class="des-lbl" style="font-size: 18px;font-weight: bold;">Idiomas y Otros</ion-label></div>
+        <div class="text-cont">
+          <h6 style="font-weight: 300;">Idiomas: Espanol (lengua nativa); Ingles</h6>
+          <p style="font-style: italic;">(Certificado TOEFL 1028-2020)</p>
+        </div>
+  
+        <div class="text-cont">
+          <h6 style="font-weight: 300;">Otros: Decencia (PUCP); Voluntariado</h6>
+          <p style="font-style: italic;">(Grupo Convergencia)</p>
+        </div>
+  
+      </div>
+    </div>
+    <div class="footer" color="transparent">
+      <ion-toolbar style="height: 80px;--background: transparent;" >
+        <ion-row style="margin-top:15px;">
+          <ion-col (click)="refresh()"> 
+            <ion-icon name="refresh-circle" color="dark" style="margin-top: -25px;"></ion-icon> 
+          </ion-col>
+          <ion-col (click)="close()">
+            <ion-icon name="close-circle" color="dark"></ion-icon> 
+          </ion-col>
+          <ion-col (click)="check()">
+            <ion-icon name="checkmark-circle" color="dark"></ion-icon> 
+          </ion-col>
+        
+          <ion-col (click)="chat()">
+            <ion-icon name="chatbubbles" color="dark" style="margin-top: -25px;"></ion-icon> 
+          </ion-col>
+        </ion-row>
+      </ion-toolbar> 
+    </div>  
+</div>

@@ -13,9 +13,9 @@
       <ion-slide *ngFor="let u of hunterList">
         <div class="img-cont">
           <ion-avatar (click)="selectUser(u)">
-            <img [src]="u.avatar" class="avatar-img">
-            <div class="circle-online" [hidden]="!u.online"></div>
-            <div class="circle-offline" [hidden]="u.online"></div>
+            <img [src]="u.photo" class="avatar-img">
+            <!-- <div class="circle-online" [hidden]="!u.online"></div>
+            <div class="circle-offline" [hidden]="u.online"></div> -->
           </ion-avatar>
         </div>       
       </ion-slide>
@@ -29,14 +29,14 @@
   </div>
   <div class="list-cont">
     <ion-list>
-      <ion-item *ngFor="let item of hunterList" (click)="selectUser(item)">
+      <ion-item *ngFor="let hunter of hunterList" (click)="selectUser(hunter)">
         <ion-avatar slot="start">
-          <img [src]="item.avatar">
+          <img [src]="hunter.photo">
         </ion-avatar>
-        <div class="circle" [hidden]="!item.online"></div>
+        <div class="circle" ></div>
         <div class="details-cont">
-          <h3>{{item.type}}</h3>
-          <p>{{item.details}}</p>
+          <h3>{{hunter.first_name}} {{hunter.last_name}}</h3>
+          <p>Me gusta tu perfil, te mandare</p>
         </div>
       </ion-item>
     </ion-list>

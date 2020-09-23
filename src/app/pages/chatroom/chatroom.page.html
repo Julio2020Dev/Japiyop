@@ -2,8 +2,8 @@
   <ion-toolbar>
     <ion-title>
       <ion-item color="transparent">
-          <img [src]="hunter.avatar" slot="start"/>
-          <p>{{hunter.author}}</p>
+          <img [src]="user.photo" style="border-radius: 50%;" slot="start"/>
+          <p>{{user.first_name}} {{user.last_name}}</p>
       </ion-item>
       
     </ion-title>
@@ -19,12 +19,36 @@
 
 <ion-content id="chatroomCont">
   <div class="proposalCont">
-    <div style="text-align: right;"><h5 (click)="proposal()">Proposal</h5></div>
+    <div *ngFor="let mess of messages">
+      <div flex flow-right *ngIf="mess.type==userType">
+          <ion-card bg-light>
+              <ion-card-content style="padding-bottom: 0px;">
+              {{ mess.msg }}  
+              </ion-card-content>
+              <p text-right no-margin light-time>{{ formatDate(mess) }}</p>
+          </ion-card>
+      </div>
+      <div flex *ngIf="mess.type!=userType">
+          <ion-card bg-white>
+              <ion-card-content style="padding-bottom: 0px;">
+              {{ mess.msg }}  
+              </ion-card-content>
+              <p text-right no-margin light-time>{{ formatDate(mess) }}</p>
+          </ion-card>
+      </div>
+    </div>
     
-    <h5 (click)="payment()">1st payment successful</h5>
-    <h5 (click)="accept()">Service Accepted</h5>
-    <h5 (click)="decline()">Service Declined</h5>
-    <h5 (click)="conclud()">Full Service Concluded</h5>
+    <!-- <div *ngIf="loader" flex v-center h-center style="height: 100%;">
+        <ion-spinner name="crescent" color="success" style="width: 100px; height: 100px;"></ion-spinner>
+    </div> -->
+      <div [hidden]="proposal">
+          <div style="text-align: right;"><h5 (click)="proposal()">Proposal</h5></div>
+          <h5 (click)="payment()">1st payment successful</h5>
+          <h5 (click)="accept()">Service Accepted</h5>
+          <h5 (click)="decline()">Service Declined</h5>
+          <h5 (click)="conclud()">Full Service Concluded</h5>
+      </div>
+    
   </div>
 </ion-content>
 
@@ -32,7 +56,7 @@
     <ion-toolbar>
       <div class="bottom-bar">
           <ion-icon name="camera" (click)="takeFile()"></ion-icon>
-          <ion-input type="text" placeholder="Type text" [(ngModel)]="textData"> </ion-input>
+          <ion-input type="text" [(ngModel)] = "chat" placeholder="Escriba aquí..."> </ion-input>
           <ion-icon name="send" (click)="sendMessage()" ></ion-icon>
       </div>
       
