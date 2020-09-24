@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController,  NavController, ToastController } from '@ionic/angular';
 import { HunterService } from '../../services/hunter.service';
 import { UserService } from '../../services/user.service';
+import { UserData } from '../../providers/user-data';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -10,28 +11,43 @@ import { UserService } from '../../services/user.service';
 export class HomePage implements OnInit {
   showSearch: boolean;
   hunterList : any = [];
+  userInfo: any;
   constructor(
     public navCtrl:  NavController,
     public toastController: ToastController,
     private loadingCtrl: LoadingController,
     private hunterService: HunterService,
-    private userService: UserService
+    private userService: UserService,
+    private userData: UserData
   ) { 
     this.showSearch = false;
-    this.hunterList = [
-      {id:0, title: 'Test Job', author: 'Chris Moscoso L', avatar:'assets/img/avatar_00.png', rate:'4.5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:true},
-      {id:1, title: 'Test Job', author: 'Emperatriz Paucar', avatar:'assets/img/avatar_01.png', rate:'5', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false},
-      {id:2, title: 'Test Job', author: 'Aria Moscoso P', avatar:'assets/img/avatar_02.png', rate:'4.8', favority: false, details:'Lorem ipsum lorem ipsum Lorem Lorem', time:' Hace 3 hrs', select:false},
-    ]
   }
 
   ngOnInit() {
+    this.getCurrentUser();
     this.getHunterDatas();
   }
+  getCurrentUser(){
+    this.userData.getUserId().then(res=>{
+      console.log('Get User ID', res);
+      if(res){
+        this.userService.getApplicant(res).subscribe(response=>{
+          this.userInfo = response;
+          console.log('Success User Information', response);
+        }),error=>{
+          console.log("Error Getting UserInfo", error)
+        }
+      }
+    });
+  }
   async getHunterDatas(){
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando Job Hunters...'
+    });
     this.hunterService.getJobHunters().subscribe(res=>{
       this.hunterList = res;
       console.log('JobHunters', res);
+      loading.dismiss();
     });
   }
   //-- Goto Profile Page
