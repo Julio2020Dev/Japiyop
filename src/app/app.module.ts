@@ -32,6 +32,8 @@ import { Facebook } from '@ionic-native/facebook/ngx';
 import { MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { OverlayModule } from "@angular/cdk/overlay";
+
+import { CallNumber } from '@ionic-native/call-number/ngx';
 @NgModule({ 
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     StatusBar, 
     Toast, 
     GooglePlus,
+    CallNumber,
     Facebook,
     OverlayModule,
     AngularFirestore

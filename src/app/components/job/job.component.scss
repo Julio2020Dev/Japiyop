@@ -17,6 +17,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            .avata-img{
+                border-radius: 50%;
+                height: 80px;
+            }
         }
         .rate-col{
             text-align: right;

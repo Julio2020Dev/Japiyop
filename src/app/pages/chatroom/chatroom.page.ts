@@ -6,7 +6,7 @@ import { MenuController, NavController, ModalController } from '@ionic/angular';
 import { CommentModalComponent } from '../../components/comment-modal/comment-modal.component';
 import { ApiService } from '../../services/api.service';
 import { UserService } from '../../services/user.service';
-
+import { CallNumber } from '@ionic-native/call-number/ngx';
 @Component({
   selector: 'app-chatroom',
   templateUrl: './chatroom.page.html',
@@ -16,8 +16,7 @@ export class ChatroomPage implements OnInit {
   @ViewChild('IonContent', { static: false }) content: IonContent
   
   public user: any;
-  public textData: any;
-  
+    
   userPhoto: any;
   cUserId:   any;
   cUserName: any;
@@ -43,6 +42,7 @@ export class ChatroomPage implements OnInit {
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     private userData: UserData,
+    private callNumber: CallNumber,
     private api: ApiService,
     private userService: UserService
   ) { 
@@ -82,7 +82,9 @@ export class ChatroomPage implements OnInit {
     this.navCtrl.back();
   }
   call(){
-    
+    this.callNumber.callNumber(this.user.mobile_phone, true)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
   more(){
     this.showModal();

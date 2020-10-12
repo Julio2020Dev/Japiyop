@@ -80,3 +80,8 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/ma
 ### iOS
 
 1. Run `ionic cordova run ios --prod`
+
+## Android Google Plus Client ID: 433647541505-pt1llehj81rmvotm3ibb1ge3v8pmaluh.apps.googleusercontent.com   
+## iOS Google Plus Client ID: 433647541505-pgjq2e3fuhv2t7b544lbb0iooffm4gsq.apps.googleusercontent.com
+## Web Application Client ID:433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com //433647541505-oo7md3u5doai2e3vkqdr7kb2b5sklrq2.apps.googleusercontent.com
+

@@ -51,28 +51,9 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // this.checkLoginStatus();
-    // this.listenForLoginEvents();
+    this.checkLoginStatus();
+    this.listenForLoginEvents();
 
-    // this.swUpdate.available.subscribe(async res => {
-    //   const toast = await this.toastCtrl.create({
-    //     message: 'Update available!',
-    //     position: 'bottom',
-    //     buttons: [
-    //       {
-    //         role: 'cancel',
-    //         text: 'Reload'
-    //       }
-    //     ]
-    //   });
-
-    //   await toast.present();
-
-    //   toast
-    //     .onDidDismiss()
-    //     .then(() => this.swUpdate.activateUpdate())
-    //     .then(() => window.location.reload());
-    // });
   }
 
   initializeApp() {
@@ -82,7 +63,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  checkLoginStatus() {
+  checkLoginStatus(): Promise<void> {
     return this.userData.isLoggedIn().then(loggedIn => {
       return this.updateLoggedInStatus(loggedIn);
     });

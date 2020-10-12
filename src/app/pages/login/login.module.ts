@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
-import { SelectAccountPageModule } from '../../Modal/select-account/select-account.module';
 
 @NgModule({
   imports: [
@@ -14,7 +13,6 @@ import { SelectAccountPageModule } from '../../Modal/select-account/select-accou
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    SelectAccountPageModule
   ],
   declarations: [LoginPage]
 })

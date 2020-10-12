@@ -31,6 +31,7 @@
     "@angular/pwa": "^0.803.23",
     "@angular/router": "^8.2.14",
     "@angular/service-worker": "^8.2.14",
+    "@ionic-native/call-number": "^5.28.0",
     "@ionic-native/core": "5.0.0-beta.15",
     "@ionic-native/facebook": "^5.28.0",
     "@ionic-native/google-plus": "^5.28.0",
@@ -71,6 +72,7 @@
     "@types/jasmine": "3.4.6",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "^12.12.26",
+    "call-number": "^1.0.1",
     "codelyzer": "^5.2.1",
     "cordova-android": "^9.0.0",
     "cordova-plugin-facebook4": "^6.4.0",
@@ -90,8 +92,7 @@
   },
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ],
     "plugins": {
       "cordova-plugin-device": {},
@@ -105,8 +106,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-x-toast": {},
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com",
-        "WEB_APPLICATION_CLIENT_ID": "433647541505-pgjq2e3fuhv2t7b544lbb0iooffm4gsq.apps.googleusercontent.com"
+        "REVERSED_CLIENT_ID": "433647541505-pt1llehj81rmvotm3ibb1ge3v8pmaluh.apps.googleusercontent.com",
+        "WEB_APPLICATION_CLIENT_ID": "433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com"
       },
       "cordova-plugin-facebook4": {
         "APP_ID": "611046296236397",

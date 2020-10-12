@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
     if (this.platform.is('cordova')) {
       if (this.platform.is('android')) {
         params = {
-          webClientId: '560375271294-taqj1flmoi806kstrb4ksrgaojl33jt9.apps.googleusercontent.com', //  webclientID 'string'
+          webClientId: '433647541505-466ifo680uiru71tau4a6svqf4rqat2g.apps.googleusercontent.com', //  webclientID 'string'
           offline: true
         };
       } else {

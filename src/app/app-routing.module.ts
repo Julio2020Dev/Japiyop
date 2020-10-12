@@ -27,10 +27,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'select-account',
-    loadChildren: () => import('./Modal/select-account/select-account.module').then( m => m.SelectAccountPageModule)
-  },
-  {
     path: 'confirm-profile',
     loadChildren: () => import('./pages/confirm-profile/confirm-profile.module').then( m => m.ConfirmProfilePageModule)
   },
