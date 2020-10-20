@@ -19,12 +19,12 @@ import { RequestModalComponent } from './components/request-modal/request-modal.
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
-import { AngularFireModule } from '@angular/fire/';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
 // import { LinkedIn } from '@ionic-native/linkedin';

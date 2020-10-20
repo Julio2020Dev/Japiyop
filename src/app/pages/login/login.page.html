@@ -1,30 +1,42 @@
  
-<ion-content >
-  <div id="opaCont"></div>
-  <div class="login-logo">
-    <img src="assets/img/path.png">
-  </div>
-  <div id="pageCont">
-    <div class="login-title">
-      <img src="assets/img/title_logo.png">
+<ion-content class="ion-padding" id="pageCont">
+  <div class="logo-cont">
+    <div class="img-cont">
+      <img src="assets/icons/logo_color.png" class="logo-img">
     </div>
-    
-    <div class="login-social">
-        <div class="btn-cont" (click)="onSignWithGoogle()">
-          <div class="img-cont"><img  class ="btn-img" src="assets/img/google_btn.png" /></div>
-        </div>
-        <div class="btn-cont" (click)="onSignWithLinkedIn()">
-          <div class="img-cont"><img class ="btn-img" src="assets/img/linkedin_btn.png"  /></div>
-        </div>
-        <div class="btn-cont" (click)="onSignWithFacebook()">
-          <div class="img-cont"><img class ="btn-img" src="assets/img/facebook_btn.png"  /></div>
-        </div>      
-      
-      <div class="term-lbl">
-        <div>Al iniciar sesión acepto los</div>
+  </div>
+
+  <div class="form-cont">
+    <form #loginForm="ngForm" novalidate>
+      <ion-list lines="none">
+          <ion-item>
+            <ion-label position="stacked" color="dark">Email</ion-label>
+            <ion-input [(ngModel)]="login.email" name="email" type="email" #email="ngModel" placeholder="Correo Electrónico" required>
+            </ion-input>
+          </ion-item>
+          <ion-text color="danger">
+            <p [hidden]="email.valid || submitted == false" class="ion-padding-start">
+              Correo electronico es requerido
+            </p>
+          </ion-text>
+
+          <ion-item>
+            <ion-label position="stacked" color="dark">Password</ion-label>
+            <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" placeholder="Contraseña" required>
+            </ion-input>
+          </ion-item>
+          <ion-text color="danger">
+            <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
+              Se requiere contraseña
+            </p>
+          </ion-text>
+      </ion-list>
+      <div class="lbl-cont">
+        <ion-label> ¿No tienes una cuenta? <span (click)="singUp()">Regístrate</span></ion-label>
       </div>
-    </div>
+      <div class="btn-cont">
+        <ion-button (click)="onLogin(loginForm)" type="submit" [disabled]="!loginForm.valid" color="success" size="small">Iniciar sesión</ion-button>
+      </div>
+    </form>
   </div>
-  
-  
 </ion-content>

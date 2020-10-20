@@ -53,9 +53,6 @@ export class UserService {
   removeApplicant(id: string) {
     return this.applicantCollection.doc(id).delete();
   }
-
-   
-
   getP(tasks: string) {
     return this.db.collection<Applicant>('Applicant', ref => ref.where('activated', '==', true)).snapshotChanges().pipe(map(
       actions => {

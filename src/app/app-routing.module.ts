@@ -178,8 +178,12 @@ const routes: Routes = [
     path: 'confirmpayment',
     loadChildren: () => import('./pages/confirmpayment/confirmpayment.module').then( m => m.ConfirmpaymentPageModule)
   },
+  {
+    path: 'sign-home',
+    loadChildren: () => import('./pages/sign-home/sign-home.module').then( m => m.SignHomePageModule)
+  },
       
-   
+  
 ];
 
 @NgModule({

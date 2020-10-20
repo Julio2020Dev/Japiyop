@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { GooglePlus } from '@ionic-native/google-plus/ngx';
-import * as firebase from 'firebase';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +12,7 @@ export class AuthService {
     return new Promise((resolve, rejected) => {
       this.AFauth.signInWithEmailAndPassword(email, password).then(res => {
         resolve(res);
-        localStorage.setItem("email", res.user.email)
+        // localStorage.setItem("email", res.user.email)
       }).catch(err => alert('datos incorrectos'))
     })
   }
@@ -22,7 +21,7 @@ export class AuthService {
     return new Promise((resolve, rejected) => {
       this.AFauth.createUserWithEmailAndPassword(email, password).then(res => {
         resolve(res)
-        localStorage.setItem("email", res.user.email)
+        // localStorage.setItem("email", res.user.email)
       }).catch(err => alert('datos incorrectos'))
     })
   }

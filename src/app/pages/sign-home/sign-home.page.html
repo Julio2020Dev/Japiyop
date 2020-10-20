@@ -1,0 +1,29 @@
+ 
+
+<ion-content>
+  <div id="opaCont"></div>
+  <div class="login-logo">
+    <img src="assets/img/path.png">
+  </div>
+  <div id="pageCont">
+    <div class="login-title">
+      <img src="assets/img/title_logo.png">
+    </div>
+    
+    <div class="login-social">
+        <div class="btn-cont" (click)="onSignWithGoogle()">
+          <div class="img-cont"><img  class ="btn-img" src="assets/img/google_btn.png" /></div>
+        </div>
+        <div class="btn-cont" (click)="onSignWithLinkedIn()">
+          <div class="img-cont"><img class ="btn-img" src="assets/img/linkedin_btn.png"  /></div>
+        </div>
+        <div class="btn-cont" (click)="onSignWithFacebook()">
+          <div class="img-cont"><img class ="btn-img" src="assets/img/facebook_btn.png"  /></div>
+        </div>      
+      
+      <div class="term-lbl">
+        <div>Al iniciar sesión acepto los</div>
+      </div>
+    </div>
+  </div>
+</ion-content>
