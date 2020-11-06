@@ -8,6 +8,7 @@ import { HunterService } from '../../services/hunter.service';
 import { UserService } from '../../services/user.service';
 import { UserData } from '../../providers/user-data';
 import { Storage } from '@ionic/storage';
+import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -101,7 +102,8 @@ export class SignupPage implements OnInit {
     private hunterService: HunterService,
     private userService: UserService,
     private userData: UserData,
-    public storage: Storage
+    public storage: Storage,
+    public apiService: ApiService
   ) { 
     let self = this;
       this.activatedRoute.queryParams.subscribe((res)=>{
@@ -135,6 +137,11 @@ export class SignupPage implements OnInit {
    
    
   ngOnInit() {
+    this.apiService.getCities().subscribe(data=>{
+      console.log('Cities Data ==', data);
+    }),(err:any)=>{
+      console.log('Cities Data Error', err);
+    }
      console.log('This Applicant and JobHunter', this.applicant, this.jobHunter);
      this.applicant = {
       id:                     '',
@@ -199,10 +206,8 @@ export class SignupPage implements OnInit {
     if (form.valid) {
       if(this.signup.userType == 'applicant'){
         this.applicantSingup();
-        console.log('adfasdf');
       }else{
         this.jobHunterSignup();
-        console.log('huntererere');
       }
     }
   }

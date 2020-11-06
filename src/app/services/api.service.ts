@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-// import { SnackbarService } from '../services/snackbar.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app'; 
 import 'firebase/firestore';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,17 +13,18 @@ export class ApiService {
   loader: boolean = false;
   user: any;
   admin: boolean = false;
-
+  headers = new HttpHeaders();
+  url = 'https://japiyopwebapp.uc.r.appspot.com/rest/';
   constructor(
-    // private snack: SnackbarService,
     private router: Router,
     private AFauth: AngularFireAuth,
-    public db:      AngularFirestore
+    public db:      AngularFirestore,
+    private _http:  HttpClient,
   ) {
-    
+     
    }
 
-   configApp() {
+  configApp() {
      
   }
   sendMsg(cId: string, toId: string, msg: string, type: string) {
@@ -56,4 +58,32 @@ export class ApiService {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
   }
+
+  // Define HttpHeaders
+  getHeader() {
+
+    let headers:HttpHeaders;
+	  headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', 'Basic ' + btoa('japiyop:j@p1y0p2020')).set("Access-Control-Allow-Origin", "*").set("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS").set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+		return headers;
+  }
+  //------------------------------------------------------------------------------------------
+  // APPPLCANT PART
+  //------------------------------------------------------------------------------------------
+    get(endpoint:string):Observable<any>  {
+      return this._http.get(this.url + endpoint, { headers: this.getHeader(), observe: 'response' });
+    }
+    post(endpoint:string, data:any):Observable<any> {
+      return this._http.post(this.url + endpoint , {data: data},{ headers: this.getHeader(), observe: 'response' });
+    }
+    getFromId(endpoint:string):Observable<any> {
+      return this._http.get(this.url + endpoint, { headers: this.getHeader(), observe: 'response' });
+    }
+    update(endpoint:string, data:any):Observable<any> {
+      return this._http.put(this.url + endpoint, {data: data},{ headers: this.getHeader(), observe: 'response' });
+    }
+    remove(endpoint:string ):Observable<any> {
+      return this._http.delete(this.url + endpoint, { headers: this.getHeader(), observe: 'response' });
+    }
+
+   
 }

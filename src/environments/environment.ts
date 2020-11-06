@@ -17,7 +17,8 @@ export const environment = {
   linkedinClientId:'86g831wln9b0p5',
   linkedinClientSecret: '61diAWyOtsz9apEg',
   Facebook_App_ID: '611046296236397',
-  Facebook_Secret_ID: '26ef2860dd73580f8f329d41259c04c5'
+  Facebook_Secret_ID: '26ef2860dd73580f8f329d41259c04c5',
+  url:'https://japiyopwebapp.uc.r.appspot.com/swagger/',
 };
 
 /*
@@ -31,3 +32,8 @@ export const environment = {
 //  MD5:  4F:21:D9:E2:8D:0A:06:B1:12:CD:65:51:F0:9E:52:BE
 //  SHA1: 62:EE:7C:76:70:6F:DD:42:67:50:16:43:9B:3A:FA:75:BB:22:87:57
 //  SHA256: 3B:4A:B0:D5:88:05:E9:49:1F:ED:90:A9:B7:00:20:90:2D:ED:62:63:62:6E:8D:F7:38:7C:4A:AC:61:3D:CD:83
+
+// https://japiyopwebapp.uc.r.appspot.com/swagger/
+// user: japiyop
+// password: j@p1y0p2020
+

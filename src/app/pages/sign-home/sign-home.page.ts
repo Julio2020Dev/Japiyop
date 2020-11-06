@@ -33,6 +33,7 @@ export class SignHomePage implements OnInit {
   }
   onSignWithGoogle(){
     this.googleLogin();
+    // this.doGoogleLogin();
   }
   onSignWithLinkedIn(){
     this.linkedInLogin()
@@ -48,6 +49,26 @@ export class SignHomePage implements OnInit {
   }
   //--------------------------------------------------------------------
   //--------GOOGLE LOGIN PART--------
+  doGoogleLogin() {
+    
+
+    console.log("doGoogle Signin");
+    
+    this.google.login({})
+      .then(res => {
+        console.log("login result ===>", res);
+        console.log("success", res.email);
+        alert('Login Successed'+ " " + JSON.stringify(res));
+        
+
+      })
+      .catch(err => {
+        
+        alert('asfasdf'+ JSON.stringify(err));
+        
+
+      });
+  }
   googleLogin(){
     let params: any;
     let self = this;
@@ -62,6 +83,7 @@ export class SignHomePage implements OnInit {
         }
         this.google.login(params).then((response) => {
             const { idToken, accessToken } = response;
+            alert('google login'+ JSON.stringify(response))
             self.onGoogleLoginSuccess(idToken, accessToken);
         }).catch((error) => {
             console.log(error);
@@ -89,6 +111,7 @@ export class SignHomePage implements OnInit {
             .credential(accessToken);
     this.fireAuth.signInWithCredential(credential)
       .then((success) => {
+        alert("Firebase Google Login ==" + JSON.stringify(success));
         let userName = success.user.displayName;
         let splitted = userName.split(' ',2);
         self.user = {

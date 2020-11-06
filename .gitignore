@@ -35,19 +35,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 
-# Estos archivos se autogeneran con comandos de GULP
-/resources/icon.png.md5
-/resources/splash.png.md5
-/resources/android/
-/resources/ios/
-/resources/splash.png
-/resources/icon.png
-/src/assets/icon/header.png
-/src/assets/images/fondo.png
-/src/assets/images/sala.gif
-/resources/splash.png
-/resources/icon.png
-/src/assets/icon/header.png
-/src/assets/css/custom.css
-
-resources/
+ 
