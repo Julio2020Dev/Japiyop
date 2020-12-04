@@ -3,6 +3,7 @@ import { LoadingController,  NavController, ToastController } from '@ionic/angul
 import { HunterService } from '../../services/hunter.service';
 import { UserService } from '../../services/user.service';
 import { UserData } from '../../providers/user-data';
+import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -18,7 +19,8 @@ export class HomePage implements OnInit {
     private loadingCtrl: LoadingController,
     private hunterService: HunterService,
     private userService: UserService,
-    private userData: UserData
+    private userData: UserData,
+    private apiService: ApiService
   ) { 
     this.showSearch = false;
   }
@@ -44,11 +46,18 @@ export class HomePage implements OnInit {
     const loading = await this.loadingCtrl.create({
       message: 'Cargando Job Hunters...'
     });
-    this.hunterService.getJobHunters().subscribe(res=>{
-      this.hunterList = res;
-      console.log('JobHunters', res);
-      loading.dismiss();
-    });
+    this.apiService.get('job_hunter/').subscribe(res=>{
+        this.hunterList = res;
+        console.log('JobHunters', res);
+        loading.dismiss();
+    }), (error:any)=>{
+      console.log('Job_hunter Getting Error', error);
+    }
+    // this.hunterService.getJobHunters().subscribe(res=>{
+    //   this.hunterList = res;
+    //   console.log('JobHunters', res);
+    //   loading.dismiss();
+    // });
   }
   //-- Goto Profile Page
   profile(){

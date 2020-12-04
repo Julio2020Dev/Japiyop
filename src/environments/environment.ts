@@ -18,7 +18,7 @@ export const environment = {
   linkedinClientSecret: '61diAWyOtsz9apEg',
   Facebook_App_ID: '611046296236397',
   Facebook_Secret_ID: '26ef2860dd73580f8f329d41259c04c5',
-  url:'https://japiyopwebapp.uc.r.appspot.com/swagger/',
+  url:'https://japiyopwebapp.uc.r.appspot.com/rest/',
 };
 
 /*

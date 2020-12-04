@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   loader: boolean = false;
+  filter = {category:'', indus:'', position:'', city:''};
   user: any;
   admin: boolean = false;
   headers = new HttpHeaders();
@@ -65,6 +66,12 @@ export class ApiService {
     let headers:HttpHeaders;
 	  headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', 'Basic ' + btoa('japiyop:j@p1y0p2020')).set("Access-Control-Allow-Origin", "*").set("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS").set("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 		return headers;
+  }
+  setFilter(data: any){
+    this.filter = data;
+  }
+  getFilter(){
+    return this.filter;
   }
   //------------------------------------------------------------------------------------------
   // APPPLCANT PART

@@ -1,45 +1,116 @@
-//---------------------------------------------------
-export interface UserOptions {
-  id:          string;
-  userName:     string;
-  phoneNumber:  string;
-  email:        string;
-  password:     string;
-  dni:          string;
-  city:         string;
-  district:     string;
-  userPhoto:    string;
-  userType:     string;
-}
-//---------------------------------------------------
-export interface JobHunter{
-  id:                     string;
-  first_name:             string;
-  last_name:              string;
+
+//--------------------Applicant-------------------------------
+export interface Applicant{
+  pk:                     string;
+  user:                   User;
   mobile_phone:           string;
-  email:                  string;
-  password:               string;
   identification_number:  string;
-  date_of_birth:          string;
-  city:                   string;
-  district:               string;
-  photo:                  string;
-  reported:               string;
+  location:               string;
+  job_situation:          any;
+  labor_availability:     any;
+  available_date:         any;
+  remote_work:            boolean;
+  relocation:             boolean;
+  show_to_job_hunters:    boolean;
+  people_forum_text_me:   any;
+  replies_forum:          any;
+  forum_message:          any;
+  job_hunters_messages:   any;
+}
+//------------- CATEGORY----------
+export interface Category{
+  pk:   string;
+  name: string;
+}
+//------------- CITY--------------------------------------
+export interface City{
+  pk?:   string;
+  name: string;
+}
+//------------- DISTRICT---------------------------------
+export interface District{
+  pk?:      string;
+  city:     City;
+  name:     string;
+  city_id?: string
+}
+//------------- EXPERIENCEXAPPLICANT---------------------
+export interface ExperienceXApplicant{
+  id:              string;
+  applicant:       string;
+  work_experience: string;
+}
+//------------- INDUSTRY---------------------------------
+export interface ExperienceXApplicant{
+  pk?:  string;
+  name: string;
+}
+//------------- JOBHUNTER-------------------------------
+export interface JobHunter{
+  pk?:                    string;
+  user:                   User;
   company_logo:           string;
-  company_name:           string;
   creed:                  string;
-  presentation_video:     string;
+  company_phone:          string;
   attention_schedule:     string;
-  expertise:              string;
-  show_to_applicants:     boolean;
+  business_contact_name:  string;
+  business_contact_phone: string;
+  business_contact_position: string;
+  business_name:          string;
+  ruc:                    string;
+  legal_representative_identification: string;
+  legal_representative_name: string;
+  tax_residence:          string;
+  office_location:        string;
+  pdf_presentation:       string;
+  video_presentation:     string;
+  annual_billing:         string;
+  people_advised_total:   string;
+  people_advised_2019:    string;
+  people_advised_2018:    string;
+  reported:               boolean;
+  show_to_applicants:     boolean
   show_to_forum_contacts: boolean;
   applicant_messages:     any;
   requests:               any;
-  liked_by_applicants:    any;
+  liked_by_applicants:    boolean;
   forum_answers:          any;
   rating_avarage:         string;
-
 }
+//------------- STUDYXAPPLICATION---------------
+export interface StudyApplicant{
+  pk:         string;
+  applicant:  Applicant;
+  study:      Study;
+}
+//------------- POSITION------------------------
+export interface Position{
+  pk:     string;
+  name:   string
+}
+//------------- TRENDING----------------------
+export interface Trending{
+  pk?:  string;
+  name: string;
+}
+
+//------------- USER--------------------------
+export interface User {
+  pk?:          string;
+  first_name:    string;
+  username:     string;
+  password:     string;
+}
+//---------------STUDY------------------------
+export interface Study{
+  id:           string;
+  profession:   any;
+  institution:  string;
+  degree:       string;
+  start_date:   any;
+  end_date:     any;
+}
+//////////////===================//////////////
 export interface JobHunterReview{
   id:         string;
   job_hunter: string;
@@ -76,35 +147,7 @@ export interface Favorite{
   applicant:  string;
   job_hunter: string;
 }
-//---------------------------------------------------
-export interface Applicant{
-  id:                     string;
-  first_name:             string;
-  last_name:              string;
-  email:                  string;
-  dni:                    string;
-  birthday:               string;
-  studies:                any;
-  mobile_phone:           string;
-  password:               string;
-  identification_number:  string;
-  city:                   string;
-  district:               string;
-  photo:                  string;
-  reported:               boolean;
-  job_situation:          any;
-  labor_availability:     any;
-  available_date:         any;
-  remote_work:            boolean;
-  relocation:             boolean;
-  work_experience:        any;
-  languages:              any;
-  show_to_job_hunters:    boolean;
-  people_forum_text_me:   any;
-  replies_forum:          any;
-  forum_message:          any;
-  job_hunters_messages:   any;
-}
+
 //---------------------------------------------------
 export interface JobSituation{
   id:   string;
@@ -123,26 +166,10 @@ export interface Language{
   id:     string;
   name:   string;
 }
-//---------------------------------------------------
-export interface District{
-  id?:   string;
-  city: string;
-  name: string;
-}
 
-export interface City{
-  id?:   string;
-  name: string;
-}
-//---------------------------------------------------
-export interface Study{
-  id:           string;
-  profession:   any;
-  institution:  string;
-  degree:       string;
-  start_date:   any;
-  end_date:     any;
-}
+
+
+
 
 export interface Institution{
   id:   string;
@@ -152,11 +179,7 @@ export interface Degree{
   id:   string;
   name: string;
 }
-export interface StudyApplicant{
-  id:         string;
-  applicant:  string;
-  study:      string;
-}
+
 //---------------------------------------------------
 export interface Proposal{
   id:                     string;
@@ -213,13 +236,6 @@ export interface Reference{
   work_reference_company_position: string;
   work_reference_last_boss:        string;
 }
-export interface Position{
-  id:     string;
-  name:   string
-}
 
-export interface ExperienceApplicant{
-  id:              string;
-  applicant:       string;
-  work_experience: string;
-}
+
+

@@ -24,7 +24,7 @@
         <ion-item>
           <ion-label position="stacked" color="dark">Industrias especialiadas</ion-label>
           <ion-select  placeholder="Publicidad" interface="alert" [(ngModel)]="filter.indus" [ngModelOptions]="{standalone: true}">
-            <ion-select-option *ngFor="let item of INDUSTRIAS_ESPECIALIZADAS;" [value]="item.name"  >
+            <ion-select-option *ngFor="let item of INDUSTRIAS;" [value]="item.name"  >
                 {{item.name}}
             </ion-select-option>
           </ion-select>
